@@ -1,7 +1,7 @@
 import React from 'react'
 import Fund from "../22.png";
 import Buttony from '../../Components/Button-yellow/Button';
-import Button from 'react-bootstrap/Button'
+import Buttonb from 'react-bootstrap/Button'
 import '../Home/Home.css'
 const Home = () => {
   return (
