@@ -1,14 +1,15 @@
-import Login from '../src/Pages/Login/Login.js'
-// import Buttony from '../src/Components/Button-yellow/Button.js'
-import RegistrationOne from './Pages/Registration-one/Registration-one.js';
-import RegistrationTwo from './Pages/Registration-two/Registration-two.js';
+import "bootstrap/dist/css/bootstrap.min.css";
+import './index.css'
+import { BrowserRouter as Router } from 'react-router-dom';
+import Profile from '../src/Components/Profile/Profile.js'
 function App() {
   return (
-    <div className="App">
-          <Login />
-          <RegistrationOne />
-          <RegistrationTwo />
+    <Router>
+      <div className="App">
+  <Profile/>
     </div>
+    </Router>
+    
   );
 }
 
