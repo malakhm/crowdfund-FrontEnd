@@ -3,7 +3,7 @@
 body{
     background-color: #1E1E1E !important;
 }
-.Title{
+.headings-title{
     display: flex !important;
     justify-content: center !important;
     width: 100% !important;
@@ -12,9 +12,9 @@ body{
     font-weight: bold !important;
     font-family: 'League Spartan', sans-serif !important;
 }
-.logo-img{
-    min-height: 100% !important;
-    min-width: 250px !important;
+.reg-form-logo{
+    width: 15em !important;
+    height: 15em !important;
 }
 .Logo-img{
     display: flex !important;

@@ -2,15 +2,15 @@ import React from "react";
 import "./Login.css";
 import Fund from "../22.png";
 import 'bootstrap-icons/font/bootstrap-icons.css';
-
 import Buttony from '../../Components/Button-yellow/Button.js'
+
 const Login = () => {
  return (
    <div className="custom-container vh-100 w-100">
      <div className="Logo-img">
-       <img src={Fund} alt="" className="logo-img w-25 h-25" />
+       <img src={Fund} alt="" className="reg-form-logo " />
      </div>
-     <div className="Title">Login</div>
+     <div className="headings-title">Login</div>
      <form className="container mt-5 w-25 d-flex flex-column gap-3 container-custom-input-width">
      <div className="mb-3">
        <div className="input-group">
@@ -38,8 +38,8 @@ const Login = () => {
          />
        </div>
      </div>
-     <div className="btn btn-warning d-flex justify-content-center align-self-center">
-     <Buttony >Login Now</Buttony>
+     <div className="btn btn-warning d-flex justify-content-center align-self-center w-50">
+     <Buttony><b>Login Now</b></Buttony>
      </div>
      <h6 className="custom-h6-input-login text-white d-flex justify-content-center">Don't Have an Account?<a className="custom-anchor-tag-login" href={'/'}>Sign up</a></h6>
      </form>
