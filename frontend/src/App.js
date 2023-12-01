@@ -1,7 +1,15 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+import './index.css'
+import { BrowserRouter as Router } from 'react-router-dom';
+
 function App() {
   return (
-    <div className="App">
+    <Router>
+      <div className="App">
+  
     </div>
+    </Router>
+    
   );
 }
 
