@@ -1,0 +1,12 @@
+:root {
+  --main-primary-color: #1E1E1E;
+  --main-secondary-color: #F3C21B;
+  --main-tertiary-color: #383842;
+  --main-shaded-color: #555454;
+  --main-light-shaded-color: #CAC5C1;
+}
+
+html {
+  background-color: var(--main-primary-color);
+  font-family: "League Spartan";
+}

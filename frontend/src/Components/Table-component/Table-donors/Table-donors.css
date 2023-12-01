@@ -1,0 +1,93 @@
+.loading-donors {
+  color: var(--main-secondary-color);
+  font-size: 50px;
+  font-weight: bolder;
+}
+
+/* Head of table */
+
+.users-list-table {
+  border-collapse: collapse;
+}
+
+.table-row-head { /*star means all children of div */
+  height: 40px;
+  border-radius: 500px 500px 0 0;
+  background-color: var(--main-shaded-color);
+  color: var(--main-secondary-color);
+  font-size: 15px;
+}
+
+.table-column-id {
+  width: 7.5%;
+  border-radius: 25% 0 0 0;
+}
+
+.table-column-username {
+  width: 15%;
+}
+
+.table-column-first-name {
+  width: 15%;
+}
+
+.table-column-last-name {
+  width: 15%;
+}
+
+.table-column-phone {
+  width: 10%;
+}
+
+.table-column-email {
+  width: 18%;
+}
+
+.table-column-dob {
+  width: 7.5%;
+}
+
+.table-column-gender {
+  width: 6%;
+}
+
+.table-column-edit-delete {
+  width: 6%;
+  border-radius: 0 25% 0 0;
+}
+
+/* Body of table */
+
+.table-row-body * {   /* the star is to include all children */
+  height: 45px;
+  border: 1px solid var(--main-shaded-color);
+  color: var(--main-light-shaded-color);
+  text-align: center;
+  font-size: 15px;
+}
+
+.table-column-edit-delete-for-body {
+  display:flex;
+  margin-left: 10%;
+  margin-right: 10%;
+  align-items: center;
+  border: 0;
+}
+
+.table-edit-icon {
+  height: 40%;
+  width: 40%;
+  border: 0;
+}
+
+.table-icon-spacer {
+  width: 30%;
+  margin: 0;
+  border: 0;
+}
+
+.table-delete-icon {
+  height: 40%;
+  width: 30%;
+  border: 0;
+}
