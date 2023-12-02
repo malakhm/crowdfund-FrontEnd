@@ -1,0 +1,11 @@
+.TRANSACTION-IS-DONE-ICON{
+    font-size: 22px;
+    color: var(--main-secondary-color);
+    
+}
+
+.Transaction-main-container{
+    margin-top: 7%;
+
+}
+

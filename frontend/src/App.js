@@ -15,6 +15,7 @@ import Header from './Components/Header/Header.js'
 import Feed from '../src/Pages/Feed/Feed.js'
 import CreatorProjects from '../src/Pages/Creator/Creator-projects/Creator-projects.js'
 import Notifications from '../src/Pages/Notifications/Notifications.js'
+import DonorTransaction from '../src/Pages/Donor/Donor-transaction/Donor-transaction.js'
 function App() {
   return (
     <Router>
@@ -23,7 +24,7 @@ function App() {
    
         <SideBar><DonorMenu/></SideBar>
 
-        <Notifications>kamal</Notifications>
+        <DonorTransaction />
     </div>
     </Router>
     
