@@ -18,11 +18,7 @@ function App() {
     <Router>
       <div className="App">
 
-      {/* <Home /> */}
    
-      {/* <Buttonb>Yes, delete</Buttonb> */}
-      {/* <RegistrationOne />
-      <RegistrationTwo /> */}
         <SideBar><DonorMenu/></SideBar>
         <Feed/>
         
