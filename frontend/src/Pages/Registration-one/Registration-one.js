@@ -2,7 +2,7 @@ import React from "react";
 import './Registration-one.css';
 import '../Login/Login.css'
 import Fund from "../22.png";
-import Buttony from "../../Components/Button-yellow/Button";
+import Buttony from "../../Components/Button-yellow/Button.js";
 import Dropdown from 'react-bootstrap/Dropdown';
 import { MdOutlinePhoneInTalk } from "react-icons/md";
 import { TfiEmail } from "react-icons/tfi";
