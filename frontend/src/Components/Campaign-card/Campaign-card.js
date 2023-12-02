@@ -22,7 +22,7 @@ const  Cards = () => {
       </div>
       <div className='Campaign-Card-Credits'><p>By</p><h4>USAID</h4></div>
       <div className='Campaign-Card-Descripton'>
-        <p className='Campaign-p-description'>jbwqdcsbqkjwckjdbcvjqb kadcn wqjcb kiavbkeqjb</p>
+        <p className='Campaign-p-description'>jbwqdcsbqkjwckjdbcvjqb k sfvdvdfcvefce wdevcwevadcn wqjcb kiavbkeqjb...</p>
         <ProgressBar animated now={70} label={`${now}%`} variant='warning text-dark'/>
         <div className='Campaign-Card-stats'><p>$4000 raised of</p><h6>$9000</h6></div>
       </div>

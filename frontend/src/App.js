@@ -13,6 +13,7 @@ import SideBar from '../src/Components/Side-bar/Side-bar.js'
 import DonorMenu from "./Components/Donor-menu/donor-menu";
 import Header from './Components/Header/Header.js'
 import Feed from '../src/Pages/Feed/Feed.js'
+import CreatorProjects from '../src/Pages/Creator/Creator-projects/Creator-projects.js'
 function App() {
   return (
     <Router>
@@ -20,8 +21,8 @@ function App() {
 
    
         <SideBar><DonorMenu/></SideBar>
-        <Feed/>
-        
+
+        <CreatorProjects/>
     </div>
     </Router>
     
