@@ -8,7 +8,7 @@ import RegistrationOne from "./Pages/Registration-one/Registration-one.js";
 import RegistrationTwo from "./Pages/Registration-two/Registration-two.js";
 import Home from "./Pages/Home/Home.js";
 import Buttonb from "./Components/Button-black/Button.js";
-
+import DetailsCard from '../src/Components/Details-card/Details-card.js'
 import SideBar from '../src/Components/Side-bar/Side-bar.js'
 import DonorMenu from "./Components/Donor-menu/donor-menu";
 import Header from './Components/Header/Header.js'
@@ -22,7 +22,7 @@ function App() {
    
         <SideBar><DonorMenu/></SideBar>
 
-        <CreatorProjects/>
+        <DetailsCard/>
     </div>
     </Router>
     

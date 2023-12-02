@@ -1,0 +1,122 @@
+.Details-Card-Main-Container{
+    display: flex;
+    /* border: 2px cadetblue solid; */
+    justify-content: space-around;
+    margin-top: 12%;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+  
+
+   
+    
+}
+
+.Details-Card-left-side{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    /* border: 2px rgb(151, 95, 160) solid; */
+    color: white;
+    
+
+}
+
+.Details-Card-right-side{
+    display: flex;
+    flex-direction: column;
+  gap: 30px;
+    /* border: 2px rgb(95, 110, 160) solid; */
+    width: 500px;
+   
+    background-color: #171717;
+    color: white;
+    padding: 50px;
+    
+    
+
+}
+
+.Details-Card-Main-Container h1{
+    color: white;
+    margin-bottom: 5%;
+
+}
+
+.Details-Card-Main-Container img{
+    margin-bottom: 5%;
+    
+}
+
+.Details-Card-Credits{
+    display: flex;
+    color: white;
+    
+}
+
+.Details-Card-Credits h4{
+
+margin-left: 10px !important;
+}
+.days-left{
+
+   font-size: 52px;
+  font-family: 'Courier New', Courier, monospace !important;
+
+}
+.details-card-p {
+
+   font-family: 'Courier New', Courier, monospace !important;
+ 
+ }
+.Details-Card-stats  {
+    display: flex;
+}
+.Details-Card-stats  h6{
+    margin: 5px ;
+  margin-left: 5px !important;
+  color: var(--main-secondary-color);
+}
+
+.Donate-icon{
+    color: var(--main-secondary-color);
+    font-size: 42px;
+}
+.Details-Card-Donate{
+    font-size: 20px !important;
+    display: flex;
+    
+}
+.Details-Card-Donate p{
+    margin: 10px ;
+    margin-left: 5px !important;
+}
+
+@media (max-width: 768px){
+    .Details-Card-right-side{
+        display: flex;
+        flex-direction: column;
+      gap: 30px;
+        /* border: 2px rgb(95, 110, 160) solid; */
+        width: 400px;
+       
+        background-color: #171717;
+        color: white;
+        padding: 50px;
+        margin-left: 50px;
+        
+        
+    
+    }
+
+    .Details-Card-left-side{
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        /* border: 2px rgb(151, 95, 160) solid; */
+        color: white;
+        
+    
+    }
+    
+    
+}
