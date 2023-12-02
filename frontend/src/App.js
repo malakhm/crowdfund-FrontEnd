@@ -17,6 +17,7 @@ import CreatorProjects from '../src/Pages/Creator/Creator-projects/Creator-proje
 import Notifications from '../src/Pages/Notifications/Notifications.js'
 import DonorTransaction from '../src/Pages/Donor/Donor-transaction/Donor-transaction.js'
 import CreatorTransaction from '../src/Pages/Creator/Creator-transaction/Creator-transaction.js'
+import CreatorProfile from '../src/Pages/Creator/Creator-profile/Creator-profile.js'
 function App() {
   return (
     <Router>
@@ -25,7 +26,7 @@ function App() {
    
         <SideBar><DonorMenu/></SideBar>
 
-        <CreatorTransaction />
+        <CreatorProfile />
     </div>
     </Router>
     
