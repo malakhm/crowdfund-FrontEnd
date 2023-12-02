@@ -1,3 +1,8 @@
+.Home-big-container{
+    display: flex !important;
+    width: 100% !important;
+}
+
 .container-for-buttons{
     width:100wh !important;
     justify-content: space-evenly !important;
