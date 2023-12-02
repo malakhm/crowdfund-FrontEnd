@@ -17,4 +17,9 @@
 body{
     font-family: spartan !important;
    background-color: #333333 !important;
+
   }
+
+.App{
+  display: flex;
+}

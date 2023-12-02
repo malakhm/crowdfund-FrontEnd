@@ -7,6 +7,7 @@
   background-color: #1E1E1E;
   margin: 0  auto;
   margin-top: 10em;
+  margin-bottom: 10em;
   padding: 90px;
   border-radius: 5px;
   /* box-shadow: 0 0 10px rgba(254, 253, 253, 0.443); */
@@ -49,6 +50,7 @@
   margin-bottom: 20px;
   color:#F3C21B;
   font-size: 1.2em;
+
 }
 
 .Contact-account-Profile {
@@ -64,14 +66,14 @@
   padding: 10px;
   border-radius: 5px;
   /* box-shadow: 0 0 10px rgba(254, 253, 253, 0.443); */
-  padding-right: 10em;
-  padding-left: 3em;
+
   border: gray solid 0.5px ;
 }
 
 .left-column-profile,
 .right-column-profile {
-  width: 100%;
+  width: 200px;
+
   
 }
 .left-column-profile{
