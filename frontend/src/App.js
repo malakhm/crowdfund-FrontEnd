@@ -26,7 +26,7 @@ function App() {
    
         <SideBar><DonorMenu/></SideBar>
 
-        <CreatorProfile />
+        <DonorTransaction />
     </div>
     </Router>
     
