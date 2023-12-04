@@ -88,9 +88,7 @@ margin-bottom: 80px;
 line-height: 1.5em; 
 color: #CAC5C1;
 }
-*{
-  background-color: #1E1E1E;
-}
+
 /* @media only screen and (max-width: 1200px) {
   .section-profile {
     padding: 60px;

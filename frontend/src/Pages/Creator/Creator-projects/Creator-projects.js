@@ -1,12 +1,11 @@
 import React from 'react'
-import Cards from '../../Components/Campaign-card/Campaign-card';
+import Cards from '../../../Components/Campaign-card/Campaign-card.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import  { useState } from 'react';
 import { PaginationControl } from 'react-bootstrap-pagination-control';
-
-import './Feed.css'
-const Feed = () => {
+import '../../Feed/Feed.css'
+const CreatorProjects = () => {
     const [page, setPage] = useState(1)
   return (
     <>
@@ -28,7 +27,7 @@ const Feed = () => {
       <Cards/>
       <Cards/>
       <Cards/>
-      <Cards/>
+      <Cards/> <Cards/>
       <Cards/>
       <Cards/>
       <Cards/>
@@ -42,4 +41,4 @@ const Feed = () => {
   )
 }
 
-export default Feed
+export default CreatorProjects

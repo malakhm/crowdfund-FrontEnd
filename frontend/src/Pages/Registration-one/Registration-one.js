@@ -2,14 +2,14 @@ import React from "react";
 import './Registration-one.css';
 import '../Login/Login.css'
 import Fund from "../22.png";
-import Buttony from "../../Components/Button-yellow/Button";
+import Buttony from "../../Components/Button-yellow/Button.js";
 import Dropdown from 'react-bootstrap/Dropdown';
 import { MdOutlinePhoneInTalk } from "react-icons/md";
 import { TfiEmail } from "react-icons/tfi";
 import { BsCalendar2Date } from "react-icons/bs";
 const RegistrationOne = () => {
   return (
-    <div className="custom-container vh-100 w-100">
+    <div className="custom-container h-100 w-100">
       <div className="Logo-img">
         <img src={Fund} alt="" className="reg-form-logo" />
       </div>
