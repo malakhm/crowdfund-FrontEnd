@@ -4,7 +4,7 @@ import './Add-campaign.css';
 import Buttony from '../../../Components/Button-yellow/Button';
 const AddCampaign = () => {
   return (
-    <div>
+    <div className="custom-container vh-100 w-100">
         <div className="headings-title">New Campaign</div>
         {/* <div> */}
           <div className='campaigns-parent-div w-100'>
