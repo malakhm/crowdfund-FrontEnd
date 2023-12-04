@@ -1,7 +1,27 @@
-:root {
-  --main-primary-color: #1E1E1E;
-  --main-secondary-color: #F3C21B;
-  --main-tertiary-color: #383842;
-  --main-shaded-color: #555454;
-  --main-light-shaded-color: #CAC5C1;
+
+@font-face {
+    font-family: spartan;
+    src: url('../src/Assets/league-spartan.bold.ttf');
+  }
+
+
+  :root {
+    --main-primary-color: #1E1E1E;
+    --main-secondary-color: #F3C21B;
+    --main-tertiary-color: #383842;
+    --main-shaded-color: #555454;
+    --main-light-shaded-color: #CAC5C1;
+    
+  }
+  
+
+body{
+    font-family: spartan !important;
+   background-color: #333333 !important;
+
+  }
+
+.App{
+  display: flex;
+
 }
