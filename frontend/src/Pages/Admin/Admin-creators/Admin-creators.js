@@ -6,7 +6,7 @@ import "./Admin-creators.css";
 
 const AdminCreators = () => {
   return (
-    <>
+    <div className="Admin-creator-table-main container d-flex ">
       <h1 className="creators-page-heading">
         <img
           className="users-icon-in-creators-page"
@@ -17,7 +17,7 @@ const AdminCreators = () => {
         <p className="creators-page-word">Creators</p>
       </h1>
       <CreatorsTable />
-    </>
+    </div>
   );
 };
 

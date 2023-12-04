@@ -5,8 +5,3 @@
   --main-shaded-color: #555454;
   --main-light-shaded-color: #CAC5C1;
 }
-
-html {
-  background-color: var(--main-primary-color);
-  font-family: "League Spartan";
-}

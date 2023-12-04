@@ -1,93 +1,93 @@
 .loading-creators {
-  color: var(--main-secondary-color);
-  font-size: 50px;
-  font-weight: bolder;
+  color: var(--main-secondary-color) !important;
+  font-size: 50px !important;
+  font-weight: bolder !important
 }
 
 /* Head of table */
 
 .users-list-table {
-  border-collapse: collapse;
+  border-collapse: collapse !important;
 }
 
 .table-row-head { /*star means all children of div */
-  height: 40px;
-  border-radius: 500px 500px 0 0;
-  background-color: var(--main-shaded-color);
-  color: var(--main-secondary-color);
-  font-size: 15px;
+  height: 40px !important;
+  border-radius: 500px 500px 0 0 !important;
+  background-color: var(--main-shaded-color) !important;
+  color: var(--main-secondary-color) !important;
+  font-size: 15px !important;
 }
 
 .table-column-id {
-  width: 7.5%;
-  border-radius: 25% 0 0 0;
+  width: 7.5% !important;
+  border-radius: 25% 0 0 0 !important;
 }
 
 .table-column-username {
-  width: 15%;
+  width: 15% !important;
 }
 
 .table-column-first-name {
-  width: 15%;
+  width: 15% !important;
 }
 
 .table-column-last-name {
-  width: 15%;
+  width: 15% !important;
 }
 
 .table-column-phone {
-  width: 10%;
+  width: 10% !important;
 }
 
 .table-column-email {
-  width: 18%;
+  width: 18% !important;
 }
 
 .table-column-dob {
-  width: 7.5%;
+  width: 7.5% !important;
 }
 
 .table-column-gender {
-  width: 6%;
+  width: 6% !important;
 }
 
 .table-column-edit-delete {
-  width: 6%;
-  border-radius: 0 25% 0 0;
+  width: 6% !important;
+  border-radius: 0 25% 0 0 !important;
 }
 
 /* Body of table */
 
 .table-row-body * {   /* the star is to include all children */
-  height: 45px;
-  border: 1px solid var(--main-shaded-color);
-  color: var(--main-light-shaded-color);
-  text-align: center;
-  font-size: 15px;
+  height: 45px !important;
+  border: 1px solid var(--main-shaded-color) !important;
+  color: var(--main-light-shaded-color) !important;
+  text-align: center !important;
+  font-size: 15px !important;
 }
 
 .table-column-edit-delete-for-body {
-  display:flex;
-  margin-left: 10%;
-  margin-right: 10%;
-  align-items: center;
-  border: 0;
+  display:flex !important;
+  margin-left: 10% !important;
+  margin-right: 10% !important;
+  align-items: center !important;
+  border: 0 !important;
 }
 
 .table-edit-icon {
-  height: 40%;
-  width: 40%;
-  border: 0;
+  height: 40% !important;
+  width: 40% !important;
+  border: 0 !important;
 }
 
 .table-icon-spacer {
-  width: 30%;
-  margin: 0;
-  border: 0;
+  width: 30% !important;
+  margin: 0 !important;
+  border: 0 !important;
 }
 
 .table-delete-icon {
-  height: 40%;
-  width: 30%;
-  border: 0;
+  height: 40% !important;
+  width: 30% !important;
+  border: 0 !important;
 }
