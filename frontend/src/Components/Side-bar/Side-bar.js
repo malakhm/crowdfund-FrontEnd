@@ -15,7 +15,7 @@ const Sidebar = ( { children }) => {
   return (
     <div className='' style={{ display: 'flex',width: '280px',height: '100vh', overflow: 'scroll initial' , position:'fixed'}}>
       <CDBSidebar textColor="#fff" backgroundColor="#333">
-        <CDBSidebarHeader prefix={<i className="fa fa-bars fa-large"></i>}>
+        <CDBSidebarHeader prefix={<i className="fa fa-bars fa-large"></i> }>
           <a href="/" className="text-decoration-none" style={{ color: 'inherit' }}>
             <img src={Logo} className='img-fluid   bg-transparent'/>
           </a>

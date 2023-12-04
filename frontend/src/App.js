@@ -18,19 +18,15 @@ import Notifications from '../src/Pages/Notifications/Notifications.js'
 import DonorTransaction from '../src/Pages/Donor/Donor-transaction/Donor-transaction.js'
 import CreatorTransaction from '../src/Pages/Creator/Creator-transaction/Creator-transaction.js'
 import CreatorProfile from '../src/Pages/Creator/Creator-profile/Creator-profile.js'
+import AdminCreators from '../src/Pages/Admin/Admin-creators/Admin-creators.js'
 function App() {
   return (
     <Router>
       <div className="App">
-
-   
         <SideBar><DonorMenu/></SideBar>
-
-        <DonorTransaction />
+        <AdminCreators />
     </div>
-    </Router>
-    
+    </Router>  
   );
 }
-
 export default App;
