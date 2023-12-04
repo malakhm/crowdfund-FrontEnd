@@ -30,7 +30,7 @@ function App() {
         {/* <RegistrationOne /> */}
         {/* <RegisterTwo /> */}
         {/* <Login /> */}
-        <AddCampaign />
+        {/* <AddCampaign /> */}
         {/* <DonorTransaction /> */}
     </div>
     </Router>
