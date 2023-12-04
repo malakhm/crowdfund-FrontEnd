@@ -2,7 +2,6 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-
   "dependencies": {
     "@coreui/react": "^4.11.0",
     "@fortawesome/fontawesome-svg-core": "^6.5.0",
