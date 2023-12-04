@@ -1,3 +1,8 @@
+
+import { BrowserRouter as Router } from 'react-router-dom';
+
+import AdminCreators from "./Pages/Admin/Admin-creators/Admin-creators.js";
+import AdminDonors from "./Pages/Admin/Admin-donors/Admin-donors.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 import './index.css'
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -19,14 +24,19 @@ import DonorTransaction from '../src/Pages/Donor/Donor-transaction/Donor-transac
 import CreatorTransaction from '../src/Pages/Creator/Creator-transaction/Creator-transaction.js'
 import CreatorProfile from '../src/Pages/Creator/Creator-profile/Creator-profile.js'
 import AdminCreators from '../src/Pages/Admin/Admin-creators/Admin-creators.js'
-function App() {
+
+
+const App = () => {
+
   return (
     <Router>
+     
       <div className="App">
         <SideBar><DonorMenu/></SideBar>
         <AdminCreators />
     </div>
     </Router>  
+
   );
 }
 export default App;

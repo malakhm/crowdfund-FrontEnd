@@ -1,3 +1,4 @@
+
 import React from 'react'
 import Fund from "../22.png";
 import Buttony from '../../Components/Button-yellow/Button';
@@ -24,3 +25,4 @@ const Home = () => {
 }
 
 export default Home
+
