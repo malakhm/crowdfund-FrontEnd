@@ -29,7 +29,7 @@ function App() {
         <SideBar><DonorMenu/></SideBar>
         {/* <RegistrationOne /> */}
         {/* <RegisterTwo /> */}
-        {/* <Login /> */}
+        <Login />
         {/* <AddCampaign /> */}
         {/* <DonorTransaction /> */}
     </div>
