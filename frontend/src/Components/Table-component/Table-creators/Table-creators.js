@@ -4,7 +4,7 @@ import axios from "axios";
 
 import delete_icon from "../Assets/Icons/delete-icon.png"
 import edit_icon from "../Assets/Icons/edit-icon.png"
-import "./Table-creators.css";
+import "./Table-creators.css";  
 
 const CreatorsTable = () => {
 

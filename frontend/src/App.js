@@ -5,7 +5,7 @@ import AdminCreators from "./Pages/Admin/Admin-creators/Admin-creators.js";
 import AdminDonors from "./Pages/Admin/Admin-donors/Admin-donors.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 import './index.css'
-import { BrowserRouter as Router } from 'react-router-dom';
+
 import Profile from '../src/Components/Profile/Profile.js'
 import Cards from '../src/Components/Campaign-card/Campaign-card.js'
 import Login from '../src/Pages/Login/Login.js'
@@ -23,16 +23,14 @@ import Notifications from '../src/Pages/Notifications/Notifications.js'
 import DonorTransaction from '../src/Pages/Donor/Donor-transaction/Donor-transaction.js'
 import CreatorTransaction from '../src/Pages/Creator/Creator-transaction/Creator-transaction.js'
 import CreatorProfile from '../src/Pages/Creator/Creator-profile/Creator-profile.js'
-import AdminCreators from '../src/Pages/Admin/Admin-creators/Admin-creators.js'
-
-
+import Adminmenu from '../src/Components/Admin-menu/admin-menu.js'
 const App = () => {
 
   return (
     <Router>
      
       <div className="App">
-        <SideBar><DonorMenu/></SideBar>
+        <SideBar><Adminmenu/></SideBar>
         <AdminCreators />
     </div>
     </Router>  
