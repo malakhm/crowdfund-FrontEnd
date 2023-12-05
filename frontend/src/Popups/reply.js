@@ -3,12 +3,9 @@ import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Popper from '@mui/material/Popper';
 import { useSpring, animated } from '@react-spring/web';
-import { FaDeleteLeft } from "react-icons/fa6";
-import TextField from '@mui/material/TextField';
-import AccountCircle from '@mui/icons-material/AccountCircle';
+
 import Buttony from '../Components/Button-yellow/Button.js';
-import Buttonb from '../Components/Button-black/Button.js'
-import { MdEditDocument } from "react-icons/md";
+import { FaReplyAll } from "react-icons/fa";
 import Button from 'react-bootstrap/Button';
 
 import '../Popups/Styles/Edit.css'
@@ -44,7 +41,7 @@ Fade.propTypes = {
   onExited: PropTypes.func,
 };
 
- const EditPopper = ()=> {
+ const ReplyPopper = ()=> {
   const [open, setOpen] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -57,41 +54,20 @@ Fade.propTypes = {
 
   return (
     <div>
-     <Button variant="warning" aria-describedby={id} type="button" onClick={handleClick} >edit</Button>
+     <FaReplyAll className='reply-message-icon text-warning w-25' aria-describedby={id} type="button" onClick={handleClick} >edit</FaReplyAll>
       
       <Popper id={id} open={open} anchorEl={anchorEl} transition className='Delete-Popper-main'>
         {({ TransitionProps }) => (
           <Fade {...TransitionProps}>
             <Box sx={{ border: 1, p: 1, bgcolor: '#333333' }}>
-             <p className='p-class-main-container'>Edit Here </p>
+             <p className='p-class-main-container'>Reply to the Message: </p>
             <div className='button-container-main container d-flex'>
             <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
                 <form className='form-popup d-flex flex-column '>
-                    <label for="username">
-                   <input type="text" name="username" placeholder='username'/>
-                    </label>
-                    <label for="First Name">
-                    <input type="text" name="First Name" placeholder='First Name'/>
-                    </label>
-
-                    <label for="Last Name">
-                    <input type="text" name="Last Name" placeholder='last name'/>
-                    </label>
-
-                    <label for="Email">
-                    <input type="Email" id='Email' name="email" placeholder='email'/>
-
-                    </label>
-                    <label for="Gender">
-                    <input type="text" name="gender" id='Gender' placeholder='gender'/>
-
-                    </label>
-                    <label for="Phone">
-                    <input type="text" name="phone" placeholder='(dd)-dddddd'/>
-
-                    </label>
-                    <label for="DOB">
-                    <input type="date" name="date of birth" placeholder='username'/>
+                    
+                   
+                    <label for="message">
+                    <textarea id='message' name="message" placeholder='Message here...'/>
 
                     </label>
                     <div className='button-container-main container d-flex'>
@@ -117,4 +93,4 @@ Fade.propTypes = {
   );
 }
 
-export default EditPopper
+export default ReplyPopper

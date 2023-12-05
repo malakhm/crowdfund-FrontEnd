@@ -235,10 +235,8 @@ const AdminCreators = () => {
             <StyledTableCell align="right">Phone</StyledTableCell>
             <StyledTableCell align="right">DOB</StyledTableCell>
             <StyledTableCell align="right">    
-              Edit
             </StyledTableCell>
             <StyledTableCell align="right"> 
-              Delete
             </StyledTableCell>
 
 
