@@ -2,11 +2,6 @@
   font-family: spartan;
   src: url('../src/Assets/league-spartan.bold.ttf');
 }
-.html{
-  height: 100% !important;
-  width: 100% !important;
-}
-
 
 :root {
   --main-primary-color: #1E1E1E;
@@ -25,7 +20,6 @@ body{
 }
 
 .App{
-width: 100% !important;
-height: 100% !important;
+
 display: flex !important;
 }

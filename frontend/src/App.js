@@ -20,6 +20,7 @@ import CreatorProfile from '../src/Pages/Creator/Creator-profile/Creator-profile
 import RegistrationOne from "./Pages/Registration-one/Registration-one.js";
 import RegisterTwo from "./Pages/Registration-two/Registration-two.js";
 import AddCampaign from '../src/Pages/Creator/Add-campaign/Add-campaign.js';
+
 function App() {
   return (
     <Router>
@@ -29,7 +30,7 @@ function App() {
         <SideBar><DonorMenu/></SideBar>
         {/* <RegistrationOne /> */}
         {/* <RegisterTwo /> */}
-        <Login />
+        {/* <Login /> */}
         {/* <AddCampaign /> */}
         {/* <DonorTransaction /> */}
     </div>

@@ -1,1 +1,14 @@
-.campaign-wrapper{}
+/* @media screen and (max-width:768px) {
+    .campaign-wrapper{
+    width: 80%;
+    }
+    .button123{
+            background-color: red;
+            display: flex;
+            justify-content: space-around;
+    }
+} */
+
+.campaign-wrapper{
+    /* border: red 1px solid !important; */
+}

@@ -4,7 +4,8 @@ import './Add-campaign.css';
 import Buttony from '../../../Components/Button-yellow/Button';
 const AddCampaign = () => {
   return (
-    <div className="custom-container h-100 w-100">
+    <div className='campaign-wrapper container d-flex'>
+    <div className="custom-container ">
         <div className="headings-title">New Campaign</div>
         {/* <div> */}
           <div className='campaigns-parent-div w-100'>
@@ -90,14 +91,14 @@ const AddCampaign = () => {
            />
        </div>
      </div>
-     <div className="btn btn-warning w-50">
-        <Buttony><b>Save</b></Buttony>
+     <div className="button123 w-50">
         </div>
      </div>
+        <Buttony className='button123'><b>Save</b></Buttony>
            </form>
         </div>
         </div>
-        // </div>
+         </div>
 
   )
 }
