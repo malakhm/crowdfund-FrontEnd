@@ -7,39 +7,36 @@ export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
-   
-    // useEffect(() => {
-    //     if(!user && user === null){
-    //     fetchUserData();
-    //     }
-    //    else{
-    //     console.log("loggedin")
-    //    }
-    // },[user]);
+    const [token, SetToken] = useState(localStorage.getItem('token'));
+
+    
 
     const fetchUserData = async () => {
         try {
-            
-            const response = await axios.get('/api/auth/user');
-            setUser(response.data.user);
-        } catch(err) {
+            if (token) {
+                const response = await axios.get('/api/users/');
+                setUser(response.data);
+                axios.defaults.headers.common["Authorization"] = "Bearer " + token;
+               
+                
+        }}
+        catch(err) {
           
             setUser(null);
         }
-        finally{
-            setCheckUser(false)
-        }
+       
     };
 
 
 
     const logout = async () => {
-        await axiosInstance.post('/api/auth/logout');
+        // await axios.post('/api/auth/logout');
+        localStorage.clear();
         setUser(null);
     };
 
     return (
-        <AuthContext.Provider value={{ user,setUser,checkUser,fetchUserData, logout }}>
+        <AuthContext.Provider value={{ user,setUser, logout }}>
             {children}
         </AuthContext.Provider>
     );

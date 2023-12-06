@@ -23,6 +23,7 @@ const Feed = () => {
         ellipsis={1}
         /> */}
     <div className='Feed-main-Container container d-flex '>
+      <h1></h1>
     <Link to="/details"style={{ textDecoration: 'none' ,color:'#333333'}}> <Cards /></Link>
     <Link to="/details"style={{ textDecoration: 'none' ,color:'#333333'}}> <Cards /></Link>
     <Link to="/details"style={{ textDecoration: 'none' ,color:'#333333'}}> <Cards /></Link>

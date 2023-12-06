@@ -1,5 +1,6 @@
 import React from 'react'
-import Profile from '../../../Components/Profile/Profile'
+
+import Profile from '../../Profile/Profile.js'
 const CreatorProfile = () => {
   return (
     <Profile/>

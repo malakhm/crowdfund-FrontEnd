@@ -5,7 +5,6 @@ import AdminCreators from "./Pages/Admin/Admin-creators/Admin-creators.js";
 import AdminDonors from "./Pages/Admin/Admin-donors/Admin-donors.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 import './index.css'
-import Profile from '../src/Components/Profile/Profile.js'
 import Cards from '../src/Components/Campaign-card/Campaign-card.js'
 import Login from '../src/Pages/Login/Login.js'
 import RegistrationOne from "./Pages/Registration-one/Registration-one.js";
@@ -29,17 +28,24 @@ import AdminRegRequests from '../src/Pages/Admin/Admin-registration-requests/Adm
 import AdminRequests from '../src/Pages/Admin/Admin-post-requests/Admin-post-requests.js'
 import AdminTransactions from '../src/Pages/Admin/Admin-transactions/Admin-transactions.js'
 import AdminAnnouncements from '../src/Pages/Admin/Admin-announcements/Admin-announcements.js'
+import AdminMenu from '../src/Components/Admin-menu/admin-menu.js';
 const App = () => {
 
   return (
     <Router>
 
       <div className="App">
-        <SideBar><DonorMenu /></SideBar>
+        <SideBar><AdminMenu /></SideBar>
         <Routes>
           <Route
-            path="/admin/donors"
+            path="/admin/do ors"
             element={<AdminDonors />
+            }
+          />
+
+          <Route
+            path="/user/login"
+            element={<Login />
             }
           />
 
@@ -96,10 +102,10 @@ const App = () => {
             path="/feed"
             element={<Feed />}
           />
-          <Route
+          {/* <Route
             path="/profile"
             element={<Profile />}
-          />
+          /> */}
           <Route
             path="/notifications"
             element={<Notifications />}
