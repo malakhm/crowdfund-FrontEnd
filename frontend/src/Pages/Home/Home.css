@@ -1,0 +1,121 @@
+/* Big box in the middle of the page */
+.support-container {
+    width: 1500px;
+    height: 600px;
+    margin: 0 auto;
+    padding-top: 30px;
+    margin-top: 10em;
+    margin-left: 15em;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    background-color:#1E1E1E;
+    border: gray solid 0.5px ;
+    text-align: center;
+  }
+  
+  /* Input field */
+  .support-input {
+    border: 1px solid  #555454;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 40px;
+    background-color: #555454;
+    width: 1150px;
+    height: 28px;
+    margin-left: 35px;
+    color: #CAC5C1;
+    font-weight: 20px;
+    font-size: 20px;
+  }
+  
+  /* Send button */
+  .support-button {
+    /* background-color: yellow;
+    color: black;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px; */
+    background-color: #F3C21B;
+    
+    color: white;
+    border: none;
+    border-radius:10px;
+    height: 50px;
+    width: 200px;
+    font-size: 30px;
+    
+    margin-bottom: 40px;
+    margin-right: 55px;
+    font-weight: bolder;
+  }
+  
+  /* Focus border */
+  /* .support-input:focus {
+    outline: none;
+    border-color: yellow;
+  } */
+  /* Media queries for responsive design */
+@media (max-width: 768px) {
+  .support-container {
+    width: 90%;
+    height: auto;
+    margin: 10em auto 0;
+    margin-left: 2em;
+    margin-right: 90em;
+    text-align: center;
+    margin-right: 20em;
+  }
+
+  .support-input {
+    width: 65%;
+   height: 10px;
+    margin-left: 0;
+    font-size: 16px;
+    margin-top: 15em;
+    margin-left: 2em;
+    
+  }
+
+  .support-button {
+    margin-right: 2.7em;
+    margin-top: 10em;
+    font-size: 24px;
+    width:90px;
+    height: 31px;
+    font-size: 20px !important;
+    font-size: large;
+    margin-left: 2em;;
+
+  }
+  
+
+@media (max-width: 480px) {
+  .support-container {
+    width: 90%;
+    height: 200px;
+   
+    margin-left: 1em;
+    margin-right: 1em;
+    display: flex;
+    margin-top: 15em;
+    
+  }
+
+  .support-input {
+    width: 90%;
+    
+    margin-left: 1em;
+    font-size: 14px;
+    
+  }
+
+  .support-button {
+    
+    font-size: 10px;
+    margin-right: 1em;
+  }
+}
+}
