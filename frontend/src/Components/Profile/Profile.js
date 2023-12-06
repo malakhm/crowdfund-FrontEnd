@@ -2,51 +2,76 @@ import React from 'react';
 import "./Profile.css";
 import ProfileImg from "../../Assets/ProfileImg.jpg";
 
-const Profile = () => { 
+const Profile = () => {
+  const [profileData, setProfileData] = useState([]);
+
+  useEffect(() => {
+    const fetchProfileData = async () => {
+      try {
+        const response = await axios.get('http://localhost:8100/api/users/');
+        setProfileData(response.data);
+      } catch (error) {
+        console.error('Error fetching profile data:', error);
+      }
+    };
+
+    fetchProfileData();
+  }, []);
+
+  if (profileData.length === 0) {
+    return <div>Loading...</div>;
+  }
+console.log("test",profileData)
   return (
-    <section className='section-profile'>
-      <div className='Profile-img-section'>
+    <section className="section-profile">
+      {/* Profile content */}
+      <div className="Profile-img-section">
         <img src={ProfileImg} alt="Profile" />
-        <h2 >Profile</h2>
+        <h2>Profile</h2>
       </div>
-      <div className='pp-profile'>
-        <div className='General-INfo-Profile'>
-          <h2 className='h2-profile'>General Info:</h2>
-          <div className="info-columns-profile">
-            <div className="left-column-profile">
-              <h4 className='h4-profile'>First Name:</h4>
-              <h4 className='h4-profile'>Last Name:</h4>
-              <h4 className='h4-profile'>DOB:</h4>
-              <h4 className='h4-profile'>Gender:</h4>
+      {profileData && profileData.data.map(
+        (profile, index) => (
+        <div className="pp-profile" key={index}>
+          <div className="General-INfo-Profile">
+            <h2 className="h2-profile">General Info:</h2>
+            <div className="info-columns-profile">
+              <div className="left-column-profile">
+                <h4 className="h4-profile">First Name:</h4>
+                <h4 className="h4-profile">Last Name:</h4>
+                <h4 className="h4-profile">DOB:</h4>
+                <h4 className="h4-profile">Gender:</h4>
+              </div>
+              <div className="right-column-profile">
+                <p className="p-profile">{profile.first_name}</p>
+                <p className="p-profile">{profile.last_name}</p>
+                <p className="p-profile">{profile.dob}</p>
+                <p className="p-profile">{profile.gender}</p>
+              </div>
             </div>
-            <div className="right-column-profile">
-              <p className='p-profile'>Dana</p>
-              <p className='p-profile'>Harb</p>
-              <p className='p-profile'>18 March 2022</p>
-              <p className='p-profile'>Female</p>
+          </div>
+          <div className="Contact-account-Profile">
+            <h2 className="h2-profile">Contact and Account Info:</h2>
+            <div className="info-columns-profile">
+              <div className="left-column-profile">
+                <h4 className="h4-profile">Role:</h4>
+                <h4 className="h4-profile">Phone:</h4>
+                <h4 className="h4-profile">Email:</h4>
+                <h4 className="h4-profile">Username:</h4>
+              </div>
+              <div className="right-column-profile">
+                <p className="p-profile">
+                  {profile.isDonor ? 'Donor' : 'Non-Donor'}
+                </p>
+                <p className="p-profile">{profile.phone_number}</p>
+                <p className="p-profile">{profile.email}</p>
+                <p className="p-profile">{profile.username}</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className='Contact-account-Profile'>
-        <h2 className='h2-profile'>Contact and Account Info:</h2> 
-        <div className="info-columns-profile">
-          <div className="left-column-profile">
-            <h4 className='h4-profile'>Role:</h4>
-            <h4 className='h4-profile'>Phone:</h4>
-            <h4 className='h4-profile'>Email:</h4>
-            <h4 className='h4-profile'>Username:</h4>
-          </div>
-          <div className="right-column-profile">
-            <p className='p-profile'>Donor</p>
-            <p className='p-profile'>+961 76 076 487</p>
-            <p className='p-profile'>malak@gmail.com</p>
-            <p className='p-profile'>AnonymousFunder12</p>
-          </div>
-        </div>
-      </div>
+      ))}
     </section>
   );
-}
+};
 
 export default Profile;
