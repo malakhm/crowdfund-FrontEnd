@@ -1,5 +1,5 @@
-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import AdminCreators from "./Pages/Admin/Admin-creators/Admin-creators.js";
 import AdminDonors from "./Pages/Admin/Admin-donors/Admin-donors.js";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -21,20 +21,26 @@ import DonorTransaction from '../src/Pages/Donor/Donor-transaction/Donor-transac
 import CreatorTransaction from '../src/Pages/Creator/Creator-transaction/Creator-transaction.js'
 import CreatorProfile from '../src/Pages/Creator/Creator-profile/Creator-profile.js'
 import AdminCampaign from '../src/Pages/Admin/Admin-campaign/Admin-campaign.js'
-import Adminmenu from '../src/Components/Admin-menu/admin-menu.js'
 import AdminMessages from '../src/Pages/Admin/Admin-messages/Admin-messages.js'
 import AdminRegRequests from '../src/Pages/Admin/Admin-registration-requests/Admin-registration-requests.js'
 import AdminRequests from '../src/Pages/Admin/Admin-post-requests/Admin-post-requests.js'
 import AdminTransactions from '../src/Pages/Admin/Admin-transactions/Admin-transactions.js'
 import AdminAnnouncements from '../src/Pages/Admin/Admin-announcements/Admin-announcements.js'
+
 import AdminMenu from '../src/Components/Admin-menu/admin-menu.js';
+
+
 const App = () => {
 
   return (
     <Router>
 
       <div className="App">
+
         <SideBar><AdminMenu /></SideBar>
+
+        <SideBar><DonorMenu /></SideBar>
+
         <Routes>
           <Route
             path="/admin/donors"
@@ -95,10 +101,13 @@ const App = () => {
             path="/feed"
             element={<Feed />}
           />
+
           {/* <Route
             path="/profile"
             element={<Profile />}
           /> */}
+       
+
           <Route
             path="/notifications"
             element={<Notifications />}

@@ -1,0 +1,12 @@
+.form-popup input{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--main-secondary-color);
+    margin-top: 10%;
+    border-radius: 0;
+    color: var(--main-secondary-color);
+}
+
+.form-popup input:focus{
+    outline: none;
+}
