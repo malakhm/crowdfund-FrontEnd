@@ -1,12 +1,11 @@
 import React from 'react'
-import Cards from '../../Components/Campaign-card/Campaign-card';
+import Cards from '../../../Components/Campaign-card/Campaign-card.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import  { useState } from 'react';
 import { PaginationControl } from 'react-bootstrap-pagination-control';
-
-import './Feed.css'
-const Feed = () => {
+import '../../Feed/Feed.css'
+const CreatorProjects = () => {
     const [page, setPage] = useState(1)
   return (
     <>
@@ -23,7 +22,15 @@ const Feed = () => {
         ellipsis={1}
         /> */}
     <div className='Feed-main-Container container d-flex '>
-    <Cards/>
+      <div className='Creator-main-Card '>
+        <Cards/>
+        <div className='creator-main-card-controls d-flex justify-self-center justify-content-around t-100'>
+            <p className='creator-main-card-edit text-warning d-flex '>Edit</p>
+            <p className='creator-main-card-delete text-danger d-flex'>Delete</p>
+        </div>
+        
+      </div>
+ 
       <Cards/>
       <Cards/>
       <Cards/>
@@ -42,4 +49,4 @@ const Feed = () => {
   )
 }
 
-export default Feed
+export default CreatorProjects
