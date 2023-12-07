@@ -1,13 +1,16 @@
 import { Navigate, Outlet } from "react-router-dom";
-import { useAuth } from "../Context/AuthContext.js";
+import { AuthContext } from "../Context/AuthContext.js";
+import {toast} from 'react-toastify';
+import { useContext } from "react";
 
 const ProtectedRoute = () => {
-    const { token } = useAuth();
+  const {token} = useContext(AuthContext)
   
     // Check if the user is authenticated
     if (!token) {
       // If not authenticated, redirect to the login page
-      return <Navigate to="/login" />;
+      toast.warning('you need to be authorized to access!') ;
+      return <Navigate to="user/login" />;
     }
   
     // If authenticated, render the child routes
