@@ -4,12 +4,14 @@ import "./Campaign-card.css";
 import Help from "../../Assets/help.webp";
 import { IoBookmarkOutline, IoBookmark } from "react-icons/io5";
 import ProgressBar from "react-bootstrap/ProgressBar";
+import { UserContext } from "../../Context/userContext";
 
 const Cards = ({ accepted_campaign }) => {
+  const { users } = useContext(UserContext);
   const target = accepted_campaign.target;
   const amount = accepted_campaign.amount;
   const now = parseInt((amount / target) * 100);
-  console.log(`thisis users in cards: ${users[0]}`)
+  // console.log(`this is theusers in cards: ${users}`) //for testing
   return (
     <div className="Campaign-Card-Component">
       <img variant="top" src={Help} />
@@ -29,12 +31,10 @@ const Cards = ({ accepted_campaign }) => {
         <div className="Campaign-Card-Credits">
           <p>By</p>
           {users.map((user)=> {
-            if (user.id === accepted_campaign.userId) {
-              return <h4 key={user.id}>{user.username}</h4>;
-            } else {
-              return <h4>No user associated with this campaign</h4>
+            if (user.isCreator && user.id === accepted_campaign.userId) {
+              return <h4 key={user.id}>{user.username}</h4>
             }
-          })};
+          })}
         </div>
         <div className="Campaign-Card-Descripton">
           <p className="Campaign-p-description">

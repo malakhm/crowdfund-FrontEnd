@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Popper from '@mui/material/Popper';
 import { useSpring, animated } from '@react-spring/web';
-import { FaDeleteLeft } from "react-icons/fa6";
+// import { FaDeleteLeft } from "react-icons/fa6";
 import Buttony from '../Components/Button-yellow/Button.js';
 import Buttonb from '../Components/Button-black/Button.js'
 import Button from 'react-bootstrap/Button';

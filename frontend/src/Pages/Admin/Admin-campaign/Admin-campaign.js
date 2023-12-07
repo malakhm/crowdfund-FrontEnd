@@ -9,8 +9,6 @@ import { FaDeleteLeft } from "react-icons/fa6";
 import campaign_icon from "../Admin-assets/campaign.png";
 import { FaRegEyeSlash, FaRegEye } from "react-icons/fa";
 const AdminCampaign = () => {
-  const [Hidden, SetHidden] = useState(false);
-
   const [accepted_campaigns, setAcceptedCampaigns] = useState(null);
   const [loading, setLoading] = useState(true);
 
