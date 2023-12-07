@@ -1,12 +1,11 @@
 
 import { BrowserRouter as Router } from 'react-router-dom';
-
+import AddCampaign from "./Pages/Creator/Add-campaign/Add-campaign.js"
 import AdminCreators from "./Pages/Admin/Admin-creators/Admin-creators.js";
 import AdminDonors from "./Pages/Admin/Admin-donors/Admin-donors.js";
-
+import EditProfile from './Components/Profile/Edit-profile.js';
 import "bootstrap/dist/css/bootstrap.min.css";
 import './index.css'
-import { BrowserRouter as Router } from 'react-router-dom';
 // import Profile from '../src/Components/Profile/Profile.js'
 // import Cards from '../src/Components/Campaign-card/Campaign-card.js'
 import Login from '../src/Pages/Login/Login.js'
@@ -26,6 +25,7 @@ import DonorTransaction from '../src/Pages/Donor/Donor-transaction/Donor-transac
 // import CreatorProfile from '../src/Pages/Creator/Creator-profile/Creator-profile.js'
 import RegistrationOne from "./Pages/Registration-one/Registration-one.js";
 import RegisterTwo from "./Pages/Registration-two/Registration-two.js";
+import Profile from './Components/Profile/Profile.js';
 function App() {
   return (
     <Router>
@@ -37,7 +37,10 @@ function App() {
         {/* <RegistrationOne /> */}
         {/* <RegisterTwo /> */}
         {/* <Login /> */}
-        <DonorTransaction />
+        {/* <Profile /> */}
+        {/* <DonorTransaction /> */}
+        {/* <EditProfile /> */}
+        <AddCampaign />
     </div>
     </Router>  
 

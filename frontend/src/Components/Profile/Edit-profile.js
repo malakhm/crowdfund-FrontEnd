@@ -1,21 +1,18 @@
-import React from 'react';
+import React from 'react'
 import "./Profile.css";
 import ProfileImg from "../../Assets/ProfileImg.jpg";
 import Buttony from '../../Components/Button-yellow/Button.js'
-const Profile = () => { 
+
+const EditProfile = () => {
   return (
-  
-    <div className='section-profile d-flex flex-column container '>
+        <section className='section-profile'>
       <div className='Profile-img-section d-flex justify-content-between'>
         <div>
         <img src={ProfileImg} alt="Profile" />
         <h2 >Profile</h2>
         </div>
-        <div>
-          <Buttony><b>Edit Profile</b></Buttony> 
-      </div>
-      </div>
-      <div className='pp-profile'>
+        </div>
+        <div className='pp-profile'>
         <div className='General-INfo-Profile'>
           <h2 className='h2-profile'>General Info:</h2>
           <div className="info-columns-profile">
@@ -49,11 +46,12 @@ const Profile = () => {
             <p className='p-profile'>malak@gmail.com</p>
             <p className='p-profile'>AnonymousFunder12</p>
           </div>
+
         </div>
       </div>
-    </div>
- 
-  );
+          <Buttony><b>Save Changes</b></Buttony> 
+    </section>
+  )
 }
 
-export default Profile;
+export default EditProfile
