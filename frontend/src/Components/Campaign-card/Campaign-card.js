@@ -14,7 +14,7 @@ const Cards = ({ accepted_campaign }) => {
   // console.log(`this is theusers in cards: ${users}`) //for testing
   return (
     <div className="Campaign-Card-Component">
-      <img variant="top" src={Help} />
+      <img variant="top" src={accepted_campaign.campaign_image} />
       <div className="Capmaign-Card-label">
         <p className="start-card-label">
           Starts by:<b>{accepted_campaign.start_date}</b>
