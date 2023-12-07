@@ -1,36 +1,49 @@
 import React from 'react'
 import Cards from '../../../Components/Campaign-card/Campaign-card.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './Admin-campaign.css'
 import { useState } from 'react';
 import { PaginationControl } from 'react-bootstrap-pagination-control';
 import Button from 'react-bootstrap/Button';
-import { BsCheckCircleFill } from "react-icons/bs";
-import campaign_req_icon from '../Admin-assets/add-post.png'
 import { FaDeleteLeft } from "react-icons/fa6";
-const  AdminRequests = () => {
+import campaign_icon from '../Admin-assets/campaign.png'
+import { FaRegEyeSlash, FaRegEye } from "react-icons/fa";
+const AdminCampaign = () => {
+  const [Hidden, SetHidden] = useState(false);
+  const handlHideClick = ()=>{
+    // console.log("hidden clicked !")
+    SetHidden(false)
+;
+  }
 
+  const handlVisibleClick = ()=>{
+    // console.log("visible clicked !")
 
+    SetHidden(true)
+;
+  }
   return (
 
     <div className='campaign-main-admin container d-flex flex-column'>
     <h1 className="donors-page-heading ">
         <img
           className="campaign-icon-in-donors-page"
-          src={campaign_req_icon}
+          src={campaign_icon}
           alt="campaign icon"
         />
         <p className="donors-page-heading-spacer"></p>
-        <p className="donors-page-word">Campaign Requests</p>
+        <p className="donors-page-word">Campaigns</p>
       </h1>
 
       <div className='campaign-main-Container container d-flex '>
 
         <div className='Creator-main-Card '>
           <div className='creator-main-card-controls d-flex justify-self-center '>
-
-           <p className='creator-main-card-edit text-success d-flex '><BsCheckCircleFill className='document-icon' /></p>
-
-        
+          {Hidden?
+           <p className='creator-main-card-edit text-warning d-flex '><FaRegEyeSlash className='document-icon' onClick={()=>handlHideClick()}/></p>
+           :
+           <p className='creator-main-card-edit text-warning d-flex'><FaRegEye className='document-icon' onClick={()=>handlVisibleClick()}/></p>
+        }
            <p className='creator-main-card-delete text-danger d-flex'><FaDeleteLeft className='document-icon' /></p>
            
           </div>
@@ -39,10 +52,11 @@ const  AdminRequests = () => {
 
         <div className='Creator-main-Card '>
           <div className='creator-main-card-controls d-flex justify-self-center '>
-
-           <p className='creator-main-card-edit text-success d-flex '><BsCheckCircleFill className='document-icon' /></p>
-
-        
+          {Hidden?
+           <p className='creator-main-card-edit text-warning d-flex '><FaRegEyeSlash className='document-icon' onClick={()=>handlHideClick()}/></p>
+           :
+           <p className='creator-main-card-edit text-warning d-flex'><FaRegEye className='document-icon' onClick={()=>handlVisibleClick()}/></p>
+        }
            <p className='creator-main-card-delete text-danger d-flex'><FaDeleteLeft className='document-icon' /></p>
            
           </div>
@@ -51,10 +65,11 @@ const  AdminRequests = () => {
 
         <div className='Creator-main-Card '>
           <div className='creator-main-card-controls d-flex justify-self-center '>
-
-           <p className='creator-main-card-edit text-success d-flex '><BsCheckCircleFill className='document-icon' /></p>
-
-        
+          {Hidden?
+           <p className='creator-main-card-edit text-warning d-flex '><FaRegEyeSlash className='document-icon' onClick={()=>handlHideClick()}/></p>
+           :
+           <p className='creator-main-card-edit text-warning d-flex'><FaRegEye className='document-icon' onClick={()=>handlVisibleClick()}/></p>
+        }
            <p className='creator-main-card-delete text-danger d-flex'><FaDeleteLeft className='document-icon' /></p>
            
           </div>
@@ -63,10 +78,11 @@ const  AdminRequests = () => {
 
         <div className='Creator-main-Card '>
           <div className='creator-main-card-controls d-flex justify-self-center '>
-
-           <p className='creator-main-card-edit text-success d-flex '><BsCheckCircleFill className='document-icon' /></p>
-
-        
+          {Hidden?
+           <p className='creator-main-card-edit text-warning d-flex '><FaRegEyeSlash className='document-icon' onClick={()=>handlHideClick()}/></p>
+           :
+           <p className='creator-main-card-edit text-warning d-flex'><FaRegEye className='document-icon' onClick={()=>handlVisibleClick()}/></p>
+        }
            <p className='creator-main-card-delete text-danger d-flex'><FaDeleteLeft className='document-icon' /></p>
            
           </div>
@@ -75,10 +91,11 @@ const  AdminRequests = () => {
 
         <div className='Creator-main-Card '>
           <div className='creator-main-card-controls d-flex justify-self-center '>
-
-           <p className='creator-main-card-edit text-success d-flex '><BsCheckCircleFill className='document-icon' /></p>
-
-        
+          {Hidden?
+           <p className='creator-main-card-edit text-warning d-flex '><FaRegEyeSlash className='document-icon' onClick={()=>handlHideClick()}/></p>
+           :
+           <p className='creator-main-card-edit text-warning d-flex'><FaRegEye className='document-icon' onClick={()=>handlVisibleClick()}/></p>
+        }
            <p className='creator-main-card-delete text-danger d-flex'><FaDeleteLeft className='document-icon' /></p>
            
           </div>
@@ -87,22 +104,11 @@ const  AdminRequests = () => {
 
         <div className='Creator-main-Card '>
           <div className='creator-main-card-controls d-flex justify-self-center '>
-
-           <p className='creator-main-card-edit text-success d-flex '><BsCheckCircleFill className='document-icon' /></p>
-
-        
-           <p className='creator-main-card-delete text-danger d-flex'><FaDeleteLeft className='document-icon' /></p>
-           
-          </div>
-          <Cards />
-        </div>
-
-        <div className='Creator-main-Card '>
-          <div className='creator-main-card-controls d-flex justify-self-center '>
-
-           <p className='creator-main-card-edit text-success d-flex '><BsCheckCircleFill className='document-icon' /></p>
-
-        
+          {Hidden?
+           <p className='creator-main-card-edit text-warning d-flex '><FaRegEyeSlash className='document-icon' onClick={()=>handlHideClick()}/></p>
+           :
+           <p className='creator-main-card-edit text-warning d-flex'><FaRegEye className='document-icon' onClick={()=>handlVisibleClick()}/></p>
+        }
            <p className='creator-main-card-delete text-danger d-flex'><FaDeleteLeft className='document-icon' /></p>
            
           </div>
@@ -115,4 +121,4 @@ const  AdminRequests = () => {
   )
 }
 
-export default AdminRequests
+export default AdminCampaign

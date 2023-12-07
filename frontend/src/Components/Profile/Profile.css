@@ -8,8 +8,9 @@
   margin: 0  auto;
   margin-top: 10em;
   margin-bottom: 10em;
-  padding: 90px;
+  padding: 100px;
   border-radius: 5px;
+padding-right: 73em;
   /* box-shadow: 0 0 10px rgba(254, 253, 253, 0.443); */
   border: gray solid 0.5px ;
 }
@@ -23,7 +24,9 @@
   color: #CAC5C1;
   font-size: 1.3em;
 }
-
+/* .h4-profile{
+  margin-top: 8px;
+} */
 .Profile-img-section img {
   border-radius: 50%;
   width: 80px;
@@ -54,7 +57,7 @@
 }
 
 .Contact-account-Profile {
-  margin-bottom: 20px;
+  margin-bottom: 90px;
   color:#F3C21B;
   font-size: 1.2em;
 }
@@ -72,12 +75,21 @@
 
 .left-column-profile,
 .right-column-profile {
-  width: 200px;
+  width: 240px;
 
   
 }
 .left-column-profile{
   color:#F3C21B;
+}
+
+.p-profile{
+  margin-top: 4px;
+}
+
+.h4-profile{
+  margin-bottom: 17px;
+  margin-top: 10px;
 }
 /* h4,
 p {
@@ -85,7 +97,7 @@ p {
 } */
 .right-column-profile{
 margin-bottom: 80px;
-line-height: 1.5em; 
+line-height: 1.6em; 
 color: #CAC5C1;
 }
 
@@ -194,26 +206,7 @@ color: #CAC5C1;
   }
 } */
 
-/* Profile.css */
 
-/* ... (other CSS rules) ... */
-
-/* Media queries for responsiveness */
-/* Profile.css */
-
-/* Existing CSS */
-
-/* Media Queries */
-/* Profile.css */
-
-/* Existing CSS */
-
-/* Media Queries */
-/* Profile.css */
-
-/* Existing styles... */
-
-/* Media Queries for responsiveness */
 
 @media only screen and (max-width: 992px) {
   .section-profile {
@@ -230,6 +223,8 @@ color: #CAC5C1;
 @media only screen and (max-width: 768px) {
   .section-profile {
     padding: 20px;
+    text-align: center;
+    width: 20px;
   }
 
   .Profile-img-section img {
