@@ -9,7 +9,7 @@ import { TfiEmail } from "react-icons/tfi";
 import { BsCalendar2Date } from "react-icons/bs";
 const RegistrationOne = () => {
   return (
-    <div className="custom-container vh-100 w-100">
+    <div className="custom-container h-100 w-100">
       <div className="Logo-img">
         <img src={Fund} alt="" className="reg-form-logo" />
       </div>

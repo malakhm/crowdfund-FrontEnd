@@ -14,8 +14,8 @@ const DonorTransaction = () => {
           <h6>Total Amount</h6>
             <p>$2000</p>
           </div>
-
         </div>
+        <div className='notifications-wrapper-div'>
         <Notification>
       <p><IoCheckmarkDoneCircle className='TRANSACTION-IS-DONE-ICON'/> You</p>
         </Notification>
@@ -37,7 +37,7 @@ const DonorTransaction = () => {
         <Notification>
       <p><IoCheckmarkDoneCircle className='TRANSACTION-IS-DONE-ICON'/> You</p>
         </Notification>
-    
+        </div>
     </div>
   )
 }

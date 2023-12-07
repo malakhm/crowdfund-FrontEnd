@@ -7,8 +7,8 @@ import Buttonb from 'react-bootstrap/Button'
 import '../Home/Home.css'
 const Home = () => {
   return (
-    <div className='Home-big-container'>
-        <div className="custom-container vh-100 w-100">
+    <div className='home-big-container'>
+        <div className="home-custom-container vh-100 w-100">
         <div className="Logo-img">
             <img src={Fund} alt="" className="reg-form-logo " />
         </div>
