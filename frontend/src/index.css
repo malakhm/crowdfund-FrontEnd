@@ -1,3 +1,4 @@
+
 @font-face {
   font-family: spartan;
   src: url('../src/Assets/league-spartan.bold.ttf');
@@ -14,12 +15,13 @@
 
 
 body{
-  font-family: spartan !important;
- background-color: #333333 !important;
+    font-family: spartan !important;
+   background-color: #333333 !important;
+   overflow-x: hidden;
 
-}
+  }
 
 .App{
+  display: flex;
 
-display: flex !important;
 }

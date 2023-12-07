@@ -1,0 +1,36 @@
+.Notification-component-main{
+  
+        background-color: #171717;
+    color: white;
+    margin-bottom: 50px;
+    
+    
+}
+
+.single-notification{
+    display: flex;
+    gap:10px;
+    justify-content: center;
+    margin-top: 15px;
+    
+}
+
+.amount-of-money-transaction{
+    color: var( --main-secondary-color);
+}
+
+
+@media (max-width: 768px){
+    .Notification-component-main{
+  
+        background-color: #171717;
+    color: white;
+    width: 70%;
+    margin-left: 100px;
+   
+    margin-bottom: 20px;
+    
+    
+}
+
+}

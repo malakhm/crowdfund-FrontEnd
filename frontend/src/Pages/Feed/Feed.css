@@ -1,0 +1,14 @@
+.Feed-main-Container{
+
+    display: flex;
+  
+  flex-wrap: wrap;
+  max-width: 65%;
+  justify-content: space-evenly;
+
+  margin-top: 2% !important;
+  margin-right: auto;
+
+    
+    
+}

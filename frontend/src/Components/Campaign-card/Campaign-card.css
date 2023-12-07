@@ -1,179 +1,81 @@
+.Campaign-Card-Basic-Info{
+  display: flex;
+  flex-direction: column;
+  margin: 3%;
+}
 
-.section-profile {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    grid-gap: 50px;
-    max-width: 1200px;
-    background-color: #1E1E1E;
-    margin: 0  auto;
-    margin-top: 10em;
-    padding: 90px;
-    border-radius: 5px;
-    /* box-shadow: 0 0 10px rgba(254, 253, 253, 0.443); */
-    border: gray solid 0.5px ;
-  }
+
+.Campaign-Card-Component {
+
+  display: flex;
+  flex-direction: column;
+  width: 340px;
+  margin-top: 2%;
   
-  .Profile-img-section {
-    grid-column: 1 / 3;
-    grid-row: 1 / 2;
-    display: flex;
-    align-items: center;
-    gap:1em;
-    color: #CAC5C1;
-    font-size: 1.3em;
-  }
+  flex-shrink: 0;
+  border-radius: 20px;
+  background: var(--main-tertiary-color);
+  box-shadow: 0px 4px 4px 0px rgba(205, 202, 202, 0.25);
+
+
+
+}
+
+.Campaign-Card-Component img {
+  width: 100%;
+  height: 45%;
+}
+
+.Capmaign-Card-label {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: var(--main-secondary-color);
+  height: 15px;
   
-  .Profile-img-section img {
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-  }
+}
+
+.start-card-label {
+  display: flex;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 10px;
+
+}
+
+.end-card-label {
+  margin-left: 100px;
+}
+
+.Campaign-Card-project-title-with-icon{
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  /* margin: 10px; */
   
+}
+
+.Campaign-Card-Credits{
+  display: flex;
+  color: white;
   
-  /* h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  } */
-  
-  .pp-profile {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    
-    
-  }
-  
-  .General-INfo-Profile {
-    margin-bottom: 20px;
-    color:#F3C21B;
-    font-size: 1.2em;
-  }
-  
-  .Contact-account-Profile {
-    margin-bottom: 20px;
-    color:#F3C21B;
-    font-size: 1.2em;
-  }
-  
-  .info-columns-profile {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 10px;
-    border-radius: 5px;
-    /* box-shadow: 0 0 10px rgba(254, 253, 253, 0.443); */
-    padding-right: 10em;
-    padding-left: 3em;
-    border: gray solid 0.5px ;
-  }
-  
-  .left-column-profile,
-  .right-column-profile {
-    width: 100%;
-    
-  }
-  .left-column-profile{
-    color:#F3C21B;
-  }
-  /* h4,
-  p {
-    margin-bottom: 10px;
-  } */
-  .right-column-profile{
-  margin-bottom: 80px;
-  line-height: 1.5em; 
-  color: #CAC5C1;
-  }
-  *{
-    background-color: #1E1E1E;
-  }
-  /* @media (max-width: 576px) {
-    section {
-      grid-template-columns: 1fr;
-      grid-template-rows: auto auto auto;
-      padding: 10px;
-    }
-  
-    .Profile-img-section {
-      grid-column: 1 / 2;
-      width: 75px;
-      height: 75px;
-    }
-  
-    
-    .info-columns {
-      flex-direction: column;
-    }
-  } */
-  
-  /* Profile page */
-  
-  /* Profile page */
-  
-  section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    grid-gap: 20px;
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .Profile-img-section {
-    grid-column: 1 / 3;
-    grid-row: 1 / 2;
-    display: flex;
-    align-items: center;
-  }
-  
-  .Profile-img-section img {
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-  }
-  
-  h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .pp {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  
-  .General-INfo-Profile {
-    margin-bottom: 20px;
-  }
-  
-  .Contact-account-Profile {
-    margin-bottom: 20px;
-  }
-  
-  .info-columns {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 5px; /* Reduced padding to minimize space */
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  .left-column,
-  .right-column {
-    width: 100%;
-  }
-  
-  h4,
-  p {
-    margin-bottom: 10px;
-  }
+}
+
+.Campaign-Card-Credits p, .Campaign-Card-stats p{
+  font-family: 'Courier New', Courier, monospace !important;
+
+}
+.Campaign-p-description{
+  color:  #FFF;
+font-size: 12px;
+
+}
+.Campaign-Card-stats{
+  display: flex;
+  margin-top: 10%;
+  color: white;
   
   
+}
+.Campaign-Card-stats h6{
+  margin: 5px ;
+  margin-left: 5px !important;
+}

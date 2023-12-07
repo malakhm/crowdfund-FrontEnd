@@ -47,14 +47,12 @@
 }
 
 .General-INfo-Profile {
-  margin-bottom: 20px;
   color:#F3C21B;
   font-size: 1.2em;
 
 }
 
 .Contact-account-Profile {
-  margin-bottom: 20px;
   color:#F3C21B;
   font-size: 1.2em;
 }
@@ -72,9 +70,7 @@
 
 .left-column-profile,
 .right-column-profile {
-  width: 200px;
 
-  
 }
 .left-column-profile{
   color:#F3C21B;

@@ -7,9 +7,8 @@ const AddCampaign = () => {
     <div className='campaign-wrapper container d-flex'>
     <div className="custom-container ">
         <div className="headings-title">New Campaign</div>
-        {/* <div> */}
           <div className='campaigns-parent-div w-100'>
-        <form className="container mt-5 w-25 d-flex gap-3 w-100">
+        <form className="form-add-project container mt-5 w-25 d-flex gap-3 w-100">
           <div className='left-child-div w-50'>
      <div className="mb-4">
        <div className="input-group">
@@ -24,17 +23,7 @@ const AddCampaign = () => {
      <div className="mb-4">
        <div className="input-group">
          <input
-           type="text"
-           className="form-control bg-transparent custom-input-loginPage text-white p-3"
-           id="formGroupExampleInput"
-           placeholder="Active"
-         />
-       </div>
-     </div>
-     <div className="mb-4">
-       <div className="input-group">
-         <input
-           type="text"
+           type="date"
            className="form-control bg-transparent custom-input-loginPage text-white p-3"
            id="formGroupExampleInput"
            placeholder="Start Date"
@@ -44,7 +33,7 @@ const AddCampaign = () => {
      <div className="mb-3">
        <div className="input-group">
          <input
-           type="text"
+           type="date"
            className="form-control bg-transparent custom-input-loginPage text-white p-3"
            id="formGroupExampleInput"
            placeholder="End Date"
@@ -54,7 +43,7 @@ const AddCampaign = () => {
      <div className="mb-2">
        <div className="input-group">
          <input
-           type="text"
+           type="number"
            className="form-control bg-transparent custom-input-loginPage text-white p-3"
            id="formGroupExampleInput"
            placeholder="Target"
@@ -81,20 +70,8 @@ const AddCampaign = () => {
         </div>
        </div>
      </div>
-     <div className="mb-3">
-       <div className="input-group">
-         <input
-           type="text"
-           className="form-control bg-transparent custom-input-loginPage text-white p-3"
-           id="formGroupExampleInput"
-           placeholder="Amount in $"
-           />
-       </div>
      </div>
-     <div className="button123 w-50">
-        </div>
-     </div>
-        <Buttony className='button123'><b>Save</b></Buttony>
+        <Buttony><b>Save</b></Buttony>
            </form>
         </div>
         </div>
