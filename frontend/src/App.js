@@ -37,11 +37,38 @@ const App = () => {
 
       <div className="App">
 
-        <SideBar><AdminMenu /></SideBar>
+      
 
         <SideBar><DonorMenu /></SideBar>
 
+        
+
         <Routes>
+
+
+        <Route
+            path="/registration1"
+            element={<RegistrationOne />
+            }
+          />
+         <Route
+            path="/registration2"
+            element={<RegistrationTwo />
+            }
+          />
+
+<Route
+            path="/home"
+            element={<Home />
+            }
+          />
+
+          <Route
+            path="/login"
+            element={<Login />
+            }
+          />
+
           <Route
             path="/admin/donors"
             element={<AdminDonors />
