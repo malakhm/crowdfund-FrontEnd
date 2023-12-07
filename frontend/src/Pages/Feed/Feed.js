@@ -20,52 +20,19 @@ const Feed = () => {
         }}
         ellipsis={1}
         /> */}
-      <div className="Feed-main-Container container d-flex ">
-        <Link
-          to="/details"
-          style={{ textDecoration: "none", color: "#333333" }}
-        >
-          {" "}
-          <Cards />
-        </Link>
-        <Link
-          to="/details"
-          style={{ textDecoration: "none", color: "#333333" }}
-        >
-          {" "}
-          <Cards />
-        </Link>
-        <Link
-          to="/details"
-          style={{ textDecoration: "none", color: "#333333" }}
-        >
-          {" "}
-          <Cards />
-        </Link>
-        <Link
-          to="/details"
-          style={{ textDecoration: "none", color: "#333333" }}
-        >
-          {" "}
-          <Cards />
-        </Link>
-        <Link
-          to="/details"
-          style={{ textDecoration: "none", color: "#333333" }}
-        >
-          {" "}
-          <Cards />
-        </Link>
-        <Link
-          to="/details"
-          style={{ textDecoration: "none", color: "#333333" }}
-        >
-          {" "}
-          <Cards />
-        </Link>
+    <div className='Feed-main-Container container d-flex '>
+      <h1></h1>
+    <Link to="/details"style={{ textDecoration: 'none' ,color:'#333333'}}> <Cards /></Link>
+    <Link to="/details"style={{ textDecoration: 'none' ,color:'#333333'}}> <Cards /></Link>
+    <Link to="/details"style={{ textDecoration: 'none' ,color:'#333333'}}> <Cards /></Link>
+    <Link to="/details"style={{ textDecoration: 'none' ,color:'#333333'}}> <Cards /></Link>
+    <Link to="/details"style={{ textDecoration: 'none' ,color:'#333333'}}> <Cards /></Link>
+    <Link to="/details"style={{ textDecoration: 'none' ,color:'#333333'}}> <Cards /></Link>
+      
 
-        {/* <ul className='Pagination-Feed'>1.2.3.4</ul> */}
-      </div>
+    {/* <ul className='Pagination-Feed'>1.2.3.4</ul> */}
+    </div>
+
     </>
   );
 };

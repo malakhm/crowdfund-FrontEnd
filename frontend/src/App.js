@@ -30,11 +30,13 @@ import AdminAnnouncements from '../src/Pages/Admin/Admin-announcements/Admin-ann
 import AdminMenu from '../src/Components/Admin-menu/admin-menu.js';
 
 
+import AppRoutes from './routes/Routes.js'
+
 const App = () => {
 
+  
   return (
-    <Router>
-
+   
       <div className="App">
 
         <SideBar><AdminMenu /></SideBar>
@@ -123,8 +125,9 @@ const App = () => {
           />
           
         </Routes>
+        <AppRoutes/>
       </div>
-    </Router>
+  
 
   );
 }

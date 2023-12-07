@@ -33,7 +33,6 @@ const Fade = React.forwardRef(function Fade(props, ref) {
     </animated.div>
   );
 });
-
 Fade.propTypes = {
   children: PropTypes.element,
   in: PropTypes.bool,
@@ -64,27 +63,16 @@ Fade.propTypes = {
             <div className='button-container-main container d-flex'>
             <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
                 <form className='form-popup d-flex flex-column '>
-                    
-                   
                     <label for="donate" className='text-white'> Enter donation amount:</label>
                     <input id='donate'type='number' name="donate" />
-
-                    
                     <div className='button-container-main container d-flex'>
-     
             <Buttony><b>Donate</b></Buttony>
             </div>
-   
-
-                    
                 </form>
    
         {/* <TextField id="input-with-sx" label="With sx" variant="standard" error= "false" inputProps="300" /> */}
       </Box>
-            </div>
-   
-             
-                    
+            </div>  
             </Box>
           </Fade>
         )}
