@@ -4,6 +4,7 @@ import Help from '../../Assets/help.webp'
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import { BiSolidDonateHeart } from "react-icons/bi";
 import Buttony from '../Button-yellow/Button';
+import DonatePopper from '../../Popups/donate.js'
 const DetailsCard = () => {
     const now = 70
   return (
@@ -22,7 +23,7 @@ const DetailsCard = () => {
             <BiSolidDonateHeart  className='Donate-icon'/>
             <p>1000 People Donated</p>
         </div>
-        <Buttony>Donate Now!</Buttony>
+        <DonatePopper/>
 
         </div>
     </div>
