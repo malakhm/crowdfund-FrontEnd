@@ -111,7 +111,7 @@ const Login = () => {
      <div className="btn btn-warning d-flex justify-content-center align-self-center w-50">
      <Button variant="bg-warning" onClick={handleSubmit}><b>Login Now</b></Button>
      </div>
-     <h6 className="custom-h6-input-login text-white d-flex justify-content-center">Don't Have an Account?<a className="custom-anchor-tag-login" href={'/'}>Sign up</a></h6>
+     <h6 className="custom-h6-input-login text-white d-flex justify-content-center">Don't Have an Account?<a className="custom-anchor-tag-login" href={'/registration1'}>Sign up</a></h6>
      </form>
    </div>
  );

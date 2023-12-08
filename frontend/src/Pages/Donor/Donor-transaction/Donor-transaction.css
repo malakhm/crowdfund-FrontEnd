@@ -7,8 +7,6 @@
 .Transaction-main-container{
     margin-top: 7%;
 
-
-
 }
 
 
@@ -35,12 +33,15 @@
     color: var(--main-secondary-color);
 }
 
-@media (max-width: 768px){
+@media screen and (max-width: 768px){
     .transaction-stats-main{
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 5%;
-        flex-wrap: wrap;
-    
+        width: 75% !important;
+
+    }
+    .notifications-wrapper-div{
+        width: 35% !important;
+    }
+    .Transaction-main-container{
+        font-size: 15px !important; 
     }
 }
