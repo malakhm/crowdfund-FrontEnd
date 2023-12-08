@@ -14,7 +14,9 @@
   align-items: center;
   color: #CAC5C1;
 }
-
+/* .h4-profile{
+  margin-top: 8px;
+} */
 .Profile-img-section img {
   border-radius: 50%;
   width: 90%;
@@ -29,6 +31,7 @@
 }
 
 .Contact-account-Profile {
+  margin-bottom: 20px;
   color:#F3C21B;
   font-size: 1.2em;
 }
@@ -44,15 +47,21 @@
 
 .left-column-profile,
 .right-column-profile {
+  width: 200px;
+
   
 }
 .left-column-profile{
   margin-bottom: 3%;
   color:#F3C21B;
 }
-
+/* h4,
+p {
+  margin-bottom: 10px;
+} */
 .right-column-profile{
-margin-bottom: 3%;
+margin-bottom: 80px;
+line-height: 1.5em; 
 color: #CAC5C1;
 }
 
@@ -161,23 +170,66 @@ color: #CAC5C1;
   }
 } */
 
-/* Profile.css */
 
-/* ... (other CSS rules) ... */
 
-/* Media queries for responsiveness */
-/* Profile.css */
+@media only screen and (max-width: 992px) {
+  .section-profile {
+    grid-template-columns: 1fr;
+    padding: 40px;
+  }
 
-/* Existing CSS */
+  .Profile-img-section {
+    grid-column: unset;
+    text-align: center;
+  }
+}
 
-/* Media Queries */
-/* Profile.css */
+@media only screen and (max-width: 768px) {
+  .section-profile {
+    padding: 20px;
+  }
 
-/* Existing CSS */
+  .Profile-img-section img {
+    width: 100px;
+    height: 100px;
+  }
 
-/* Media Queries */
-/* Profile.css */
+  .info-columns-profile {
+    padding-right: 1em;
+    padding-left: 1em;
+  }
+}
 
-/* Existing styles... */
+@media only screen and (max-width: 576px) {
+  .section-profile {
+    grid-gap: 0.2px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 
-/* Media Queries for responsiveness */
+  .Profile-img-section img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .General-INfo-Profile,
+  .Contact-account-Profile {
+    font-size: 1em;
+  }
+
+  .pp-profile {
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .Contact-account-Profile {
+    padding-right: 10px;
+    margin-right: 0;
+    padding-left: 10px;
+  }
+  .General-INfo-Profile{
+    padding-right: 10px;
+    margin-right: 0;
+   padding-left: 10px;
+  }
+}

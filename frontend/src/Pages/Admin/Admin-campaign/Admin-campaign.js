@@ -8,6 +8,8 @@ import Button from 'react-bootstrap/Button';
 import { FaDeleteLeft } from "react-icons/fa6";
 import campaign_icon from '../Admin-assets/campaign.png'
 import { FaRegEyeSlash, FaRegEye } from "react-icons/fa";
+import SideBar from '../../../Components/Side-bar/Side-bar.js'
+import AdminMenu from '../../../Components/Admin-menu/admin-menu'
 const AdminCampaign = () => {
   const [Hidden, SetHidden] = useState(false);
   const handlHideClick = ()=>{
@@ -23,7 +25,8 @@ const AdminCampaign = () => {
 ;
   }
   return (
-
+    <>
+    <SideBar><AdminMenu/></SideBar>
     <div className='campaign-main-admin container d-flex flex-column'>
     <h1 className="donors-page-heading ">
         <img
@@ -116,6 +119,7 @@ const AdminCampaign = () => {
         </div>
 </div>
     </div>
+    </>
 
 
   )

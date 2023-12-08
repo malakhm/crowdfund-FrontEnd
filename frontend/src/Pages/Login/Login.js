@@ -48,6 +48,7 @@ const Login = () => {
       resolve();
     })
     await fetchUserData()
+
     navigate('/feed')
     setUser(response.data)
     console.log(response.data)
@@ -58,6 +59,11 @@ const Login = () => {
   catch(err){
     if(err.response && err.response.status===401){
       toast.error("Unauthorized !", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+    }
+    if(err.response && err.response.status===406){
+      toast.error("Waiting for Admin Confirmation !", {
         position: toast.POSITION.TOP_RIGHT,
       });
     }
@@ -105,7 +111,7 @@ const Login = () => {
      <div className="btn btn-warning d-flex justify-content-center align-self-center w-50">
      <Button variant="bg-warning" onClick={handleSubmit}><b>Login Now</b></Button>
      </div>
-     <h6 className="custom-h6-input-login text-white d-flex justify-content-center">Don't Have an Account?<a className="custom-anchor-tag-login" href={'/'}>Sign up</a></h6>
+     <h6 className="custom-h6-input-login text-white d-flex justify-content-center">Don't Have an Account?<a className="custom-anchor-tag-login" href={'/registration1'}>Sign up</a></h6>
      </form>
    </div>
  );

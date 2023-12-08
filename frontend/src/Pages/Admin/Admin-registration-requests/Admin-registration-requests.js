@@ -10,6 +10,8 @@ import Paper from '@mui/material/Paper';
 import users_icon from "../Admin-assets/users-icon.png";
 import DeletePopper from '../../../Popups/delete.js';
 import Button from 'react-bootstrap/Button';
+import SideBar from '../../../Components/Side-bar/Side-bar.js'
+import AdminMenu from '../../../Components/Admin-menu/admin-menu'
 const primary = {
   main: '#333333',
   light: '#f3c21b',
@@ -123,7 +125,11 @@ const rows = []
   console.log(rows)
 
 const AdminRegRequests = () => {
+  
   return (
+    <>
+    <SideBar><AdminMenu/></SideBar>
+
     <div className='Admin-Creators-table-main container d-flex flex-column '>
        <h1 className="donors-page-heading">
         <img
@@ -193,6 +199,7 @@ const AdminRegRequests = () => {
     </TableContainer>
 
     </div>
+    </>
   )
 }
 
