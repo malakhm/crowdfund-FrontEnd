@@ -128,74 +128,7 @@ Gender: "male"
           DOB: "12 january 2023",
           Gender: "male"
           
-          },{
-  
-            id: 1,
-            Username: "kamal", 
-            FirstName: "Malvrvak",
-            LastName: "Hamwi",
-            Phone: "76-076487",
-            Email: "csd@gmail.com",
-            DOB: "12 january 2023",
-            Gender: "male"
-            
-            },{
-  
-              id: 1,
-              Username: "kamal", 
-              FirstName: "Malvrvak",
-              LastName: "Hamwi",
-              Phone: "76-076487",
-              Email: "csd@gmail.com",
-              DOB: "12 january 2023",
-              Gender: "male"
-              
-              },{
-  
-                id: 1,
-                Username: "kamal", 
-                FirstName: "Malvrvak",
-                LastName: "Hamwi",
-                Phone: "76-076487",
-                Email: "csd@gmail.com",
-                DOB: "12 january 2023",
-                Gender: "male"
-                
-                },{
-  
-                  id: 1,
-                  Username: "kamal", 
-                  FirstName: "Malvrvak",
-                  LastName: "Hamwi",
-                  Phone: "76-076487",
-                  Email: "csd@gmail.com",
-                  DOB: "12 january 2023",
-                  Gender: "male"
-                  
-                  },{
-  
-                    id: 1,
-                    Username: "kamal", 
-                    FirstName: "Malvrvak",
-                    LastName: "Hamwi",
-                    Phone: "76-076487",
-                    Email: "csd@gmail.com",
-                    DOB: "12 january 2023",
-                    Gender: "male"
-                    
-                    },{
-  
-                      id: 1,
-                      Username: "kamal", 
-                      FirstName: "Malvrvak",
-                      LastName: "Hamwi",
-                      Phone: "76-076487",
-                      Email: "csd@gmail.com",
-                      DOB: "12 january 2023",
-                      Gender: "male"
-                      
-                      }
-    
+          }
     
 
 ]
@@ -235,10 +168,8 @@ const AdminDonors = () => {
             <StyledTableCell align="right">Phone</StyledTableCell>
             <StyledTableCell align="right">DOB</StyledTableCell>
             <StyledTableCell align="right">    
-              Edit
             </StyledTableCell>
             <StyledTableCell align="right"> 
-              Delete
             </StyledTableCell>
 
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import Cards from '../../Components/Campaign-card/Campaign-card';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import {Link}  from 'react-router-dom'; 
 import  { useState } from 'react';
 import { PaginationControl } from 'react-bootstrap-pagination-control';
 
@@ -23,17 +23,14 @@ const Feed = () => {
         ellipsis={1}
         /> */}
     <div className='Feed-main-Container container d-flex '>
-    <Cards/>
-      <Cards/>
-      <Cards/>
-      <Cards/>
-      <Cards/>
-      <Cards/>
-      <Cards/>
-      <Cards/>
-      <Cards/>
-      <Cards/>
-      <Cards/>
+      <h1></h1>
+    <Link to="/details"style={{ textDecoration: 'none' ,color:'#333333'}}> <Cards /></Link>
+    <Link to="/details"style={{ textDecoration: 'none' ,color:'#333333'}}> <Cards /></Link>
+    <Link to="/details"style={{ textDecoration: 'none' ,color:'#333333'}}> <Cards /></Link>
+    <Link to="/details"style={{ textDecoration: 'none' ,color:'#333333'}}> <Cards /></Link>
+    <Link to="/details"style={{ textDecoration: 'none' ,color:'#333333'}}> <Cards /></Link>
+    <Link to="/details"style={{ textDecoration: 'none' ,color:'#333333'}}> <Cards /></Link>
+      
 
     {/* <ul className='Pagination-Feed'>1.2.3.4</ul> */}
     </div>

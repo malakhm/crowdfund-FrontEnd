@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState, useEffect, useCallback } from "react";
+import axios from "axios";
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -11,206 +12,90 @@ import users_icon from "../Admin-assets/users-icon.png";
 import DeletePopper from '../../../Popups/delete.js';
 import EditPopper from '../../../Popups/edituser.js';
 import './Admin-creators.css'
-const primary = {
-  main: '#333333',
-  light: '#f3c21b',
-  dark: '#171717',
-  shaded: '#CAC5C1',
-};
 
 
-const StyledTableCell = styled(TableCell)(({ theme }) => ({
-  [`&.${tableCellClasses.head}`]: {
-   color: primary.light,
-   backgroundColor: primary.dark
-  },
-  [`&.${tableCellClasses.body}`]: {
-    fontSize: 14,
-    color: primary.shaded,
-    backgroundColor: primary.main,
-  },
-}));
 
-const StyledTableRow = styled(TableRow)(({ theme }) => ({
-  '&:nth-of-type(odd)': {
-    backgroundColor: theme.palette.action.hover,
-  },
-  // hide last border
-  '&:last-child td, &:last-child th': {
-    border: 0,
-  },
-}));
 
-const data = [ {
-  id: 1,
-  Username: "malak12", 
-  FirstName: "husein",
-  LastName: "khasen",
-  Phone: "76-076487",
-  Email: "malakelhamwi@gmail.com",
-  DOB: "12 december 2023",
-  Gender: "male"
+  const primary = {
+    main: '#333333',
+    light: '#f3c21b',
+    dark: '#171717',
+    shaded: '#CAC5C1',
+  };
   
-},{ id: 1,
-Username: "malak12", 
-FirstName: "Malak",
-LastName: "Hamwi",
-Phone: "76-076487",
-Email: "malakelhamwi@gmail.com",
-DOB: "12 december 2023",
-Gender: "male"
-
-},
-{
-  id: 1,
-  Username: "lidsx", 
-  FirstName: "pa",
-  LastName: "Hamwi",
-  Phone: "76-076487",
-  Email: "jawad@gmail.com",
-  DOB: "12 december 2023",
-  Gender: "male"
   
-  },{
+  const StyledTableCell = styled(TableCell)(({ theme }) => ({
+    [`&.${tableCellClasses.head}`]: {
+     color: primary.light,
+     backgroundColor: primary.dark
+    },
+    [`&.${tableCellClasses.body}`]: {
+      fontSize: 14,
+      color: primary.shaded,
+      backgroundColor: primary.main,
+    },
+  }));
   
-  id: 1,
-  Username: "kamal", 
-  FirstName: "Malvrvak",
-  LastName: "Hamwi",
-  Phone: "76-076487",
-  Email: "csd@gmail.com",
-  DOB: "12 january 2023",
-  Gender: "male"
+  const StyledTableRow = styled(TableRow)(({ theme }) => ({
+    '&:nth-of-type(odd)': {
+      backgroundColor: theme.palette.action.hover,
+    },
+    // hide last border
+    '&:last-child td, &:last-child th': {
+      border: 0,
+    },
+  }));
   
-  }
-  ,{
-  
-    id: 1,
-    Username: "kamal", 
-    FirstName: "Malvrvak",
-    LastName: "Hamwi",
-    Phone: "76-076487",
-    Email: "csd@gmail.com",
-    DOB: "12 january 2023",
-    Gender: "male"
-    
-    }
-    ,{
-  
-      id: 1,
-      Username: "kamal", 
-      FirstName: "Malvrvak",
-      LastName: "Hamwi",
-      Phone: "76-076487",
-      Email: "csd@gmail.com",
-      DOB: "12 january 2023",
-      Gender: "male"
-      
-      },{
-  
-        id: 1,
-        Username: "kamal", 
-        FirstName: "Malvrvak",
-        LastName: "Hamwi",
-        Phone: "76-076487",
-        Email: "csd@gmail.com",
-        DOB: "12 january 2023",
-        Gender: "male"
-        
-        },{
-  
-          id: 1,
-          Username: "kamal", 
-          FirstName: "Malvrvak",
-          LastName: "Hamwi",
-          Phone: "76-076487",
-          Email: "csd@gmail.com",
-          DOB: "12 january 2023",
-          Gender: "male"
-          
-          },{
-  
-            id: 1,
-            Username: "kamal", 
-            FirstName: "Malvrvak",
-            LastName: "Hamwi",
-            Phone: "76-076487",
-            Email: "csd@gmail.com",
-            DOB: "12 january 2023",
-            Gender: "male"
-            
-            },{
-  
-              id: 1,
-              Username: "kamal", 
-              FirstName: "Malvrvak",
-              LastName: "Hamwi",
-              Phone: "76-076487",
-              Email: "csd@gmail.com",
-              DOB: "12 january 2023",
-              Gender: "male"
-              
-              },{
-  
-                id: 1,
-                Username: "kamal", 
-                FirstName: "Malvrvak",
-                LastName: "Hamwi",
-                Phone: "76-076487",
-                Email: "csd@gmail.com",
-                DOB: "12 january 2023",
-                Gender: "male"
-                
-                },{
-  
-                  id: 1,
-                  Username: "kamal", 
-                  FirstName: "Malvrvak",
-                  LastName: "Hamwi",
-                  Phone: "76-076487",
-                  Email: "csd@gmail.com",
-                  DOB: "12 january 2023",
-                  Gender: "male"
-                  
-                  },{
-  
-                    id: 1,
-                    Username: "kamal", 
-                    FirstName: "Malvrvak",
-                    LastName: "Hamwi",
-                    Phone: "76-076487",
-                    Email: "csd@gmail.com",
-                    DOB: "12 january 2023",
-                    Gender: "male"
-                    
-                    },{
-  
-                      id: 1,
-                      Username: "kamal", 
-                      FirstName: "Malvrvak",
-                      LastName: "Hamwi",
-                      Phone: "76-076487",
-                      Email: "csd@gmail.com",
-                      DOB: "12 january 2023",
-                      Gender: "male"
-                      
-                      }
-    
-    
-
-]
-
-    
 
 function createData(id, Username, FirstName, LastName, Phone, Email, DOB, Gender, Action) {
   return { id, Username, FirstName, LastName, Phone, Email, DOB, Gender, Action };
 }
 
-const rows = []
-  for(let i = 0; i< data.length;  i++) {rows.push(createData(data[i].id, data[i].Username, data[i].FirstName, data[i].LastName, data[i].Phone, data[i].Email,data[i].Gender, data[i].DOB))}
-  console.log(rows)
 
 const AdminCreators = () => {
+
+const [accepted_creators, setAcceptedCreators] = useState(null);
+const [loading, setLoading] = useState(true);
+
+const fetchAcceptedCreators = useCallback(async () => { //saves the function so there is no need for compiler to create new instance of it every time it needs it
+  try {
+    const accepted_creators_response = await axios.get("http://localhost:8100/api/users/getCreators/data"); //axios returns a response object with a data property, we then use .data to get it
+    console.log("This is the accepted creators response: ", accepted_creators_response) //for checking
+    if (accepted_creators_response.data) {
+      setAcceptedCreators(accepted_creators_response.data) //returning the data as an array of objects
+    }
+  } catch (error) {
+    console.error("error fetching accepted creators: ", error);
+    setLoading(false);
+  } finally {
+    setLoading(false);
+  }
+}, []); //this dependancy will specify on which change should the compiler recreate the function
+
+useEffect (() => {
+  fetchAcceptedCreators();
+}, []) //left dependancy array empty so it doesnt run when handle delete is ran
+
+
+const handleCreatorDelete = async (id) => {
+  try {
+    await axios.delete(`http://localhost:8100/api/users/${id}`);
+  } catch (error) {
+    console.log("error deleting creator: ", error);
+  } finally {
+    fetchAcceptedCreators();
+  }
+};
+
+const handleCreatorEdit = async (id) => {
+  try {
+    await axios.put(`http://localhost:8100/api/users/${id}`);
+  } catch (error) {
+    console.log("error editing creator: ", error);
+  } finally {
+    fetchAcceptedCreators();
+  }
+};
   return (
     <div className='Admin-Creators-table-main container d-flex flex-column '>
        <h1 className="donors-page-heading">
@@ -235,32 +120,32 @@ const AdminCreators = () => {
             <StyledTableCell align="right">Phone</StyledTableCell>
             <StyledTableCell align="right">DOB</StyledTableCell>
             <StyledTableCell align="right">    
-              Edit
             </StyledTableCell>
             <StyledTableCell align="right"> 
-              Delete
             </StyledTableCell>
 
 
           </StyledTableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
+        {!loading ?
+          ( accepted_creators ?
+            accepted_creators.map((creator) =>(
             <TableRow
-              key={row.id}
+              key={creator.id}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <StyledTableCell component="th" scope="row">
-                {row.id}
+                {creator.id}
               </StyledTableCell>
         
-              <StyledTableCell align="right">{row.Username}</StyledTableCell>
-              <StyledTableCell align="right">{row.FirstName}</StyledTableCell>
-              <StyledTableCell align="right">{row.LastName}</StyledTableCell>
-              <StyledTableCell align="right">{row.Email}</StyledTableCell>
-              <StyledTableCell align="right">{row.DOB}</StyledTableCell>
-              <StyledTableCell align="right">{row.Phone}</StyledTableCell>
-              <StyledTableCell align="right">{row.Gender}</StyledTableCell>
+              <StyledTableCell align="right">{creator.username}</StyledTableCell>
+              <StyledTableCell align="right">{creator.first_name}</StyledTableCell>
+              <StyledTableCell align="right">{creator.last_name}</StyledTableCell>
+              <StyledTableCell align="right">{creator.email}</StyledTableCell>
+              <StyledTableCell align="right">{creator.gender}</StyledTableCell>
+              <StyledTableCell align="right">{creator.phone_number}</StyledTableCell>
+              <StyledTableCell align="right">{creator.dob}</StyledTableCell>
               <StyledTableCell align="right">
             <EditPopper/>
 
@@ -271,7 +156,11 @@ const AdminCreators = () => {
               </StyledTableCell>
         
             </TableRow>
-          ))}
+          ))
+          : ( <p className="no-approved-creators">No approved creators found!</p>))
+
+          :( <p className="loading-creators">Loading Creators...</p> ) 
+            }
         </TableBody>
       </Table>
     </TableContainer>
