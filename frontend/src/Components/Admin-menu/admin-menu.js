@@ -7,10 +7,16 @@ import {
   CDBSidebarMenuItem,
 } from 'cdbreact';
 import { NavLink } from 'react-router-dom';
-
+import { toast } from 'react-toastify';
 
 
 const AdminMenu = () =>{
+ 
+ const handleLogout= (e)=>{
+  e.preventDefault()
+  localStorage.clear();
+  toast.success('Logged out successfully !')
+}
   return (
     <div>
       <CDBSidebarMenu >
@@ -42,8 +48,8 @@ const AdminMenu = () =>{
               <CDBSidebarMenuItem icon="paper-plane" className='menu-list-item-color'>Announcements</CDBSidebarMenuItem>
             </NavLink>
 
-            <NavLink exact to="/admin/logout" activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="sign-out-alt" className='menu-list-item-color'>Logout</CDBSidebarMenuItem>
+            <NavLink exact to = "/admin/login" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="sign-out-alt" className='menu-list-item-color' onClick={handleLogout}>Logout</CDBSidebarMenuItem>
             </NavLink>
           </CDBSidebarMenu>
     </div>

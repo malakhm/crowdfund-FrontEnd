@@ -9,12 +9,12 @@ import {useNavigate} from 'react-router-dom'
 import {toast} from 'react-toastify';
 import axios from "axios";
 import {AuthContext} from '../../Context/AuthContext.js'
-const Login = () => {
+const LoginAdmin = () => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
   
-  const { fetchUserData , SetToken, setUser, user } = useContext(AuthContext);
+  const { fetchUserData , SetToken } = useContext(AuthContext);
   
   const navigate = useNavigate()
 
@@ -30,7 +30,7 @@ const Login = () => {
   }
     try{
       console.log('fetching...')
-      const response = await axios.post('http://localhost:8100/api/auth/signin',
+      const response = await axios.post('http://localhost:8100/api/admin/auth/signin',
     {
      username,
      password,
@@ -48,10 +48,8 @@ const Login = () => {
       resolve();
     })
     await fetchUserData()
-    navigate('/feed')
-    setUser(response.data)
-    console.log(response.data)
-    toast.success("Successful Login !", {
+    navigate('/admin/creators')
+    toast.success("Admin Successful Login !", {
       position: toast.POSITION.TOP_RIGHT,
     });
   }
@@ -72,7 +70,7 @@ const Login = () => {
      <div className="Logo-img">
        <img src={Fund} alt="" className="reg-form-logo " />
      </div>
-     <div className="headings-title">Login</div>
+     <div className="headings-title">Admin Login</div>
      <form className="container mt-5 w-25 d-flex flex-column gap-3 container-custom-input-width">
      <div className="mb-3">
        <div className="input-group">
@@ -111,4 +109,4 @@ const Login = () => {
  );
 };
 
-export default Login;
+export default LoginAdmin;
