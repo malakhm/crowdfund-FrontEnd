@@ -3,6 +3,10 @@
     font-family: spartan;
     src: url('../src/Assets/league-spartan.bold.ttf');
   }
+  .html{
+    height: 100%;
+    width: 100%;
+  }
 
 
 :root {
