@@ -3,7 +3,7 @@ import { Button } from "bootstrap";
 const Buttonb = ({ children }) => {
   return (
     <div>
-         <button type="submit"  class="btn btn-dark text-white">{children}</button>
+         <button type="submit"  className="btn btn-dark text-white">{children}</button>
     </div>
   )
 }
