@@ -26,6 +26,8 @@ import ProtectedRoute from './ProtectedRoutes.js'
 import CreatorMenu from '../Components/Creator-menu/creator-menu.js';
 import AdminLogin from '../Pages/Login/LoginAdmin.js'
 import Home from '../Pages/Home/Home.js'
+import  RegistrationOne from '../Pages/Registration/Registration-one/Registration-one.js';
+import  RegistrationTwo from '../Pages/Registration/Registration-two/Registration-two.js'
 
 const AppRoutes = () => {
     return (
@@ -48,7 +50,19 @@ const AppRoutes = () => {
             }
           />
           </Route>
+          <Route element={<ProtectedRoute />}>
+          <Route
+            path="/registration1"
+            element={<RegistrationOne />}
+          />
+          </Route>
 
+          <Route element={<ProtectedRoute />}>
+          <Route
+            path="/registration2"
+            element={<RegistrationTwo />}
+          />
+          </Route>
 
           <Route
             path="/user/login"
@@ -151,7 +165,7 @@ const AppRoutes = () => {
           />
           </Route>
 
-          <Route element={<ProtectedRoute />}>
+          <Route >
           <Route
             path="/donor/transactions"
             element={<DonorTransaction />}
