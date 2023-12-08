@@ -7,10 +7,14 @@ import Button from 'react-bootstrap/Button';
 import { BsCheckCircleFill } from "react-icons/bs";
 import campaign_req_icon from '../Admin-assets/add-post.png'
 import { FaDeleteLeft } from "react-icons/fa6";
+import SideBar from '../../../Components/Side-bar/Side-bar.js'
+import AdminMenu from '../../../Components/Admin-menu/admin-menu'
 const  AdminRequests = () => {
 
 
   return (
+    <>
+    <SideBar><AdminMenu/></SideBar>
 
     <div className='campaign-main-admin container d-flex flex-column'>
     <h1 className="donors-page-heading ">
@@ -110,6 +114,7 @@ const  AdminRequests = () => {
         </div>
 </div>
     </div>
+    </>
 
 
   )

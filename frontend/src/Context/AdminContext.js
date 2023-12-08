@@ -4,13 +4,10 @@ import {toast} from 'react-toastify'
 
 
 
-export const AuthContext = createContext(null) ; 
+export const AdminContext = createContext(null) ; 
 
-export const AuthProvider = ({ children }) => {
-    const [user, setUser] = useState(null);
-    const [isDonor, setIsDonor] = useState(null);
-    const [isCreator, setIsCreator] = useState(null);
-
+export const AdminAuthProvider = ({ children }) => {
+    const [admin, setAdmin] = useState(null);
     const [token, SetToken] = useState(localStorage.getItem('token'));
 
     console.log('from AuthProvider: ', token)
@@ -29,15 +26,15 @@ export const AuthProvider = ({ children }) => {
        
     };
 
-console.log('from AuthProvider: ',user)
+console.log('from AuthProvider: ',admin)
 
     return (
-        <AuthContext.Provider value={{ user, setUser,token, SetToken,fetchUserData }}>
+        <AdminContext.Provider value={{ admin, setAdmin,token, SetToken,fetchUserData }}>
             {children}
-        </AuthContext.Provider>
+        </AdminContext.Provider>
     );
 };
 
 export const useAuth = ()=>{
-    return useContext(AuthContext)
+    return useContext(AdminContext)
 }

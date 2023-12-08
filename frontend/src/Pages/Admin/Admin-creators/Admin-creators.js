@@ -11,6 +11,8 @@ import Paper from '@mui/material/Paper';
 import users_icon from "../Admin-assets/users-icon.png";
 import DeletePopper from '../../../Popups/delete.js';
 import EditPopper from '../../../Popups/edituser.js';
+import SideBar from '../../../Components/Side-bar/Side-bar.js'
+import AdminMenu from '../../../Components/Admin-menu/admin-menu'
 import './Admin-creators.css'
 
 
@@ -97,6 +99,10 @@ const handleCreatorEdit = async (id) => {
   }
 };
   return (
+    <>
+    <SideBar><AdminMenu/></SideBar>
+
+    
     <div className='Admin-Creators-table-main container d-flex flex-column '>
        <h1 className="donors-page-heading">
         <img
@@ -166,6 +172,7 @@ const handleCreatorEdit = async (id) => {
     </TableContainer>
 
     </div>
+    </>
   )
 }
 

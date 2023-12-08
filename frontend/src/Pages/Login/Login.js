@@ -48,6 +48,7 @@ const Login = () => {
       resolve();
     })
     await fetchUserData()
+
     navigate('/feed')
     setUser(response.data)
     console.log(response.data)
@@ -58,6 +59,11 @@ const Login = () => {
   catch(err){
     if(err.response && err.response.status===401){
       toast.error("Unauthorized !", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+    }
+    if(err.response && err.response.status===406){
+      toast.error("Waiting for Admin Confirmation !", {
         position: toast.POSITION.TOP_RIGHT,
       });
     }
