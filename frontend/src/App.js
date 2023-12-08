@@ -26,7 +26,7 @@ import AdminRegRequests from '../src/Pages/Admin/Admin-registration-requests/Adm
 import AdminRequests from '../src/Pages/Admin/Admin-post-requests/Admin-post-requests.js'
 import AdminTransactions from '../src/Pages/Admin/Admin-transactions/Admin-transactions.js'
 import AdminAnnouncements from '../src/Pages/Admin/Admin-announcements/Admin-announcements.js'
-
+import Profile from './Components/Profile/Profile.js';
 import AdminMenu from '../src/Components/Admin-menu/admin-menu.js';
 
 
@@ -147,6 +147,11 @@ const App = () => {
           <Route
             path="/details"
             element={<DetailsCard />}
+          />
+          <Route
+            path="/profile"
+            element={<Profile />
+            }
           />
           
         </Routes>
