@@ -24,7 +24,15 @@ const RegistrationTwo = () => {
     dob,
     gender
   } = location.state || {};
-
+  let isDonor;
+  let isCreator
+  switch(role){
+    case 'isDonor': isDonor = true; break;
+    case 'isCreator': isCreator =true; break;
+    default: isDonor = false; isCreator=false;break;
+  }
+  console.log('isCreator', isCreator)
+  console.log('isDonor', isDonor)
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -37,7 +45,8 @@ const RegistrationTwo = () => {
 
     // Prepare user data
     const userData = {
-      role,
+      isDonor,
+      isCreator,
       first_name:firstName,
       last_name:lastName,
       phone_number:phone,
@@ -53,10 +62,11 @@ const RegistrationTwo = () => {
       const response = await axios.post('http://localhost:8100/api/users/', userData);
       console.log("res ",response.data); 
       if(response.status === 200){
-        navigate('/login', { replace: true });
+        navigate('/user/login', { replace: true });
       }
     } catch (error) {
-      console.error('Error:', error); 
+      
+      toast.error('username already exists!'); 
     }
   };
 
