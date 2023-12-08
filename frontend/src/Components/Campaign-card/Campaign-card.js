@@ -8,9 +8,17 @@ import { UserContext } from "../../Context/userContext";
 
 const Cards = ({ accepted_campaign }) => {
   const { users } = useContext(UserContext);
-  const target = accepted_campaign.target;
-  const amount = accepted_campaign.amount;
-  const now = parseInt((amount / target) * 100);
+  if (accepted_campaign) {
+    const target = accepted_campaign.target;
+    const amount = accepted_campaign.amount;
+    const now = parseInt((amount / target) * 100);
+  }
+  else if (pending_campaign) {
+    const target = accepted_campaign.target;
+    const amount = accepted_campaign.amount;
+    const now = parseInt((amount / target) * 100);
+  }
+  console.log("this is accepted campaign in cards: ", accepted_campaign)
   // console.log(`this is theusers in cards: ${users}`) //for testing
   return (
     <div className="Campaign-Card-Component">

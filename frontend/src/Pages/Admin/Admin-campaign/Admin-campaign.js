@@ -134,7 +134,6 @@ const AdminCampaign = () => {
               ) : (
                 <p>Loading...</p>
               )}
-              ;
             </div>
           </div>
         </div>
