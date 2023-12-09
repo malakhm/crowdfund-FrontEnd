@@ -40,7 +40,7 @@ Fade.propTypes = {
   onExited: PropTypes.func,
 };
 
-const DeletePopper = ({row, cb}) => {
+const DonorDeletePopper = ({donor, cb}) => {
   const [open, setOpen] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -52,11 +52,11 @@ const DeletePopper = ({row, cb}) => {
   const canBeOpen = open && Boolean(anchorEl);
   const id = canBeOpen ? "spring-popper" : undefined;
 
-  const handleUserDelete = async (id) => {
+  const handledonorDelete = async (id) => {
     try {
       await axios.delete(`http://localhost:8100/api/users/${id}`);
     } catch (error) {
-      console.log("error deleting user: ", error);
+      console.log("error deleting donor: ", error);
     } finally {
       cb();
     }
@@ -85,7 +85,7 @@ const DeletePopper = ({row, cb}) => {
 
               <form className="button-container-main container d-flex">
                 <Buttonb type="submit">No</Buttonb>
-                <button className="btn btn-warning" type="reset" onClick = {() => handleUserDelete(row.id)}>
+                <button className="btn btn-warning" type="reset" onClick = {() => handledonorDelete(donor.id)}>
                   <b>Yes</b>
                 </button>
               </form>
@@ -97,4 +97,4 @@ const DeletePopper = ({row, cb}) => {
   );
 };
 
-export default DeletePopper;
+export default DonorDeletePopper;

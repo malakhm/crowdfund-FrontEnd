@@ -9,7 +9,7 @@ import {
   CDBSidebarMenu,
   CDBSidebarMenuItem,
 } from 'cdbreact';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 import '../Side-bar/Side-bar.css';
 const Sidebar = ( { children }) => {
   return (

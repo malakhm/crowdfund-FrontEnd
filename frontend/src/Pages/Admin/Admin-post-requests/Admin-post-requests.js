@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect } from "react";
 import axios from "axios";
-import Cards from "../../../Components/Campaign-card/Campaign-card.js";
+import PendingCampaignCard from "../../../Components/Campaign-card/Pending-Campaign-card.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
 import { PaginationControl } from "react-bootstrap-pagination-control";
@@ -8,11 +8,12 @@ import Button from "react-bootstrap/Button";
 import { BsCheckCircleFill } from "react-icons/bs";
 import campaign_req_icon from "../Admin-assets/add-post.png";
 import { FaDeleteLeft } from "react-icons/fa6";
+
 const AdminRequests = () => {
-  const [pending_campaigns, setPendingCampaigns] = useState(null);
+  const [pending_campaigns, setPendingCampaigns] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const fetchPendingCampaigns = useCallback(async () => {
+  const fetchPendingCampaigns = useCallback( async () => {
     //saves the function so there is no need for compiler to create new instance of it every time it needs it
     try {
       const pending_campaigns_response = await axios.get(
@@ -65,6 +66,8 @@ const AdminRequests = () => {
     }
   };
 
+console.log("this is pending campaigns in postrequests: ", loading, pending_campaigns[0])
+
   return (
     <div className="campaign-main-admin container d-flex flex-column">
       <h1 className="donors-page-heading ">
@@ -79,18 +82,18 @@ const AdminRequests = () => {
       <div className="campaign-main-Container container d-flex ">
         {!loading ? (
           pending_campaigns.map((campaign, campaign_name) => {
-            <div className="Creator-main-Card ">
+            <div key={campaign_name} className="Creator-main-Card ">
               <div className="creator-main-card-controls d-flex justify-self-center ">
                 <p className="creator-main-card-edit text-success d-flex ">
-                  <BsCheckCircleFill className="document-icon" />
+                  <BsCheckCircleFill onClick={() => handleAcceptClick(campaign)} className="document-icon" />
                 </p>
 
                 <p className="creator-main-card-delete text-danger d-flex">
-                  <FaDeleteLeft className="document-icon" />
+                  <FaDeleteLeft onClick={() => handleCampaignDelete(campaign)} className="document-icon" />
                 </p>
               </div>
-              <Cards key={campaign.campaign_name} pending_campaign={campaign} />
-            </div>;
+              <PendingCampaignCard key={campaign.campaign_name} campaign={campaign} />
+            </div>
           })
         ) : (
           <p>Loading...</p>

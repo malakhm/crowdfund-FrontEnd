@@ -9,7 +9,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import users_icon from "../Admin-assets/users-icon.png";
-import DeletePopper from "../../../Popups/delete.js";
+import RegisterRequestDeletePopper from "../../../Popups/delete-register-request.js";
 import Button from "react-bootstrap/Button";
 
 const primary = {
@@ -189,7 +189,7 @@ const AdminRegRequests = () => {
                   <Button variant="success" onClick={() => handleAcceptUser(row.id)}>Accept</Button>
                 </StyledTableCell>
                 <StyledTableCell align="right">
-                  <DeletePopper key={row.id} row={row} cb={fetchPendingUsers}/>
+                  <RegisterRequestDeletePopper key={row.id} row={row} cb={fetchPendingUsers}/>
                 </StyledTableCell>
               </TableRow>
             ))}

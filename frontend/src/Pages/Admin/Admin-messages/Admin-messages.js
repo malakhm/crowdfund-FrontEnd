@@ -8,7 +8,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import users_icon from "../Admin-assets/users-icon.png";
-import DeletePopper from '../../../Popups/delete.js';
+import MessageDeletePopper from '../../../Popups/delete-message.js';
 import ReplyPopper from '../../../Popups/reply.js';
 import message_icon from '../Admin-assets/inbox.png';
 const primary = {
@@ -82,7 +82,7 @@ function createData(id, Username, Message, Date, Role, Action) {
 
 const rows = []
   for(let i = 0; i< data.length;  i++) {rows.push(createData(data[i].id, data[i].Username, data[i].Message, data[i].Date, data[i].Role))}
-  console.log(rows)
+  // console.log(rows)
 
 function AdminMessages() {
   return (
@@ -135,7 +135,7 @@ function AdminMessages() {
               </StyledTableCell>
               <StyledTableCell align="right">
                 
-                  <DeletePopper />
+                  <MessageDeletePopper />
               </StyledTableCell>
         
             </TableRow>

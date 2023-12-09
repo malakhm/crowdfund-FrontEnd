@@ -1,12 +1,12 @@
 import React, {useContext} from "react";
 
-import "./Campaign-card.css";
+import "./Accepted-Campaign-card.css";
 import Help from "../../Assets/help.webp";
 import { IoBookmarkOutline, IoBookmark } from "react-icons/io5";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import { UserContext } from "../../Context/userContext";
 
-const Cards = ({ campaign }) => {
+const AcceptedCampaignCard = ({ campaign }) => {
   console.log("this is campaign in cards: ", campaign)
   const { users } = useContext(UserContext);
   const target = campaign.target;
@@ -58,4 +58,4 @@ const Cards = ({ campaign }) => {
   );
 };
 
-export default Cards;
+export default AcceptedCampaignCard;

@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import axios from "axios";
-import Cards from "../../../Components/Campaign-card/Campaign-card.js";
+import AcceptedCampaignCard from "../../../Components/Campaign-card/Accepted-Campaign-card.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Admin-campaign.css";
 // import { PaginationControl } from "react-bootstrap-pagination-control";
@@ -18,10 +18,10 @@ const AdminCampaign = () => {
       const accepted_campaigns_response = await axios.get(
         "http://localhost:8100/api/campaignRoute/getAllAccepted"
       ); //axios returns a response object with a data property, we then use .data to get it
-      console.log(
-        "This is the accepted campaigns response: ",
-        accepted_campaigns_response
-      ); //for checking
+      // console.log(
+      //   "This is the accepted campaigns response: ",
+      //   accepted_campaigns_response
+      // ); //for checking
       if (accepted_campaigns_response.data) {
         setAcceptedCampaigns(accepted_campaigns_response.data.data); //returning the data as an array of objects
       }
@@ -42,7 +42,7 @@ const AdminCampaign = () => {
         `http://localhost:8100/api/campaignRoute/hide/${campaign.campaign_name}`
       );
       fetchAcceptedCampaigns();
-      console.log("hide clicked !", campaign.isHidden, campaign.campaign_name, campaign.id);
+      // console.log("hide clicked !", campaign.isHidden, campaign.campaign_name, campaign.id);
     } catch (error) {
       console.error("hide failed due to error:", error);
     }
@@ -54,7 +54,7 @@ const AdminCampaign = () => {
         `http://localhost:8100/api/campaignRoute/unhide/${campaign.campaign_name}`
       );
       fetchAcceptedCampaigns();
-      console.log("unhide clicked !", campaign.isHidden, campaign.campaign_name, campaign.id);
+      // console.log("unhide clicked !", campaign.isHidden, campaign.campaign_name, campaign.id);
     } catch (error) {
       console.error("unhide failed due to error:", error);
     }
@@ -103,9 +103,9 @@ const AdminCampaign = () => {
                           onClick={ () => handleCampaignDelete(campaign)}
                         />
                       </p>
-                      <Cards
+                      <AcceptedCampaignCard
                         key = {campaign.campaign_name}
-                        accepted_campaign = {campaign}
+                        campaign = {campaign}
                       />
                     </section>
                   ) : (
@@ -124,9 +124,9 @@ const AdminCampaign = () => {
                           onClick={ () => handleCampaignDelete(campaign)}
                         />
                       </p>
-                      <Cards
+                      <AcceptedCampaignCard
                         key = {campaign.campaign_name}
-                        accepted_campaign = {campaign}
+                        campaign = {campaign}
                       />
                     </section>
                   );

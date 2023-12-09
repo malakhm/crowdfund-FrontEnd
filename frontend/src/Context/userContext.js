@@ -22,7 +22,7 @@ export const Provider = ({ children }) => {
       fetchUsers();
 
   }, []);
-console.log(users)
+// console.log(users)
   return (
     <UserContext.Provider value={{users, usersLoading}}>
       {children}

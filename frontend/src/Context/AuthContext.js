@@ -8,7 +8,7 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [token, SetToken] = useState(localStorage.getItem("token"));
 
-  console.log("from AuthProvider: ", token);
+  // console.log("from AuthProvider: ", token);
 
   const fetchUserData = async () => {
     try {
@@ -20,7 +20,7 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  console.log("from AuthProvider: ", user);
+  // console.log("from AuthProvider: ", user);
 
   return (
     <AuthContext.Provider

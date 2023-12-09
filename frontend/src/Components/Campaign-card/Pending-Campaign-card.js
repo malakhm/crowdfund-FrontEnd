@@ -1,13 +1,13 @@
 import React, {useContext} from "react";
 
-import "./Campaign-card.css";
+import "./Pending-Campaign-card.css";
 import Help from "../../Assets/help.webp";
 import { IoBookmarkOutline, IoBookmark } from "react-icons/io5";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import { UserContext } from "../../Context/userContext";
 
-const Cards = ({ campaign }) => {
-  console.log("this is campaign in cards: ", campaign)
+const PendingCampaignCard = ({ campaign }) => {
+  console.log("this is campaign in pending c card: ", campaign)
   const { users } = useContext(UserContext);
   const target = campaign.target;
   const amount = campaign.amount;
@@ -58,4 +58,4 @@ const Cards = ({ campaign }) => {
   );
 };
 
-export default Cards;
+export default PendingCampaignCard;
