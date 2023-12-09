@@ -2,19 +2,18 @@ import React from "react";
 import "./Login.css";
 import Fund from "../22.png";
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import Buttony from '../../Components/Button-yellow/Button.js'
 import Button from 'react-bootstrap/Button'
 import { useState, useEffect, useContext } from "react";
 import {useNavigate} from 'react-router-dom'
 import {toast} from 'react-toastify';
 import axios from "axios";
-import {AuthContext} from '../../Context/AuthContext.js'
+import {AdminContext} from '../../Context/AdminContext.js'
 const LoginAdmin = () => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
   
-  const { fetchUserData , SetToken } = useContext(AuthContext);
+  const { fetchUserData , SetToken ,setAdmin } = useContext(AdminContext);
   
   const navigate = useNavigate()
 
@@ -23,7 +22,7 @@ const LoginAdmin = () => {
     e.preventDefault();
     setLoading(true);
     if (!username || !password) {
-      console.log("ENTER EMAIL OR PASSWORD")
+    
       toast.error("Please insret email or password")
       setLoading(false);
       return;
@@ -38,7 +37,7 @@ const LoginAdmin = () => {
     
   );
   
-  console.log(response.data.status)
+  console.log(response.status)
   if(!response){alert("Wrong username or password !")}
   console.log(response.data.accessToken)
   const token = response.data.accessToken
@@ -49,6 +48,8 @@ const LoginAdmin = () => {
     })
     await fetchUserData()
     navigate('/admin/creators')
+    setAdmin(response.data)
+  
     toast.success("Admin Successful Login !", {
       position: toast.POSITION.TOP_RIGHT,
     });
@@ -103,7 +104,6 @@ const LoginAdmin = () => {
      <div className="btn btn-warning d-flex justify-content-center align-self-center w-50">
      <Button variant="bg-warning" onClick={handleSubmit}><b>Login Now</b></Button>
      </div>
-     <h6 className="custom-h6-input-login text-white d-flex justify-content-center">Don't Have an Account?<a className="custom-anchor-tag-login" href={'/'}>Sign up</a></h6>
      </form>
    </div>
  );

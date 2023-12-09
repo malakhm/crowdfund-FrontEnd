@@ -195,7 +195,7 @@ const RegistrationOne = () => {
             {/* Login Link */}
             <h6 className="custom-h6-input-login text-white d-flex justify-content-center">
               Have an Account?
-              <a className="custom-anchor-tag-login" href={"/"}>
+              <a className="custom-anchor-tag-login" href={"/user/login"}>
                 Login
               </a>
             </h6>

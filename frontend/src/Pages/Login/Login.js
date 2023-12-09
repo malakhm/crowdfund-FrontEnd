@@ -48,6 +48,7 @@ const Login = () => {
       resolve();
     })
     await fetchUserData()
+
     navigate('/feed')
     setUser(response.data)
     console.log(response.data)
@@ -61,6 +62,11 @@ const Login = () => {
         position: toast.POSITION.TOP_RIGHT,
       });
     }
+    if(err.response && err.response.status===406){
+      toast.error("Waiting for Admin Confirmation !", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+    }
   }
 }
     
@@ -68,12 +74,12 @@ const Login = () => {
  
 
  return (
-   <div className="custom-container vh-100 w-100">
+   <div className="login-container custom-container vh-100 w-100">
      <div className="Logo-img">
-       <img src={Fund} alt="" className="reg-form-logo " />
+       <img src={Fund} alt="" className="reg-form-logo "/>
      </div>
      <div className="headings-title">Login</div>
-     <form className="container mt-5 w-25 d-flex flex-column gap-3 container-custom-input-width">
+     <form className="login-container container mt-5 w-25 d-flex flex-column gap-3 container-custom-input-width">
      <div className="mb-3">
        <div className="input-group">
          <span className="input-group-text bg-transparent text-white">
@@ -105,7 +111,7 @@ const Login = () => {
      <div className="btn btn-warning d-flex justify-content-center align-self-center w-50">
      <Button variant="bg-warning" onClick={handleSubmit}><b>Login Now</b></Button>
      </div>
-     <h6 className="custom-h6-input-login text-white d-flex justify-content-center">Don't Have an Account?<a className="custom-anchor-tag-login" href={'/'}>Sign up</a></h6>
+     <h6 className="custom-h6-input-login text-white d-flex justify-content-center">Don't Have an Account?<a className="custom-anchor-tag-login" href={'/registration1'}>Sign up</a></h6>
      </form>
    </div>
  );

@@ -1,10 +1,10 @@
 
 import React, { useState} from "react";
-import { Link, useLocation, useNavigate } from 'react-router-dom'; // Import useLocation
+import {  useLocation, useNavigate } from 'react-router-dom'; // Import useLocation
 import Fund from "../../22.png";
 import Buttony from "../../../Components/Button-yellow/Button.js";
 import axios from 'axios';
-
+import { toast } from "react-toastify";
 const RegistrationTwo = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -24,20 +24,29 @@ const RegistrationTwo = () => {
     dob,
     gender
   } = location.state || {};
-
+  let isDonor;
+  let isCreator
+  switch(role){
+    case 'isDonor': isDonor = true; break;
+    case 'isCreator': isCreator =true; break;
+    default: isDonor = false; isCreator=false;break;
+  }
+  console.log('isCreator', isCreator)
+  console.log('isDonor', isDonor)
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     console.log("handlesubmit")
 
     if (password !== confirmPassword) {
-      console.log("Passwords don't match");
+      toast.error("Passwords don't match");
       return;
     }
 
     // Prepare user data
     const userData = {
-      role,
+      isDonor,
+      isCreator,
       first_name:firstName,
       last_name:lastName,
       phone_number:phone,
@@ -53,10 +62,11 @@ const RegistrationTwo = () => {
       const response = await axios.post('http://localhost:8100/api/users/', userData);
       console.log("res ",response.data); 
       if(response.status === 200){
-        navigate('/login', { replace: true });
+        navigate('/user/login', { replace: true });
       }
     } catch (error) {
-      console.error('Error:', error); 
+      
+      toast.error('username already exists!'); 
     }
   };
 

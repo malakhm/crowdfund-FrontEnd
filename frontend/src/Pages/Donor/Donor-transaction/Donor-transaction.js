@@ -222,17 +222,32 @@ const DonorTransaction = () => {
         </div>
         <div className='Total-amount'>
           <h6>Total Amount</h6>
-          <p>${totalAmount}</p>
-        </div>
-      </div>
-      {donations.map((donation) => (
-      <Notification key={donation.id} username={donation.Username} amount={donation.amount} campaign={donation.Campaign && donation.Campaign.name ? donation.Campaign.name : 'Unknown Campaign'}>
-        <p>
-          {donation.Username} donated ${donation.amount} for {donation.Campaign && donation.Campaign.name ? donation.Campaign.name : 'Unknown Campaign'}
-        </p>
-      </Notification>
-    ))}
+            <p>$2000</p>
+          </div>
 
+        </div>
+        <Notification>
+      <p><IoCheckmarkDoneCircle className='TRANSACTION-IS-DONE-ICON'/> You</p>
+        </Notification>
+
+        <Notification>
+      <p><IoCheckmarkDoneCircle className='TRANSACTION-IS-DONE-ICON'/> You</p>
+        </Notification>
+
+        <Notification>
+      <p><IoCheckmarkDoneCircle className='TRANSACTION-IS-DONE-ICON'/> You</p>
+        </Notification>
+
+        <Notification>
+      <p><IoCheckmarkDoneCircle className='TRANSACTION-IS-DONE-ICON'/> You</p>
+        </Notification>
+        <Notification>
+      <p><IoCheckmarkDoneCircle className='TRANSACTION-IS-DONE-ICON'/> You</p>
+        </Notification>
+        <Notification>
+      <p><IoCheckmarkDoneCircle className='TRANSACTION-IS-DONE-ICON'/> You</p>
+        </Notification>
+    
     </div>
   );
 };

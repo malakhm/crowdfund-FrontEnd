@@ -1,14 +1,19 @@
 import React from 'react'
 import Button from 'react-bootstrap/esm/Button'
 import './Admin-announcements.css'
+import SideBar from '../../../Components/Side-bar/Side-bar.js'
+import AdminMenu from '../../../Components/Admin-menu/admin-menu'
 function AdminAnnouncements() {
   return (
+    <>
+    <SideBar><AdminMenu/></SideBar>
     <div className='Announcements-main-container container d-flex justify-content-center '>
       <form className='d-flex container '>
         <input type="text" />
         <Button variant="warning" >Send</Button>
       </form>
     </div>
+    </>
   )
 }
 

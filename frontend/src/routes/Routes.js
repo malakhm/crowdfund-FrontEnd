@@ -26,10 +26,24 @@ import ProtectedRoute from './ProtectedRoutes.js'
 import CreatorMenu from '../Components/Creator-menu/creator-menu.js';
 import AdminLogin from '../Pages/Login/LoginAdmin.js'
 import Home from '../Pages/Home/Home.js'
-import  RegistrationOne from '../Pages/Registration/Registration-one/Registration-one.js';
-import  RegistrationTwo from '../Pages/Registration/Registration-two/Registration-two.js'
 
 const AppRoutes = () => {
+  let menuComponent ;
+  const {token,  user} = useContext(AuthContext)
+  const {admin} = useContext(AdminContext)
+  if(!user){toast.warning('you need to login !')}
+else{
+  if(user.isDonor ){
+    menuComponent = <SideBar><DonorMenu/></SideBar>
+  }
+  else if(user.isCreator){
+    menuComponent = <SideBar><CreatorMenu/></SideBar>
+  }
+ 
+}
+  
+
+
     return (
         // <Routes>
         //     <Route exact path="/" element={<Home />} />
@@ -40,10 +54,11 @@ const AppRoutes = () => {
         //     <Route path="/unauthorized" element={<Unauthorized />} />
         //     <Route path="/*" element={<NotFound />} />
         // </Routes>
-<>
-
+        <>
+        {menuComponent}
+       
         <Routes>
-        <Route element={<ProtectedRoute />}>
+        <Route element={<AdminProtected />}>
           <Route
             path="/admin/donors"
             element={<AdminDonors />
@@ -69,13 +84,26 @@ const AppRoutes = () => {
             element={<Login />
             }
           />
+
+          <Route
+            path="/registration1"
+            element={<RegistrationOne />
+            }
+          />
+          <Route
+            path="/registration2"
+            element={<RegistrationTwo />
+            }
+          />
+          </Routes>
+          <Routes>
           <Route
             path="/admin/login"
             element={<AdminLogin />
             }
           />
           {/* <Route path='/' element={<Layout/>}> */}
-          <Route element={<ProtectedRoute />}>
+          <Route element={<AdminProtected />}>
             <Route
               path="/admin/creators"
               element={<AdminCreators />
@@ -83,7 +111,7 @@ const AppRoutes = () => {
             />
           </Route>
 
-          <Route element={<ProtectedRoute />}>
+          <Route element={<AdminProtected />}>
             <Route
               path="/admin/campaigns"
               element={<AdminCampaign />
@@ -91,7 +119,7 @@ const AppRoutes = () => {
             />
           </Route>
 
-          <Route element={<ProtectedRoute />}>
+          <Route element={<AdminProtected />}>
           <Route
             path="/admin/messages"
             element={<AdminMessages />
@@ -99,7 +127,7 @@ const AppRoutes = () => {
           />
           </Route>
 
-          <Route element={<ProtectedRoute />}>
+          <Route element={<AdminProtected />}>
           <Route
             path="/admin/reg/requests"
             element={<AdminRegRequests />
@@ -107,7 +135,7 @@ const AppRoutes = () => {
           />
           </Route>
 
-          <Route element={<ProtectedRoute />}>
+          <Route element={<AdminProtected />}>
           <Route
             path="/admin/post/requests"
             element={<AdminRequests />
@@ -120,7 +148,7 @@ const AppRoutes = () => {
             element={user && (user.usertype ==="project" || )?<AdminRegRequests />}
           /> */}
 
-          <Route element={<ProtectedRoute />}>
+          <Route element={<AdminProtected />}>
           <Route
             path="/admin/transactions"
             element={<AdminTransactions />
@@ -128,7 +156,7 @@ const AppRoutes = () => {
           />
           </Route>
 
-          <Route element={<ProtectedRoute />}>
+          <Route element={<AdminProtected />}>
           <Route
             path="/admin/anouncements"
             element={<AdminAnnouncements />
@@ -136,14 +164,13 @@ const AppRoutes = () => {
           />
           </Route>
           {/* </Route> */}
-{/* ----------------------------------------- */}
 
             <Route
             path="/"
             element={<Home />
             }
           />
-   \
+   
           <Route element={<ProtectedRoute />}>
           <Route
             path="/feed"
@@ -165,21 +192,21 @@ const AppRoutes = () => {
           />
           </Route>
 
-          <Route >
+          <Route element={<ProtectedRoute />}>
           <Route
             path="/donor/transactions"
             element={<DonorTransaction />}
           />
           </Route>
 
-          <Route element={<ProtectedRoute />}>
+          <Route element={<CreatorProtectedRoute />}>
             <Route 
             path='/creator/projects'
             element={CreatorProjects}
             />
           </Route>
 
-          <Route element={<ProtectedRoute />}>
+          <Route element={<CreatorProtectedRoute />}>
           <Route
             path="/transactions"
             element={<CreatorTransaction />}

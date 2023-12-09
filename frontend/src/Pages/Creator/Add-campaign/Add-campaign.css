@@ -1,0 +1,27 @@
+
+.campaign-wrapper{
+    /* border: red 1px solid !important; */
+    width: 50%;
+    margin-top: 10%;
+    
+}
+
+@media screen and (max-width:768px) {
+    .campaign-wrapper{
+        width: 100%!important;
+        display: flex !important;;
+        flex-direction: column !important;
+    }
+    .headings-title{
+        font-size: 28px!important;
+    }
+    .campaigns-parent-div{
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    .form-add-project{
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+}

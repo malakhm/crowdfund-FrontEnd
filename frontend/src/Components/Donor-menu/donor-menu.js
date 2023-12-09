@@ -6,18 +6,19 @@ import {
   CDBSidebarMenu,
   CDBSidebarMenuItem,
 } from 'cdbreact';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { SiBuzzfeed } from "react-icons/si/index.esm.js";
 import { toast } from 'react-toastify';
 
 
 
 const DonorMenu = () => {
-
+const navigate = useNavigate()
   const handleLogout = (e) => {
 
     e.preventDefault()
     localStorage.clear();
+    navigate('/user/login')
     toast.success('Logged out successfully !')
 
   }
