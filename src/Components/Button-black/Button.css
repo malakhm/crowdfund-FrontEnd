@@ -1,0 +1,92 @@
+/* Big box in the middle of the page */
+.support-container {
+    width: 1500px;
+    height: 600px;
+    margin: 0 auto;
+    padding-top: 30px;
+    margin-top: 10em;
+    margin-left: 15em;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    background-color:#1E1E1E;
+    border: gray solid 0.5px ;
+    text-align: center;
+  }
+  
+  /* Input field */
+  .support-input {
+    border: 1px solid  #555454;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 40px;
+    background-color: #555454;
+    width: 1150px;
+    height: 28px;
+    margin-left: 35px;
+    color: #CAC5C1;
+    font-weight: 20px;
+    font-size: 20px;
+  }
+  
+  /* Send button */
+  .support-button {
+    /* background-color: yellow;
+    color: black;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px; */
+    background-color: #F3C21B;
+    
+    color: white;
+    border: none;
+    border-radius:10px;
+    height: 50px;
+    width: 200px;
+    font-size: 30px;
+    
+    margin-bottom: 40px;
+    margin-right: 55px;
+    font-weight: bolder;
+  }
+  
+  /* Focus border */
+  /* .support-input:focus {
+    outline: none;
+    border-color: yellow;
+  } */
+  @media (max-width: 768px) {
+    .support-container {
+      width: 90%;
+      height: auto;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .support-container {
+      height: auto;
+      margin-top: 10em;
+      margin-left: 2em;
+      width: 500px;
+    }
+    
+    .support-input {
+      width: 0%;
+      max-width: none;
+      margin-left: 0;
+      font-size: 16px;
+    }
+    
+    .support-button {
+      margin-right: 0;
+      font-size: 24px;
+    }
+  }
