@@ -19,6 +19,8 @@ import React from "react";
 
 // export default SendNotification;
 
+
+
 import './Notification.css';
 
 const Notification = ({ children, username, amount, campaign }) => {
@@ -32,4 +34,5 @@ const Notification = ({ children, username, amount, campaign }) => {
 };
 
 export default Notification;
+
 

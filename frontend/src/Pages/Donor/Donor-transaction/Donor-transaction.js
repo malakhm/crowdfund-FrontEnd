@@ -215,6 +215,7 @@ const DonorTransaction = () => {
 
   return (
     <div className='Transaction-main-container container d-flex flex-column'>
+
       <div className='transaction-stats-main d-flex'>
         <div className='Total-donations'>
           <h6>Total Donations</h6>
@@ -222,36 +223,39 @@ const DonorTransaction = () => {
         </div>
         <div className='Total-amount'>
           <h6>Total Amount</h6>
-            <p>$2000</p>
-          </div>
-
+          <p>${totalAmount}</p>
         </div>
-        <Notification>
-      <p><IoCheckmarkDoneCircle className='TRANSACTION-IS-DONE-ICON'/> You</p>
-        </Notification>
+      </div>
+      {donations.map((donation) => (
+  <Notification
+    key={donation.id}
+    username={donation.Username} // Update to donation.Username
+    amount={donation.amount}
+    campaign={
+      donation.Campaign && donation.Campaign.name
+        ? donation.Campaign.name
+        : 'Unknown Campaign'
+    }
+  >
+    <p>
+      {donation.Username} donated ${donation.amount} for{' '}
+      {donation.Campaign && donation.Campaign.name
+        ? donation.Campaign.name
+        : 'Unknown Campaign'}
+    </p>
+  </Notification>
+))}
 
-        <Notification>
-      <p><IoCheckmarkDoneCircle className='TRANSACTION-IS-DONE-ICON'/> You</p>
-        </Notification>
 
-        <Notification>
-      <p><IoCheckmarkDoneCircle className='TRANSACTION-IS-DONE-ICON'/> You</p>
-        </Notification>
 
-        <Notification>
-      <p><IoCheckmarkDoneCircle className='TRANSACTION-IS-DONE-ICON'/> You</p>
-        </Notification>
-        <Notification>
-      <p><IoCheckmarkDoneCircle className='TRANSACTION-IS-DONE-ICON'/> You</p>
-        </Notification>
-        <Notification>
-      <p><IoCheckmarkDoneCircle className='TRANSACTION-IS-DONE-ICON'/> You</p>
-        </Notification>
-    
     </div>
   );
 };
 
 export default DonorTransaction;
+
+;
+
+
 
 

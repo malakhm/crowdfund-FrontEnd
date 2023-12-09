@@ -1,11 +1,15 @@
 
-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import AdminCreators from "../Pages/Admin/Admin-creators/Admin-creators.js";
 import AdminDonors from "../Pages/Admin/Admin-donors/Admin-donors.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 import '../index.css'
 import Login from '../../src/Pages/Login/Login.js'
+
+
+
 import DetailsCard from '../Components/Details-card/Details-card.js'
 import SideBar from '../Components/Side-bar/Side-bar.js'
 import DonorMenu from "../Components/Donor-menu/donor-menu";
@@ -26,7 +30,15 @@ import ProtectedRoute from './ProtectedRoutes.js'
 import CreatorMenu from '../Components/Creator-menu/creator-menu.js';
 import AdminLogin from '../Pages/Login/LoginAdmin.js'
 import Home from '../Pages/Home/Home.js'
-
+import RegistrationOne from '../Pages/Registration/Registration-one/Registration-one.js'
+import RegistrationTwo from '../Pages/Registration/Registration-two/Registration-two.js'
+import  DonorProtectedRoute  from './DonorProtected.js';
+import CreatorProtectedRoute from './CreatorProtected.js'
+import AdminProtected from './AdminProtected.js'
+import { AuthContext } from '../Context/AuthContext.js';
+import { AdminContext } from '../Context/AdminContext.js';
+import { useContext } from 'react';
+import {toast} from 'react-toastify'
 const AppRoutes = () => {
   let menuComponent ;
   const {token,  user} = useContext(AuthContext)
@@ -65,19 +77,7 @@ else{
             }
           />
           </Route>
-          <Route element={<ProtectedRoute />}>
-          <Route
-            path="/registration1"
-            element={<RegistrationOne />}
-          />
-          </Route>
 
-          <Route element={<ProtectedRoute />}>
-          <Route
-            path="/registration2"
-            element={<RegistrationTwo />}
-          />
-          </Route>
 
           <Route
             path="/user/login"
@@ -192,7 +192,7 @@ else{
           />
           </Route>
 
-          <Route element={<ProtectedRoute />}>
+          <Route >
           <Route
             path="/donor/transactions"
             element={<DonorTransaction />}
