@@ -30,7 +30,7 @@ const Profile = () => {
   }
 console.log("test",data)
   return (
-    <section className="section-profile">
+    <section className="section-profile d-flex container">
       {/* Profile content */}
       <div className="Profile-img-section">
         <img src={ProfileImg} alt="Profile" />

@@ -25,9 +25,10 @@
     .Notification-component-main{
   
         background-color: #171717;
+        font-size: 11px !important;
     color: white;
-    width: 70%;
-    margin-left: 100px;
+    width: 80%;
+    margin-left: 70px;
    
     margin-bottom: 20px;
     

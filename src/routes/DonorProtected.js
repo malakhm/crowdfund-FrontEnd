@@ -1,4 +1,4 @@
-import { Navigate, Outlet } from "react-router-dom";
+import { Navigate, Outlet , useNavigate} from "react-router-dom";
 import { AuthContext } from "../Context/AuthContext.js";
 import {toast} from 'react-toastify';
 import { useContext } from "react";
@@ -8,10 +8,11 @@ import SideBar from '../Components/Side-bar/Side-bar.js'
 
 const DonorProtectedRoute = () => {
     const {token,  user} = useContext(AuthContext)
+    const navigate = useNavigate()
     // console.log(isDonor)
     // console.log(isCreator)
   
-    if(!user){toast.warning('you need to login !')}
+    if(!user){toast.warning('you need to login !');  navigate('/user/login')}
     else{
       // Check if the user is authenticated
       if (!token || (!user.isDonor || !user.confirmedByAdmin) ) {

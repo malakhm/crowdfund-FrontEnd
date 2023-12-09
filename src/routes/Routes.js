@@ -1,5 +1,5 @@
 
-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Routes , useNavigate} from 'react-router-dom';
 
 import AdminCreators from "../Pages/Admin/Admin-creators/Admin-creators.js";
 import AdminDonors from "../Pages/Admin/Admin-donors/Admin-donors.js";
@@ -39,7 +39,8 @@ const AppRoutes = () => {
   let menuComponent ;
   const {token,  user} = useContext(AuthContext)
   const {admin} = useContext(AdminContext)
-  if(!user){toast.warning('you need to login !')}
+  const navigate = useNavigate()
+  if(!user){toast.warning('you need to login !');  navigate('/user/login')}
 else{
   if(user.isDonor ){
     menuComponent = <SideBar><DonorMenu/></SideBar>
