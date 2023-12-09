@@ -226,13 +226,12 @@ const DonorTransaction = () => {
         </div>
       </div>
       {donations.map((donation) => (
-  <Notification key={donation.id}>
-    <p>
-      <IoCheckmarkDoneCircle className='TRANSACTION-IS-DONE-ICON' /> You donated ${donation.amount} for {donation.Campaign && donation.Campaign.name ? donation.Campaign.name : 'Unknown Campaign'}
-    </p>
-  </Notification>
-))}
-
+      <Notification key={donation.id} username={donation.Username} amount={donation.amount} campaign={donation.Campaign && donation.Campaign.name ? donation.Campaign.name : 'Unknown Campaign'}>
+        <p>
+          {donation.Username} donated ${donation.amount} for {donation.Campaign && donation.Campaign.name ? donation.Campaign.name : 'Unknown Campaign'}
+        </p>
+      </Notification>
+    ))}
 
     </div>
   );
