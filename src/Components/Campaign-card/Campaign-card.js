@@ -5,28 +5,29 @@ import Help from '../../Assets/help.webp'
 import { IoBookmarkOutline, IoBookmark } from "react-icons/io5";
 import ProgressBar from 'react-bootstrap/ProgressBar';
 
-const  Cards = () => {
-  const target = 9000
-  const amount = 4000
+const  Cards = (props) => {
+  const target = parseInt(props.target)
+  const amount = parseInt(props.amount)
     const now = parseInt((amount/target)*100)
   return (
 
         <div className="Campaign-Card-Component">
-      <img variant="top" src={Help} />
+      <img variant="top" src={props.image} />
+      {console.log(props.image)}
       <div className='Capmaign-Card-label'>
-        <p className='start-card-label'>start date :<b>2 March 2023</b></p><p className='start-card-label'>end date :<b>3 March 2023</b></p>
+        <p className='start-card-label'>start date :<b>{props.start_date}</b></p><p className='start-card-label'>end date :<b>{props.end_date}</b></p>
       </div>    
       <div className='Campaign-Card-Basic-Info'> 
       <div className='Campaign-Card-project-title-with-icon'>
-        <h3>Urgent Help</h3> 
+        <h3>{props.campaign_name}</h3> 
         <IoBookmark/>
                
       </div>
-      <div className='Campaign-Card-Credits'><p>By</p><h4>USAID</h4></div>
+      <div className='Campaign-Card-Credits'><p>By</p><h4>{props.creator}</h4></div>
       <div className='Campaign-Card-Descripton'>
-        <p className='Campaign-p-description'>jbwqdcsbqkjwckjdbcvjqb k sfvdvdfcvefce wdevcwevadcn wqjcb kiavbkeqjb...</p>
+        <p className='Campaign-p-description'>{props.description}</p>
         <ProgressBar animated now={now} label={`${now}%`} variant='warning text-dark'/>
-        <div className='Campaign-Card-stats'><p>$4000 raised of</p><h6>$9000</h6></div>
+        <div className='Campaign-Card-stats'><p>${props.amount} raised of</p><h6>${props.target}</h6></div>
       </div>
 
       

@@ -41,7 +41,9 @@ const AppRoutes = () => {
   const {token,  user} = useContext(AuthContext)
   const {admin} = useContext(AdminContext)
   const navigate = useNavigate()
-  if(!user){toast.warning('you need to login !');  navigate('user/login')}
+  if(!user){toast.warning('you need to login !'); 
+  
+  navigate('user/login')}
 else{
   if(user.isDonor ){
     menuComponent = <SideBar><DonorMenu/></SideBar>
@@ -210,7 +212,7 @@ else{
             element={<CreatorTransaction />}
           />
           </Route>
-          <Route element={<ProtectedRoute />}>
+          <Route element={<DonorProtectedRoute />}>
           <Route
             path="/details"
             element={<DetailsCard />}
