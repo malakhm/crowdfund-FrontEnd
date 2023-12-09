@@ -3,41 +3,34 @@ import "./Profile.css";
 import ProfileImg from "../../Assets/ProfileImg.jpg";
 import { useState , useEffect , useContext} from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import {AuthContext} from '../../Context/AuthContext'
+import { FaUserCircle } from "react-icons/fa";
 const Profile = () => {
-  const [data, setData] = useState([]);
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const fetchProfileData = async () => {
-      try {
-        const response = await axios.get(`http://localhost:8100/api/users/${user.id}`);
-        setData(response.data);
-        console.log(response.data)
-      } catch (error) {
-        // navigate('/user/login')
-        console.error('Error fetching profile data:', error);
-      }
-    };
+//function to split the date from time
+const splitDate = user.dob.split('T')[0];
 
-    fetchProfileData();
-  }, []);
 
-  if (data.length === 0) {
-    return <div>Loading...</div>;
-  }
-console.log("test",data)
+ 
+
+ 
+console.log("test",user)
   return (
-    <section className="section-profile d-flex container">
+    <>
+   
+    <section className="section-profile container">
       {/* Profile content */}
       <div className="Profile-img-section">
-        <img src={ProfileImg} alt="Profile" />
+        {/* <img src={ProfileImg} alt="Profile" /> */}
+        <FaUserCircle className='profile-icon-main'/>
         <h2>Profile</h2>
+        <Link to='/edit/profile' state={{id:user.id}}><button className='btn btn-warning button-edit-profile'>Edit Profile</button></Link>
       </div>
       
-        <div className="pp-profile" key={data.id}>
+        <div className="pp-profile" key={user.id}>
         <div className="General-INfo-Profile">
           <h2 className="h2-profile">General Info:</h2>
           <div className="info-columns-profile">
@@ -48,10 +41,10 @@ console.log("test",data)
               <h4 className="h4-profile">Gender:</h4>
             </div>
             <div className="right-column-profile">
-              <p className="p-profile">{data.first_name}</p>
-              <p className="p-profile">{data.last_name}</p>
-              <p className="p-profile">{data.dob}</p>
-              <p className="p-profile">{data.gender}</p>
+              <p className="p-profile">{user.first_name}</p>
+              <p className="p-profile">{user.last_name}</p>
+              <p className="p-profile">{splitDate}</p>
+              <p className="p-profile">{user.gender}</p>
             </div>
           </div>
         </div>
@@ -66,11 +59,11 @@ console.log("test",data)
             </div>
             <div className="right-column-profile">
               <p className="p-profile">
-                {data.isDonor ? 'Donor' : 'Project Creator'}
+                {user.isDonor ? 'Donor' : 'Project Creator'}
               </p>
-              <p className="p-profile">{data.phone_number}</p>
-              <p className="p-profile">{data.email}</p>
-              <p className="p-profile">{data.username}</p>
+              <p className="p-profile">{user.phone_number}</p>
+              <p className="p-profile">{user.email}</p>
+              <p className="p-profile">{user.username}</p>
             </div>
           </div>
         </div>
@@ -81,6 +74,7 @@ console.log("test",data)
         
   
     </section>
+    </>
   );
 };
 

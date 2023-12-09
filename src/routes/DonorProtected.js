@@ -12,7 +12,7 @@ const DonorProtectedRoute = () => {
     // console.log(isDonor)
     // console.log(isCreator)
   
-    if(!user){toast.warning('you need to login !');  navigate('/user/login')}
+    if(!user){toast.warning('you need to login !');  navigate('user/login')}
     else{
       // Check if the user is authenticated
       if (!token || (!user.isDonor || !user.confirmedByAdmin) ) {

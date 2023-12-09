@@ -31,6 +31,7 @@ import RegistrationTwo from '../Pages/Registration/Registration-two/Registration
 import  DonorProtectedRoute  from './DonorProtected.js';
 import CreatorProtectedRoute from './CreatorProtected.js'
 import AdminProtected from './AdminProtected.js'
+import EditProfile from '../Pages/Profile/Edit-profile.js'
 import { AuthContext } from '../Context/AuthContext.js';
 import { AdminContext } from '../Context/AdminContext.js';
 import { useContext } from 'react';
@@ -40,7 +41,7 @@ const AppRoutes = () => {
   const {token,  user} = useContext(AuthContext)
   const {admin} = useContext(AdminContext)
   const navigate = useNavigate()
-  if(!user){toast.warning('you need to login !');  navigate('/user/login')}
+  if(!user){toast.warning('you need to login !');  navigate('user/login')}
 else{
   if(user.isDonor ){
     menuComponent = <SideBar><DonorMenu/></SideBar>
@@ -216,6 +217,11 @@ else{
           />
           </Route>
 
+          <Route element={<ProtectedRoute />}>
+          <Route 
+            path='/edit/profile'
+            element= {<EditProfile/>}/>
+          </Route>
 
         </Routes>
         </>
