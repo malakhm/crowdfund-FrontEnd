@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState, useContext, useEffect } from 'react';
 import axios from 'axios';
 import {toast} from 'react-toastify'
 
@@ -18,7 +18,17 @@ export const AuthProvider = ({ children }) => {
     //                     gender: 'male',
     //                     isDonor: true,
     //                 }]
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState(() => {
+        // Try to get user from localStorage on initial load
+        const storedUser = localStorage.getItem('user');
+        return storedUser ? JSON.parse(storedUser) : null;
+      });
+    
+      useEffect(() => {
+        // Save user to localStorage whenever it changes
+        localStorage.setItem('user', JSON.stringify(user));
+      }, [user]);
+    
     const [isDonor, setIsDonor] = useState(null);
     const [isCreator, setIsCreator] = useState(null);
 
