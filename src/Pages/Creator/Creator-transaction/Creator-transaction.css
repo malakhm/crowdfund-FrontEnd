@@ -1,0 +1,10 @@
+@media (max-width: 768px) {
+    .Transaction-main-container{
+       width: 350px;
+       align-items: center !important;
+       justify-content: center !important;
+       
+     
+    }
+
+}

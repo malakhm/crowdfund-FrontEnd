@@ -1,0 +1,268 @@
+.section-profile {
+  width: 100%;
+  gap: 30px;
+  max-width: 1200px;
+  background-color: #1E1E1E;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  padding: 3%;
+  border-radius: 10px;  
+  border: gray solid 0.5px ;
+}
+
+.profile-icon-main{
+  font-size: 50px;
+}
+.Profile-img-section {
+  align-items: center;
+  color: #CAC5C1;
+  height: 50px !important;
+ 
+}
+/* .h4-profile{
+  margin-top: 8px;
+} */
+.Profile-img-section img {
+  border-radius: 50%;
+  width: 90%;
+  height: 100px;
+}
+
+
+.General-INfo-Profile {
+  color:#F3C21B;
+  font-size: 1.2em;
+
+}
+
+.Contact-account-Profile {
+  margin-bottom: 20px;
+  color:#F3C21B;
+  font-size: 1.2em;
+}
+
+.info-columns-profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 10px;
+  border: gray solid 0.5px ;
+}
+
+.left-column-profile,
+.right-column-profile {
+  width: 200px;
+  gap: 20px;
+
+  
+}
+.left-column-profile{
+  margin-bottom: 3%;
+  color:#F3C21B;
+}
+/* h4,
+p {
+  margin-bottom: 10px;
+} */
+.right-column-profile{
+margin-bottom: 80px;
+line-height: 1.5em; 
+color: #CAC5C1;
+}
+
+.pp-profile{
+  display: flex;
+  gap: 50px;
+  margin-top: 20%;
+  font-size: 15px;
+  height: min-content;
+}
+.p-profile{
+  line-height: 3;
+
+}
+.h4-profile{
+  line-height: 2.5;
+}
+
+.button-edit-profile{
+  width: 100px !important;
+  height: 50px !important;
+  
+}
+
+/* @media only screen and (max-width: 1200px) {
+  .section-profile {
+    padding: 60px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .section-profile {
+    grid-template-columns: 1fr;
+  }
+
+  .Profile-img-section {
+    grid-column: 1 / 2;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .section-profile {
+    padding: 40px;
+  }
+
+  .Profile-img-section img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .section-profile {
+    padding: 20px;
+    grid-gap: 20px;
+  }
+
+  .Profile-img-section img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .General-INfo-Profile,
+  .Contact-account-Profile {
+    font-size: 1em;
+  }
+} */
+
+
+/* @media only screen and (max-width: 1200px) {
+  .section-profile {
+    padding: 60px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .section-profile {
+    grid-template-columns: 1fr;
+    padding: 40px;
+  }
+
+  .Profile-img-section {
+    grid-column: unset;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .section-profile {
+    padding: 20px;
+  }
+
+  .Profile-img-section img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .section-profile {
+    
+    grid-gap: 0.2px;
+    padding-left: 30px;
+  }
+
+  .Profile-img-section img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .General-INfo-Profile,
+  .Contact-account-Profile {
+    font-size: 1em;
+  }
+  .pp-profile{
+    padding-right: 50px;
+    margin-right: 1em;
+    
+    flex-direction: space-between;
+    gap:80em;
+    line-height: 1em;
+  }
+  .Contact-account-Profile{
+    padding-right:40px;
+    margin-right: 19em;
+  }
+} */
+
+
+
+@media only screen and (max-width: 992px) {
+  .section-profile {
+    grid-template-columns: 1fr;
+    padding: 40px;
+  }
+
+  .Profile-img-section {
+    grid-column: unset;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .section-profile {
+    padding: 20px;
+  }
+  
+
+  .Profile-img-section  {
+    margin-bottom: 100px !important;
+    
+  }
+
+  .info-columns-profile {
+   margin-right: 200px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .section-profile {
+    grid-gap: 0.2px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .p-profile{
+    line-height: 3;
+  }
+  .h4-profile{
+    line-height: 3;
+  }
+
+  .Profile-img-section img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .General-INfo-Profile,
+  .Contact-account-Profile {
+    font-size: 1em;
+  }
+
+  .pp-profile {
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .Contact-account-Profile {
+    padding-right: 10px;
+    margin-right: 0;
+    padding-left: 10px;
+  }
+  .General-INfo-Profile{
+    padding-right: 10px;
+    margin-right: 0;
+   padding-left: 10px;
+  }
+}

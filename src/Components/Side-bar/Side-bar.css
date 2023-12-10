@@ -1,0 +1,9 @@
+.sidebar-component-main{
+    height: 100% !important;
+}
+@media screen and (max-width:500px) {
+    .sidebar-component-main{
+    
+        
+    }
+}

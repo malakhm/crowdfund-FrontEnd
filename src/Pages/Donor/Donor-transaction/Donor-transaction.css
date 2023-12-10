@@ -1,0 +1,47 @@
+.TRANSACTION-IS-DONE-ICON{
+    font-size: 22px;
+    color: var(--main-secondary-color);
+    
+}
+
+
+
+
+.Total-donations, .Total-amount{
+    display: flex;
+    flex-direction: column;
+    background-color: #171717;
+    color: white;
+    width: 200px;
+    height: 120px;
+    align-items: center;
+    justify-content: center;
+  
+
+}
+
+.Total-donations p, .Total-amount p {
+    color: var(--main-secondary-color);
+    display: flex;
+    align-self: center;
+    justify-self: center;
+}
+
+@media screen and (max-width: 768px){
+    .transaction-stats-main{
+        margin-left: 20%;
+    }
+    
+}
+
+.transaction-stats-main{
+    gap: 50px !important;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 5%;
+}
+
+.notifications-wrapper-div{
+    margin-top: 10%;
+}
