@@ -3,7 +3,8 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import './Add-campaign.css';
 import Buttony from '../../../Components/Button-yellow/Button';
 import axios from 'axios'
-import { useState } from 'react';
+import { AuthContext } from '../../../Context/AuthContext';
+import { useState, useContext } from 'react';
 const AddCampaign = () => {
   const [campaign_name, setCampaignName] = useState("")
   const [description, setDescription] = useState("")
@@ -12,7 +13,11 @@ const AddCampaign = () => {
   const [start_date, setStartDate] = useState("")
   const [end_date, setEndDate] = useState("")
   const [UserId, setUserId] = useState("")
-  
+  const {token} = useContext(AuthContext)
+  const headers = {
+    Authorization: `Bearer ${token}`,
+    // Other headers if needed
+  };
   const handleSubmit = async (e) => {
 
     e.preventDefault();
@@ -32,7 +37,7 @@ try {
       headers: {
         'Content-Type': 'multipart/form-data'
       }
-    })
+    },{ headers })
     console.log(response);
 }
 catch (error){

@@ -32,6 +32,7 @@ import  DonorProtectedRoute  from './DonorProtected.js';
 import CreatorProtectedRoute from './CreatorProtected.js'
 import AdminProtected from './AdminProtected.js'
 import EditProfile from '../Pages/Profile/Edit-profile.js'
+import AddCampaign from '../Pages/Creator/Add-campaign/Add-campaign.js'
 import { AuthContext } from '../Context/AuthContext.js';
 import { AdminContext } from '../Context/AdminContext.js';
 import { useContext } from 'react';
@@ -41,10 +42,8 @@ const AppRoutes = () => {
   const {token,  user} = useContext(AuthContext)
   const {admin} = useContext(AdminContext)
   const navigate = useNavigate()
-  if(!user){toast.warning('you need to login !'); 
   
-  navigate('user/login')}
-else{
+ if(user){
   if(user.isDonor ){
     menuComponent = <SideBar><DonorMenu/></SideBar>
   }
@@ -52,7 +51,7 @@ else{
     menuComponent = <SideBar><CreatorMenu/></SideBar>
   }
  
-}
+ }
   
 
 
@@ -202,10 +201,18 @@ else{
           <Route element={<CreatorProtectedRoute />}>
             <Route 
             path='/creator/projects'
-            element={CreatorProjects}
+            element={<CreatorProjects/>}
             />
           </Route>
 
+          <Route element={<CreatorProtectedRoute />}>
+            <Route 
+            path='/creator/add'
+            element={<AddCampaign/>}
+            />
+          </Route>
+
+          
           <Route element={<CreatorProtectedRoute />}>
           <Route
             path="/transactions"
