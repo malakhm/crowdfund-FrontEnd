@@ -180,82 +180,70 @@
 // export default DonorTransaction;
 
 
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import Notification from '../../../Components/Notification/Notification';
-import { IoCheckmarkDoneCircle } from 'react-icons/io5';
-import './Donor-transaction.css';
 
+import React, { useContext } from 'react'
+import Notification from '../../../Components/Notification/Notification'
+import Transaction from '../../../Components/Transaction/Transaction.js'
+import { useState, useEffect } from 'react';
+import { AuthContext } from '../../../Context/AuthContext';
+import axios from 'axios';
+import {toast} from 'react-toastify'
+import './Donor-transaction.css'
 const DonorTransaction = () => {
-  const [donations, setDonations] = useState([]);
-  const [totalDonations, setTotalDonations] = useState(0);
-  const [totalAmount, setTotalAmount] = useState(0);
+
+  const {user, token} = useContext(AuthContext)
+  const [data, setData] = useState([])
+  const [first, setFirst] = useState({})
+  const headers = {
+    Authorization: `Bearer ${token}`,
+   
+  };
+  const fetchData = async()=>{
+    try{
+    const response = await axios.get(`http://localhost:8100/api/donationRoute/donor/${user.id}`, { headers })
+    if(response.status === 200){
+      setData(response.data.data)
+    }}
+    catch(error){
+      toast.error('something went wrong ERROR')
+    }
+
+  }
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get('http://localhost:8100/api/donationRoute'); // Assuming this is the endpoint to fetch all donations
-        const donationData = response.data.data;
-
-        setDonations(donationData);
-
-        // Calculate total donations and total amount
-        let totalDonationCount = donationData.length;
-        let totalDonationAmount = donationData.reduce((acc, donation) => acc + donation.amount, 0);
-
-        setTotalDonations(totalDonationCount);
-        setTotalAmount(totalDonationAmount);
-      } catch (error) {
-        console.error('Error fetching donation data:', error);
-      }
-    };
-
-    fetchData();
+    const fetchFirst = async()=>{
+      const res =await axios.get(`http://localhost:8100/api/donationRoute/donation/sum/${user.id}`, { headers })
+      setFirst(res.data)}
+    
+    fetchFirst()
+    fetchData()
   }, []);
 
   return (
+    <>
+    
     <div className='Transaction-main-container container d-flex flex-column'>
-
-      <div className='transaction-stats-main d-flex'>
-        <div className='Total-donations'>
-          <h6>Total Donations</h6>
-          <p>{totalDonations}</p>
-        </div>
-        <div className='Total-amount'>
+        <div className='transaction-stats-main d-flex '>
+          <div className='Total-donations'>
+            <h6>Total Donations</h6>
+            <p>{first.count}</p>
+          </div>
+          <div className='Total-amount'>
           <h6>Total Amount</h6>
-          <p>${totalAmount}</p>
+            <p>${first.sum}</p>
+          </div>
         </div>
-      </div>
-      {donations.map((donation) => (
-  <Notification
-    key={donation.id}
-    username={donation.Username} // Update to donation.Username
-    amount={donation.amount}
-    campaign={
-      donation.Campaign && donation.Campaign.name
-        ? donation.Campaign.name
-        : 'Unknown Campaign'
-    }
-  >
-    <p>
-      {donation.Username} donated ${donation.amount} for{' '}
-      {donation.Campaign && donation.Campaign.name
-        ? donation.Campaign.name
-        : 'Unknown Campaign'}
-    </p>
-  </Notification>
-))}
+        <div className='notifications-wrapper-div '>
 
-
-
+       {data.map((item)=>(
+        <Notification key={item.id} amount={item.amount}
+        campaignName={item.Campaign.campaign_name}>You</Notification>
+        
+ ))}
+        </div>
     </div>
-  );
-};
+    </>
+  )
+}
 
-export default DonorTransaction;
-
-;
-
-
-
-
+export default DonorTransaction
