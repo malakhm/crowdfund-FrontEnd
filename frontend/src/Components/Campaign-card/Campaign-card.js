@@ -9,7 +9,7 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 const  Cards = () => {
   const [campaignCard, setcampaignCard] = useState([])
   const target = 9000
-  const amount = 4000
+  const amount = 4000 
   const now = parseInt((amount/target)*100);
 
     useEffect(() => {
