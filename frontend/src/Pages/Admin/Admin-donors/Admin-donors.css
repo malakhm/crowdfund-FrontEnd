@@ -1,0 +1,38 @@
+.donors-page-heading {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  color: var(--main-light-shaded-color);
+  margin: 0 0 0 5px;
+}
+
+.users-icon-in-donors-page {
+  width: 22px !important;
+  height: 16px !important;
+}
+
+.donors-page-heading-spacer {
+  width: 9px;
+}
+
+.donors-page-word {
+  font-size: 20px;
+}
+
+.Admin-Donors-table-main{
+  margin-left: 20% !important;
+  justify-self: center;
+  align-self: center;
+  margin-top: 5%;
+}
+
+.Table-container-component-wrapper{
+  width: 80% !important;
+  
+  
+}
+
+.table-icon-main{
+  color: #f3c21b;
+}
+

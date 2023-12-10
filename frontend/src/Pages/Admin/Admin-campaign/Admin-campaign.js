@@ -73,9 +73,9 @@ const AdminCampaign = () => {
   return (
     <>
       <div className="campaign-main-admin container d-flex flex-column">
-        <h1 className="donors-page-heading ">
+        <h1 className="donors-page-heading">
           <img
-            className="campaign-icon-in-donors-page"
+            className="campaign-icon-in-campaign-page"
             src={campaign_icon}
             alt="campaign icon"
           />

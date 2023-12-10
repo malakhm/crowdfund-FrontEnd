@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-
+import {Link} from 'react-router-dom'
 import "./Accepted-Campaign-card.css";
 import Help from "../../Assets/help.webp";
 import { IoBookmarkOutline, IoBookmark } from "react-icons/io5";
@@ -34,7 +34,7 @@ const AcceptedCampaignCard = ({ campaign }) => {
           <p>By</p>
           {users.map((user)=> {
             if (user.isCreator && user.id === campaign.userId) {
-              return <h4 key={user.id}>{user.username}</h4>
+              return <Link className="Campaign-Link-name" to={'/admin/creators'} key={user.id}>{user.username}</Link>
             }
           })}
         </div>

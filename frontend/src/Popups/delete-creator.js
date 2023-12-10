@@ -5,7 +5,7 @@ import Box from "@mui/material/Box";
 import Popper from "@mui/material/Popper";
 import { useSpring, animated } from "@react-spring/web";
 // import { FaDeleteLeft } from "react-icons/fa6";
-import Buttony from "../Components/Button-yellow/Button.js";
+// import Buttony from "../Components/Button-yellow/Button.js";
 import Buttonb from "../Components/Button-black/Button.js";
 import Button from "react-bootstrap/Button";
 import "./Styles/Delete.css";
@@ -40,7 +40,7 @@ Fade.propTypes = {
   onExited: PropTypes.func,
 };
 
-const CreatorDeletePopper = ({creator, cb}) => {
+const CreatorDeletePopper = ({ creator, cb }) => {
   const [open, setOpen] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -61,7 +61,7 @@ const CreatorDeletePopper = ({creator, cb}) => {
       cb();
     }
   };
-// console.log("this is row in popper: ", row) //for checking
+  // console.log("this is row in popper: ", row) //for checking
 
   return (
     <div>
@@ -85,7 +85,11 @@ const CreatorDeletePopper = ({creator, cb}) => {
 
               <form className="button-container-main container d-flex">
                 <Buttonb type="submit">No</Buttonb>
-                <button className="btn btn-warning" type="reset" onClick = {() => handlecreatorDelete(creator.id)}>
+                <button
+                  className="btn btn-warning"
+                  type="reset"
+                  onClick={() => handlecreatorDelete(creator.id)}
+                >
                   <b>Yes</b>
                 </button>
               </form>

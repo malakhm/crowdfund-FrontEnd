@@ -4,11 +4,16 @@
   margin: 3%;
 }
 
+.Campaign-Link-name {
+  margin-left: 5px;
+  color: white;
+}
 
 .Campaign-Card-Component {
 
   display: flex;
   flex-direction: column;
+  height: 450px;
   width: 300px;
   margin-top: 2%;
   

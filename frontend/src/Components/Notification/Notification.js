@@ -1,12 +1,13 @@
 
 import React from "react";
+import { Link } from 'react-router-dom';
 // import io from "socket.io-client";
 
 // const socket = io("http://localhost:8100");
 
 // const SendNotification = () => {
 //   const sendNotification = () => {
-//     socket.emit("send_notification", { notification_message: "hello" });
+//     socket.emit("send_notification", { notification_message: {source_user: "put name of user here from authcontext", message_text: "put notofication here"}});
 //   };
 
 //   return (
@@ -20,12 +21,16 @@ import React from "react";
 // export default SendNotification;
 
 import './Notification.css'
-const Notification = ({ children }) => {
+
+
+
+const Notification = ({ children, donation }) => {
   return (
     <div className='Notification-component-main container d-flex justify-self-center'>
+      <p className='amount-of-money-transaction'>#{donation.id}</p>
         <div className='single-notification container d-flex justify-self-center'>
-            { children } donated <p className='amount-of-money-transaction'>$1000</p> 
-            for<p>Planting Project</p> </div>
+            <Link to={'/admin/donors'} className='amount-of-money-transaction'>{ children }</Link> donated <p className='amount-of-money-transaction'>${donation.amount}</p> 
+            for the campaign<Link to={'/admin/campaigns'} className='amount-of-money-transaction'>{donation.Campaign.campaign_name}</Link>on<p className='amount-of-money-transaction'>{donation.createdAt.split("T")[0]}</p></div>
     </div>
   )
 }

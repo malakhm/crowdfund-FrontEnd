@@ -52,9 +52,10 @@ const MessageDeletePopper = ({message, cb}) => {
   const canBeOpen = open && Boolean(anchorEl);
   const id = canBeOpen ? "spring-popper" : undefined;
 
-  const handlemessageDelete = async (id) => {
+  const handlemessageDelete = async (e, id) => {
+    e.preventDefault();
     try {
-      await axios.delete(`http://localhost:8100/api/users/${id}`);
+      await axios.delete(`http://localhost:8100/api/messages/${id}`);
     } catch (error) {
       console.log("error deleting message: ", error);
     } finally {
@@ -85,7 +86,7 @@ const MessageDeletePopper = ({message, cb}) => {
 
               <form className="button-container-main container d-flex">
                 <Buttonb type="submit">No</Buttonb>
-                <button className="btn btn-warning" type="reset" onClick = {() => handlemessageDelete(message.id)}>
+                <button className="btn btn-warning" type="reset" onClick = {(e) => handlemessageDelete(e,message.id)}>
                   <b>Yes</b>
                 </button>
               </form>

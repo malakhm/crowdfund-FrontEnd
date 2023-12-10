@@ -104,7 +104,7 @@ const AdminDonors = () => {
           alt="users icon"
         />
         <p className="donors-page-heading-spacer"></p>
-        <p className="donors-page-word">Creators</p>
+        <p className="donors-page-word">Donors</p>
       </h1>
       <TableContainer
         component={Paper}
