@@ -11,23 +11,7 @@ function Notifications() {
       <Notification>Kamal</Notification>
       <Notification>Kamal</Notification>
       <Notification>Kamal</Notification>
-      <Notification>Kamal</Notification>
-      <Notification>Kamal</Notification>
-      <Notification>Kamal</Notification>
-      <Notification>Kamal</Notification>
-      <Notification>Kamal</Notification>
-      <Notification>Kamal</Notification>
-      <Notification>Kamal</Notification>
-      <Notification>Kamal</Notification>
-      <Notification>Kamal</Notification>
-      <Notification>Kamal</Notification>
-      <Notification>Kamal</Notification>
-      <Notification>Kamal</Notification>
-      <Notification>Kamal</Notification>
-      <Notification>Kamal</Notification>
-      <Notification>Kamal</Notification>
-      <Notification>Kamal</Notification>
-      <Notification>Kamal</Notification>
+   
    
     </div>
   )

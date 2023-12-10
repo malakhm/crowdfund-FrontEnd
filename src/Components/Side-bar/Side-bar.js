@@ -16,7 +16,7 @@ const Sidebar = ( { children }) => {
     <div className='.sidebar-component-main' style={{ display: 'flex', overflow: 'scroll initial'}}>
       <CDBSidebar textColor="#fff" backgroundColor="#333">
         <CDBSidebarHeader prefix={<i className="fa fa-bars fa-large"></i> }>
-          <a href="/feed" className="text-decoration-none" style={{ color: 'inherit' }}>
+          <a href="/" className="text-decoration-none" style={{ color: 'inherit' }}>
             <img src={Logo} className='img-fluid   bg-transparent'/>
           </a>
         </CDBSidebarHeader>

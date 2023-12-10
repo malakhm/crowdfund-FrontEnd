@@ -40,7 +40,7 @@ try {
       }
     },{ headers })
     toast.success('campaign added successfully !')
-    navigate('/feed')
+    navigate('/')
     console.log(response);
 }
 catch (error){

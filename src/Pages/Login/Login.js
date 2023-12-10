@@ -49,7 +49,7 @@ const Login = () => {
     })
     await fetchUserData()
 
-    navigate('/feed')
+    navigate('/')
     setUser(response.data)
     console.log(response.data)
     toast.success("Successful Login !", {
@@ -69,10 +69,6 @@ const Login = () => {
     }
   }
 }
-    
-
- 
-
  return (
    <div className="login-container custom-container vh-100 w-100">
      <div className="Logo-img">
@@ -111,7 +107,7 @@ const Login = () => {
      <div className="btn btn-warning d-flex justify-content-center align-self-center w-50">
      <Button variant="bg-warning" onClick={handleSubmit}><b>Login Now</b></Button>
      </div>
-     <h6 className="custom-h6-input-login text-white d-flex justify-content-center">Don't Have an Account?<a className="custom-anchor-tag-login" href={'/'}>Sign up</a></h6>
+     <h6 className="custom-h6-input-login text-white d-flex justify-content-center">Don't Have an Account?<a className="custom-anchor-tag-login" href={'/home'}>Sign up</a></h6>
      </form>
    </div>
  );

@@ -25,7 +25,7 @@ const navigate = useNavigate()
   return (
     <div>
       <CDBSidebarMenu >
-        <NavLink exact to="/feed" activeClassName="activeClicked">
+        <NavLink exact to="/" activeClassName="activeClicked">
           <CDBSidebarMenuItem icon='seedling' className='menu-list-item-color'>Feed</CDBSidebarMenuItem>
         </NavLink>
         <NavLink exact to="/profile" activeClassName="activeClicked">

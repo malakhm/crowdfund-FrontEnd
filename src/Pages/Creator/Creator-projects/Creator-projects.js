@@ -9,7 +9,8 @@ import { FaDeleteLeft } from "react-icons/fa6";
 import './Creator-projects.css'
 import '../../Feed/Feed.css'
 import Swal from 'sweetalert2'
-
+import Button from 'react-bootstrap/esm/Button.js';
+import { Link } from 'react-router-dom';
 const CreatorProjects = () => {
 
   const {token, user} = useContext(AuthContext)
@@ -70,8 +71,10 @@ const CreatorProjects = () => {
   return (
     <>
     
-    <div className='Feed-main-Container container d-flex '>
-    
+    <div className='Feed-main-Container container d-flex flex-column'>
+    <div className='button-for-adding' ><Link to='/creator/add'><Button className='btn btn-warning'>Add A Project</Button></Link></div>
+      
+    <div className='main-Container-cards  d-flex justify-content-around'>
       {data.map((item)=>(
         <div className='Creator-main-Card '>
         <div className='creator-main-card-controls d-flex justify-self-between '>
@@ -96,7 +99,7 @@ const CreatorProjects = () => {
      
 
       ))}
-      
+      </div>
     {/* <ul className='Pagination-Feed'>1.2.3.4</ul> */}
     </div>
     </>

@@ -36,6 +36,7 @@ console.log(data)
 
   
     <div className='Feed-main-Container container d-flex '>
+   
     {data.map((item)=>(
       console.log(item.user),
       
@@ -54,8 +55,9 @@ console.log(data)
              
             />
         </Link>
-    ))}
+    ))
    
+  }
 
 
 

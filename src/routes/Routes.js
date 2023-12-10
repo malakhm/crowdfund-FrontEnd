@@ -165,14 +165,14 @@ const AppRoutes = () => {
           {/* </Route> */}
 
             <Route
-            path="/"
+            path="/home"
             element={<Home />
             }
           />
    
           <Route element={<ProtectedRoute />}>
           <Route
-            path="/feed"
+            path="/"
             element={<Feed />}
           />
           </Route>
