@@ -64,7 +64,6 @@ Fade.propTypes = {
       
               <form  className='button-container-main container d-flex'>
                 <Buttonb type="submit">No</Buttonb>
-                <Buttony type="reset"><b>Yes</b></Buttony>
               </form>
             
      

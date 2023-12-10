@@ -33,7 +33,7 @@ const Login = () => {
       const response = await axios.post('http://localhost:8100/api/auth/signin',
     {
      username,
-     password,
+     password
     }
     
   );
