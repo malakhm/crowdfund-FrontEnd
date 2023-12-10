@@ -1,3 +1,4 @@
+import Feed from './Pages/Feed/Feed.js';
 import AppRoutes from './routes/Routes.js'
 
 const App = () => {
@@ -6,7 +7,8 @@ const App = () => {
   return (
    
       <div className="App">
-        <AppRoutes/>
+        {/* <AppRoutes/> */}
+        <Feed />
       </div>
   
 

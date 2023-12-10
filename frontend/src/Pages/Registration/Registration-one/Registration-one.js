@@ -28,7 +28,7 @@ const RegistrationOne = () => {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [dob, setDob] = useState("");
-  const [gender, setGender] = useState("");
+  const [gender, setGender] = useState("Gender");
   const [role, setRole] = useState(null);
 
   // Accessing data from link state object
@@ -174,7 +174,7 @@ const RegistrationOne = () => {
             {/* Gender */}
             <Dropdown className="align-self-center">
               <Dropdown.Toggle variant="bg-transparent text-white" id="dropdown-basic">
-                Gender
+                {gender}
               </Dropdown.Toggle>
     
               <Dropdown.Menu>
@@ -188,7 +188,7 @@ const RegistrationOne = () => {
               {/* <Buttony type="submit" name="next"><b>Next</b></Buttony> */}
   <Link to="/registration2" state={{ role: role, firstName:firstName, lastName:lastName, phone:phone, email:email, dob:dob,gender:gender}}>
              
-          <Buttony type="submit" name="next"><b>Next</b></Buttony>
+          <Buttony type="submit" name="next" className={"btn btn-warning"}><b>Next</b></Buttony>
         </Link>
             </div>
     
