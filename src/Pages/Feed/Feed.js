@@ -6,6 +6,7 @@ import  { useState , useEffect, useContext} from 'react';
 import { AuthContext } from '../../Context/AuthContext';
 import axios from 'axios';
 import './Feed.css'
+import { toast } from 'react-toastify';
 const Feed = () => {
   const {token} = useContext(AuthContext)
   const [data, setData] = useState([])
@@ -14,9 +15,17 @@ const Feed = () => {
     // Other headers if needed
   };
   const fetchData = async ()=>{
-    const response = await axios.get(`http://localhost:8100/api/campaignRoute/getAll`,{ headers })
+    try{
+      const response = await axios.get(`http://localhost:8100/api/campaignRoute/getAllVisible`,{ headers })
     setData(response.data.data)
+    
+
+    }catch(err){
+      toast.warning('no campaigns Found')
+    }
+    
   }
+  
 
   useEffect(()=>{
     fetchData()

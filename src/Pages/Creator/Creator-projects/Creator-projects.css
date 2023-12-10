@@ -1,14 +1,21 @@
 .creator-main-card-controls {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
 }
 
 .creator-main-card-edit, .creator-main-card-delete{
 
     width: 32px !important;
+    margin-bottom: -15px;
 }
 .document-icon{
     font-size: 22px !important;
     align-self: center;
+}
+
+.class-status{
+    font-size: 72px;
+ 
+   
 }

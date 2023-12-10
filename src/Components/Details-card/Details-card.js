@@ -51,10 +51,12 @@ const DetailsCard = () => {
     const [data, setData] = useState('')
     const [donors, setDonors] = useState([])
     const { item } = location.state
+    console.log(item)
     //calculate the percentage of collected amount
     const target = parseInt(item.target)
     const amount = parseInt(item.amount)
     const now = parseInt((amount / target) * 100)
+    
     const headers = {
         Authorization: `Bearer ${token}`,
         // Other headers if needed
@@ -105,8 +107,8 @@ const DetailsCard = () => {
     return (
         <div className='Details-Card-Main-Container container d-flex justify-self-center'>
             <div className='Details-Card-left-side'>
-                <h1>Urgent Help</h1>
-                <img src={item.image} />
+                <h1>{item.campaign_name}</h1>
+                <img src={item.campaign_image} />
                 <p>{item.description}</p>
             </div>
             <div className='Details-Card-right-side'>
