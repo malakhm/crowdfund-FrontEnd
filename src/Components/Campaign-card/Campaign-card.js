@@ -9,6 +9,7 @@ const  Cards = (props) => {
   const target = parseInt(props.target)
   const amount = parseInt(props.amount)
     const now = parseInt((amount/target)*100)
+    console.log(props.creator)
   return (
 
         <div className="Campaign-Card-Component">

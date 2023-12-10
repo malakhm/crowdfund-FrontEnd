@@ -5,24 +5,26 @@ import Buttony from '../../../Components/Button-yellow/Button';
 import axios from 'axios'
 import { AuthContext } from '../../../Context/AuthContext';
 import { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 const AddCampaign = () => {
+  const navigate = useNavigate()
   const [campaign_name, setCampaignName] = useState("")
   const [description, setDescription] = useState("")
   const [campaign_image, setCampaignImage] = useState("")
   const [target, setTarget] = useState("")
   const [start_date, setStartDate] = useState("")
   const [end_date, setEndDate] = useState("")
-  const [UserId, setUserId] = useState("")
-  const {token} = useContext(AuthContext)
+  const {token, user} = useContext(AuthContext)
   const headers = {
     Authorization: `Bearer ${token}`,
     // Other headers if needed
   };
   const handleSubmit = async (e) => {
-
+ 
     e.preventDefault();
 try {
-
+  
     const formData = new FormData();
   
     formData.append("campaign_name", campaign_name)
@@ -31,17 +33,19 @@ try {
     formData.append("target", target)
     formData.append("start_date", start_date)
     formData.append("end_date", end_date)
-    formData.append("UserId", UserId)
 
-    const response = await axios.post("http://localhost:8100/api/campaignRoute/post",formData,{
+    const response = await axios.post(`http://localhost:8100/api/campaignRoute/post/${user.id}`,formData,{
       headers: {
         'Content-Type': 'multipart/form-data'
       }
     },{ headers })
+    toast.success('campaign added successfully !')
+    navigate('/feed')
     console.log(response);
 }
 catch (error){
   console.log(error)
+  toast.error('something went wrong !!!!')
 }
 
   }
@@ -126,14 +130,7 @@ catch (error){
         </div>
        </div>
      </div>
-     <input
-           type="text"
-           className="form-control bg-transparent custom-input-loginPage text-white p-3"
-           id="formGroupExampleInput"
-           placeholder="User Id"
-            value={UserId}
-            onChange={(e) => setUserId(e.target.value)}
-      />
+  
 
      </div>
         <Buttony><b>Save</b></Buttony>

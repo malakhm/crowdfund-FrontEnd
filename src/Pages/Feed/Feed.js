@@ -28,13 +28,16 @@ console.log(data)
   
     <div className='Feed-main-Container container d-flex '>
     {data.map((item)=>(
+      console.log(item.user),
+      
         <Link to="/details" state= {{item:item}}style={{ textDecoration: 'none' ,color:'#333333'}}> 
             <Cards 
+            
             key={item.id}
             campaign_name = {item.campaign_name}
             description = {item.description}
             image = {item.campaign_image}
-            creator = {item.user.username}
+            creator = {item.user.username}//should be item.user.username
             start_date = {item.start_date}
             end_date = {item.end_date}
             amount = {item.amount}
