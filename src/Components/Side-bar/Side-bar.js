@@ -31,7 +31,7 @@ const Sidebar = ( { children }) => {
               padding: '20px 5px',
             }}
           >
-            Sidebar Footer
+            @copyright 2023
           </div>
         </CDBSidebarFooter>
       </CDBSidebar>

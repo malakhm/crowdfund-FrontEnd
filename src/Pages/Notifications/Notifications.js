@@ -36,9 +36,11 @@ console.log(data)
         <div className='notifications-wrapper-div '>
 
           {data.map((item)=>(
+            item.CampaignId?
+          
           <Notification key={item.id} amount={item.amount}
           campaignName={item.Campaign.campaign_name}>{item.user.username}</Notification>
-
+:toast.error('why!!!!!!!!!!!')
           ))}
  </div>
       

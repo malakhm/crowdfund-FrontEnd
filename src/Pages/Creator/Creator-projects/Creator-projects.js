@@ -28,8 +28,12 @@ const CreatorProjects = () => {
       iconHtml: "?",
       confirmButtonText: "Delete",
       cancelButtonText: "Cancel",
+      background: '#1a1a1a',
       showCancelButton: true,
       showCloseButton: true,
+      
+      confirmButtonColor: '#F3C21B', // Color for the confirm button
+    customClass:{title: 'dark-mode-text',text: 'dark-mode-text'}
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
@@ -38,7 +42,10 @@ const CreatorProjects = () => {
           Swal.fire({
             title: "Deleted!",
             text: "Your file has been deleted.",
-            icon: "success"
+            icon: "success",
+            background: '#1a1a1a',
+            customClass:{title: 'dark-mode-text',text: 'dark-mode-text'}
+
           });
         } catch (err) {
           console.log(err);
