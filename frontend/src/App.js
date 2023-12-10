@@ -5,7 +5,7 @@ const App = () => {
 
   
   return (
-   
+    // <Router>
       <div className="App">
         {/* <AppRoutes/> */}
         <Feed />
@@ -14,4 +14,5 @@ const App = () => {
 
   );
 }
+
 export default App;
