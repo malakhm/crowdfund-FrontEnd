@@ -1,19 +1,14 @@
-import React, { createContext, useState, useContext } from 'react';
-import axios from 'axios';
-import {toast} from 'react-toastify'
+import React, { createContext, useState, useContext } from "react";
+import axios from "axios";
+import { toast } from "react-toastify";
 
-
-
-export const AuthContext = createContext(null) ; 
+export const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
-    const [isDonor, setIsDonor] = useState(null);
-    const [isCreator, setIsCreator] = useState(null);
-
     const [token, SetToken] = useState(localStorage.getItem('token'));
 
-    console.log('from AuthProvider: ', token)
+  // console.log("from AuthProvider: ", token);
 
     const fetchUserData = async () => {
         try {
@@ -24,20 +19,22 @@ export const AuthProvider = ({ children }) => {
         }}
         catch(err) {
           
-            console.error(err)
+            setUser(null);
         }
        
     };
 
-console.log('from AuthProvider: ',user)
+  // console.log("from AuthProvider: ", user);
 
-    return (
-        <AuthContext.Provider value={{ user, setUser,token, SetToken,fetchUserData }}>
-            {children}
-        </AuthContext.Provider>
-    );
+  return (
+    <AuthContext.Provider
+      value={{ user, setUser, token, SetToken, fetchUserData }}
+    >
+      {children}
+    </AuthContext.Provider>
+  );
 };
 
-export const useAuth = ()=>{
-    return useContext(AuthContext)
-}
+export const useAuth = () => {
+  return useContext(AuthContext);
+};

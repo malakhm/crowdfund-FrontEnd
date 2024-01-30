@@ -1,12 +1,12 @@
 import React, {useContext} from "react";
-
-import "./Campaign-card.css";
+import {Link} from 'react-router-dom'
+import "./Accepted-Campaign-card.css";
 import Help from "../../Assets/help.webp";
 import { IoBookmarkOutline, IoBookmark } from "react-icons/io5";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import { UserContext } from "../../Context/userContext";
 
-const Cards = ({ campaign }) => {
+const AcceptedCampaignCard = ({ campaign }) => {
   console.log("this is campaign in cards: ", campaign)
   const { users } = useContext(UserContext);
   const target = campaign.target;
@@ -34,7 +34,7 @@ const Cards = ({ campaign }) => {
           <p>By</p>
           {users.map((user)=> {
             if (user.isCreator && user.id === campaign.userId) {
-              return <h4 key={user.id}>{user.username}</h4>
+              return <Link className="Campaign-Link-name" to={'/admin/creators'} key={user.id}>{user.username}</Link>
             }
           })}
         </div>
@@ -58,4 +58,4 @@ const Cards = ({ campaign }) => {
   );
 };
 
-export default Cards;
+export default AcceptedCampaignCard;

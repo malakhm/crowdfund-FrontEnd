@@ -1,0 +1,12 @@
+.campaign-icon-in-requests-page {
+  height: 24px !important;
+  width: 24px !important;
+}
+
+.rquests-page-heading {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: baseline !important;
+  color: var(--main-light-shaded-color) !important;
+  margin: 0 0 0 5px !important;
+}

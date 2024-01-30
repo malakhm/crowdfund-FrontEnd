@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import axios from "axios";
 import "./Profile.css";
 import ProfileImg from "../../Assets/ProfileImg.jpg";
 import { useState , useEffect , useContext} from 'react';

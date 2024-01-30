@@ -1,29 +1,27 @@
-import React from 'react'
-import { styled } from '@mui/material/styles';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell, { tableCellClasses } from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
+import React, { useState, useEffect, useCallback } from "react";
+import axios from "axios";
+import { styled } from "@mui/material/styles";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell, { tableCellClasses } from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
 import users_icon from "../Admin-assets/users-icon.png";
 import DeletePopper from '../../../Popups/delete.js';
 import Button from 'react-bootstrap/Button';
-import SideBar from '../../../Components/Side-bar/Side-bar.js'
-import AdminMenu from '../../../Components/Admin-menu/admin-menu'
 const primary = {
-  main: '#333333',
-  light: '#f3c21b',
-  dark: '#171717',
-  shaded: '#CAC5C1',
+  main: "#333333",
+  light: "#f3c21b",
+  dark: "#171717",
+  shaded: "#CAC5C1",
 };
-
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
-   color: primary.light,
-   backgroundColor: primary.dark
+    color: primary.light,
+    backgroundColor: primary.dark,
   },
   [`&.${tableCellClasses.body}`]: {
     fontSize: 14,
@@ -33,11 +31,11 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 }));
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
-  '&:nth-of-type(odd)': {
+  "&:nth-of-type(odd)": {
     backgroundColor: theme.palette.action.hover,
   },
   // hide last border
-  '&:last-child td, &:last-child th': {
+  "&:last-child td, &:last-child th": {
     border: 0,
   },
 }));
@@ -125,11 +123,7 @@ const rows = []
   console.log(rows)
 
 const AdminRegRequests = () => {
-  
   return (
-    <>
-    <SideBar><AdminMenu/></SideBar>
-
     <div className='Admin-Creators-table-main container d-flex flex-column '>
        <h1 className="donors-page-heading">
         <img
@@ -140,67 +134,65 @@ const AdminRegRequests = () => {
         <p className="donors-page-heading-spacer"></p>
         <p className="donors-page-word">Registration Requests</p>
       </h1>
-    <TableContainer component={Paper} className='Table-container-component-wrapper'>
-      <Table sx={{ minWidth: 750 }} size="small" aria-label="customized table">
-        <TableHead>
-          <StyledTableRow  style={{backgroundColor:'#f3c21b', color: '#333333'}}>
-            <StyledTableCell>id </StyledTableCell>
-            <StyledTableCell align="right">Username</StyledTableCell>
-            <StyledTableCell align="right">Role</StyledTableCell>
-
-            <StyledTableCell align="right">FirstName</StyledTableCell>
-            <StyledTableCell align="right">LastName</StyledTableCell>
-            <StyledTableCell align="right">Email</StyledTableCell>
-            <StyledTableCell align="right">Gender</StyledTableCell>
-            <StyledTableCell align="right">Phone</StyledTableCell>
-            <StyledTableCell align="right">DOB</StyledTableCell>
-            <StyledTableCell align="right">    
-        
-            </StyledTableCell>
-            <StyledTableCell align="right"> 
-              
-            </StyledTableCell>
-
-
-          </StyledTableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow
-              key={row.id}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+      <TableContainer
+        component={Paper}
+        className="Table-container-component-wrapper"
+      >
+        <Table
+          sx={{ minWidth: 750 }}
+          size="small"
+          aria-label="customized table"
+        >
+          <TableHead>
+            <StyledTableRow
+              style={{ backgroundColor: "#f3c21b", color: "#333333" }}
             >
-              <StyledTableCell component="th" scope="row">
-                {row.id}
-              </StyledTableCell>
-        
-              <StyledTableCell align="right">{row.Username}</StyledTableCell>
-              <StyledTableCell align="right">{row.Role}</StyledTableCell>
+              <StyledTableCell>id </StyledTableCell>
+              <StyledTableCell align="right">Username</StyledTableCell>
+              <StyledTableCell align="right">Role</StyledTableCell>
 
-              <StyledTableCell align="right">{row.FirstName}</StyledTableCell>
-              <StyledTableCell align="right">{row.LastName}</StyledTableCell>
-              <StyledTableCell align="right">{row.Email}</StyledTableCell>
-              <StyledTableCell align="right">{row.DOB}</StyledTableCell>
-              <StyledTableCell align="right">{row.Phone}</StyledTableCell>
-              <StyledTableCell align="right">{row.Gender}</StyledTableCell>
-              <StyledTableCell align="right">
-            <Button variant="success">Accept</Button>
+              <StyledTableCell align="right">FirstName</StyledTableCell>
+              <StyledTableCell align="right">LastName</StyledTableCell>
+              <StyledTableCell align="right">Email</StyledTableCell>
+              <StyledTableCell align="right">Gender</StyledTableCell>
+              <StyledTableCell align="right">Phone</StyledTableCell>
+              <StyledTableCell align="right">DOB</StyledTableCell>
+              <StyledTableCell align="right"></StyledTableCell>
+              <StyledTableCell align="right"></StyledTableCell>
+            </StyledTableRow>
+          </TableHead>
+          <TableBody>
+            {rows.map((row) => (
+              <TableRow
+                key={row.id}
+                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+              >
+                <StyledTableCell component="th" scope="row">
+                  {row.id}
+                </StyledTableCell>
 
-              </StyledTableCell>
-              <StyledTableCell align="right">
-                
-                  <DeletePopper />
-              </StyledTableCell>
-        
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+                <StyledTableCell align="right">{row.Username}</StyledTableCell>
+                <StyledTableCell align="right">{row.Role}</StyledTableCell>
 
+                <StyledTableCell align="right">{row.FirstName}</StyledTableCell>
+                <StyledTableCell align="right">{row.LastName}</StyledTableCell>
+                <StyledTableCell align="right">{row.Email}</StyledTableCell>
+                <StyledTableCell align="right">{row.DOB}</StyledTableCell>
+                <StyledTableCell align="right">{row.Phone}</StyledTableCell>
+                <StyledTableCell align="right">{row.Gender}</StyledTableCell>
+                <StyledTableCell align="right">
+                  <Button variant="success" onClick={() => handleAcceptUser(row.id)}>Accept</Button>
+                </StyledTableCell>
+                <StyledTableCell align="right">
+                  <RegisterRequestDeletePopper key={row.id} row={row} cb={fetchPendingUsers}/>
+                </StyledTableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
     </div>
-    </>
   )
 }
 
-export default AdminRegRequests
+export default AdminRegRequests;

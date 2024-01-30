@@ -4,7 +4,7 @@ import { Button } from "bootstrap";
 const Buttony = ({ children }) => {
   return (
     <div>
-         <button type="submit"  class="btn btn-warning">{children}</button>
+         <button type="reset"  className="btn btn-warning">{children}</button>
     </div>
   )
 }

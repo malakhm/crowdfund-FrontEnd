@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
-// import SweetAlert from 'sweetalert-react';
 
 import delete_icon from "../Assets/Icons/delete-icon.png"
 import edit_icon from "../Assets/Icons/edit-icon.png"

@@ -6,7 +6,7 @@ import { useSpring, animated } from '@react-spring/web';
 
 import Buttony from '../Components/Button-yellow/Button.js';
 import { FaReplyAll } from "react-icons/fa";
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 
 import '../Popups/Styles/Edit.css'
 import './Styles/Delete.css'

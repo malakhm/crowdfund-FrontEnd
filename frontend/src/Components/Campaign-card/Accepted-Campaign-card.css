@@ -1,0 +1,88 @@
+.Campaign-Card-Basic-Info{
+  display: flex;
+  flex-direction: column;
+  margin: 3%;
+}
+
+.Campaign-Link-name {
+  margin-left: 5px;
+  color: white;
+}
+
+.Campaign-Card-Component {
+
+  display: flex;
+  flex-direction: column;
+  height: 450px;
+  width: 300px;
+  margin-top: 2%;
+  
+  flex-shrink: 0;
+  border-radius: 20px;
+  background: #343232;
+
+
+
+}
+
+.Campaign-Card-Component img {
+  width: 100%;
+  height: 45%;
+  border-radius: 20px;
+}
+
+.Capmaign-Card-label {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: var(--main-secondary-color);
+  height: 15px;
+  
+}
+
+.start-card-label {
+  display: flex;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 10px;
+
+}
+
+.end-card-label {
+  margin-left: 100px;
+}
+
+.Campaign-Card-project-title-with-icon{
+  display: flex;
+  justify-content: space-between;
+color: white;
+  /* margin: 10px; */
+  
+}
+
+.Campaign-Card-Credits{
+  display: flex;
+  color:white;
+
+  
+}
+
+.Campaign-Card-Credits p, .Campaign-Card-stats p{
+  font-family: 'Courier New', Courier, monospace !important;
+
+}
+.Campaign-p-description{
+
+  color:  var(--main-light-shaded-color);
+font-size: 12px;
+
+}
+.Campaign-Card-stats{
+  display: flex;
+  margin-top: 10%;
+  color: white;
+  
+  
+}
+.Campaign-Card-stats h6{
+  margin: 5px ;
+  margin-left: 5px !important;
+}

@@ -3,8 +3,7 @@ import React from 'react'
 import Fund from "../22.png";
 import Buttony from '../../Components/Button-yellow/Button';
 import Buttonb from 'react-bootstrap/Button'
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
+
 import '../Home/Home.css'
 const Home = () => {
  

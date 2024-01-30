@@ -1,18 +1,16 @@
-import React from 'react'
-import Cards from '../../Components/Campaign-card/Campaign-card';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import {Link}  from 'react-router-dom'; 
-import  { useState } from 'react';
-import { PaginationControl } from 'react-bootstrap-pagination-control';
+import React from "react";
+import Cards from "../../Components/Campaign-card/Campaign-card";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Link } from "react-router-dom";
+import { useState } from "react";
+// import { PaginationControl } from "react-bootstrap-pagination-control";
 
-import './Feed.css'
+import "./Feed.css";
 const Feed = () => {
-    const [page, setPage] = useState(1)
+  const [page, setPage] = useState(1);
   return (
     <>
-    
-
-        {/* <PaginationControl
+      {/* <PaginationControl
         page={page}
         between={2}
         total={20}
@@ -36,7 +34,7 @@ const Feed = () => {
     </div>
 
     </>
-  )
-}
+  );
+};
 
-export default Feed
+export default Feed;

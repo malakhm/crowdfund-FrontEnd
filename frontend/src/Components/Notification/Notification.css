@@ -8,6 +8,20 @@
     
 }
 
+.donation-id-in-transactions {
+    font-size: 14px;
+}
+
+.donation-date-in-transactions {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    width: 100px;
+    color: var(--main-shaded-color);
+}
+
 .single-notification{
     display: flex;
     gap:10px;

@@ -1,15 +1,11 @@
 
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 
 import AdminCreators from "../Pages/Admin/Admin-creators/Admin-creators.js";
 import AdminDonors from "../Pages/Admin/Admin-donors/Admin-donors.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 import '../index.css'
 import Login from '../../src/Pages/Login/Login.js'
-
-
-
 import DetailsCard from '../Components/Details-card/Details-card.js'
 import SideBar from '../Components/Side-bar/Side-bar.js'
 import DonorMenu from "../Components/Donor-menu/donor-menu";
@@ -30,32 +26,8 @@ import ProtectedRoute from './ProtectedRoutes.js'
 import CreatorMenu from '../Components/Creator-menu/creator-menu.js';
 import AdminLogin from '../Pages/Login/LoginAdmin.js'
 import Home from '../Pages/Home/Home.js'
-import RegistrationOne from '../Pages/Registration/Registration-one/Registration-one.js'
-import RegistrationTwo from '../Pages/Registration/Registration-two/Registration-two.js'
-import  DonorProtectedRoute  from './DonorProtected.js';
-import CreatorProtectedRoute from './CreatorProtected.js'
-import AdminProtected from './AdminProtected.js'
-import { AuthContext } from '../Context/AuthContext.js';
-import { AdminContext } from '../Context/AdminContext.js';
-import { useContext } from 'react';
-import {toast} from 'react-toastify'
+
 const AppRoutes = () => {
-  let menuComponent ;
-  const {token,  user} = useContext(AuthContext)
-  const {admin} = useContext(AdminContext)
-  if(!user){toast.warning('you need to login !')}
-else{
-  if(user.isDonor ){
-    menuComponent = <SideBar><DonorMenu/></SideBar>
-  }
-  else if(user.isCreator){
-    menuComponent = <SideBar><CreatorMenu/></SideBar>
-  }
- 
-}
-  
-
-
     return (
         // <Routes>
         //     <Route exact path="/" element={<Home />} />
@@ -66,11 +38,10 @@ else{
         //     <Route path="/unauthorized" element={<Unauthorized />} />
         //     <Route path="/*" element={<NotFound />} />
         // </Routes>
-        <>
-        {menuComponent}
-       
+<>
+
         <Routes>
-        <Route element={<AdminProtected />}>
+        <Route element={<ProtectedRoute />}>
           <Route
             path="/admin/donors"
             element={<AdminDonors />
@@ -84,26 +55,13 @@ else{
             element={<Login />
             }
           />
-
-          <Route
-            path="/registration1"
-            element={<RegistrationOne />
-            }
-          />
-          <Route
-            path="/registration2"
-            element={<RegistrationTwo />
-            }
-          />
-          </Routes>
-          <Routes>
           <Route
             path="/admin/login"
             element={<AdminLogin />
             }
           />
           {/* <Route path='/' element={<Layout/>}> */}
-          <Route element={<AdminProtected />}>
+          <Route element={<ProtectedRoute />}>
             <Route
               path="/admin/creators"
               element={<AdminCreators />
@@ -111,7 +69,7 @@ else{
             />
           </Route>
 
-          <Route element={<AdminProtected />}>
+          <Route element={<ProtectedRoute />}>
             <Route
               path="/admin/campaigns"
               element={<AdminCampaign />
@@ -119,7 +77,7 @@ else{
             />
           </Route>
 
-          <Route element={<AdminProtected />}>
+          <Route element={<ProtectedRoute />}>
           <Route
             path="/admin/messages"
             element={<AdminMessages />
@@ -127,7 +85,7 @@ else{
           />
           </Route>
 
-          <Route element={<AdminProtected />}>
+          <Route element={<ProtectedRoute />}>
           <Route
             path="/admin/reg/requests"
             element={<AdminRegRequests />
@@ -135,7 +93,7 @@ else{
           />
           </Route>
 
-          <Route element={<AdminProtected />}>
+          <Route element={<ProtectedRoute />}>
           <Route
             path="/admin/post/requests"
             element={<AdminRequests />
@@ -148,7 +106,7 @@ else{
             element={user && (user.usertype ==="project" || )?<AdminRegRequests />}
           /> */}
 
-          <Route element={<AdminProtected />}>
+          <Route element={<ProtectedRoute />}>
           <Route
             path="/admin/transactions"
             element={<AdminTransactions />
@@ -156,7 +114,7 @@ else{
           />
           </Route>
 
-          <Route element={<AdminProtected />}>
+          <Route element={<ProtectedRoute />}>
           <Route
             path="/admin/anouncements"
             element={<AdminAnnouncements />
@@ -164,13 +122,14 @@ else{
           />
           </Route>
           {/* </Route> */}
+{/* ----------------------------------------- */}
 
             <Route
             path="/"
             element={<Home />
             }
           />
-   
+   \
           <Route element={<ProtectedRoute />}>
           <Route
             path="/feed"
@@ -192,21 +151,21 @@ else{
           />
           </Route>
 
-          <Route >
+          <Route element={<ProtectedRoute />}>
           <Route
             path="/donor/transactions"
             element={<DonorTransaction />}
           />
           </Route>
 
-          <Route element={<CreatorProtectedRoute />}>
+          <Route element={<ProtectedRoute />}>
             <Route 
             path='/creator/projects'
             element={CreatorProjects}
             />
           </Route>
 
-          <Route element={<CreatorProtectedRoute />}>
+          <Route element={<ProtectedRoute />}>
           <Route
             path="/transactions"
             element={<CreatorTransaction />}
