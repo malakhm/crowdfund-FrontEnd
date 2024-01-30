@@ -62,7 +62,9 @@ const AdminCampaign = () => {
 
   const handleCampaignDelete = async (campaign) => {
     try {
-      await axios.delete(`http://localhost:8100/api/campaignRoute/deleteByName/${campaign.campaign_name}`);
+      await axios.delete(
+        `http://localhost:8100/api/campaignRoute/deleteByName/${campaign.campaign_name}`
+      );
     } catch (error) {
       console.log("error deleting campaign: ", error);
     } finally {
@@ -89,9 +91,7 @@ const AdminCampaign = () => {
                 accepted_campaigns.map((campaign, campaign_name) => {
                   return campaign.isHidden ? (
                     <section key={campaign_name}>
-                      <p
-                      className="creator-main-card-edit text-warning d-flex "
-                      >
+                      <p className="creator-main-card-edit text-warning d-flex ">
                         <FaRegEyeSlash
                           className="document-icon"
                           onClick={() => handleCampaignUnhideClick(campaign)}
@@ -100,19 +100,17 @@ const AdminCampaign = () => {
                       <p className="creator-main-card-delete text-danger d-flex">
                         <FaDeleteLeft
                           className="document-icon"
-                          onClick={ () => handleCampaignDelete(campaign)}
+                          onClick={() => handleCampaignDelete(campaign)}
                         />
                       </p>
                       <AcceptedCampaignCard
-                        key = {campaign.campaign_name}
-                        campaign = {campaign}
+                        key={campaign.campaign_name}
+                        campaign={campaign}
                       />
                     </section>
                   ) : (
                     <section key={campaign_name}>
-                      <p
-                        className="creator-main-card-edit text-warning d-flex"
-                      >
+                      <p className="creator-main-card-edit text-warning d-flex">
                         <FaRegEye
                           className="document-icon"
                           onClick={() => handleCampaignHideClick(campaign)}
@@ -121,12 +119,12 @@ const AdminCampaign = () => {
                       <p className="creator-main-card-delete text-danger d-flex">
                         <FaDeleteLeft
                           className="document-icon"
-                          onClick={ () => handleCampaignDelete(campaign)}
+                          onClick={() => handleCampaignDelete(campaign)}
                         />
                       </p>
                       <AcceptedCampaignCard
-                        key = {campaign.campaign_name}
-                        campaign = {campaign}
+                        key={campaign.campaign_name}
+                        campaign={campaign}
                       />
                     </section>
                   );
