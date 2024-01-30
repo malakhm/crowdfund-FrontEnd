@@ -9,8 +9,9 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import users_icon from "../Admin-assets/users-icon.png";
-import DeletePopper from '../../../Popups/delete.js';
-import Button from 'react-bootstrap/Button';
+import RegisterRequestDeletePopper from "../../../Popups/delete-register-request.js";
+import Button from "react-bootstrap/Button";
+
 const primary = {
   main: "#333333",
   light: "#f3c21b",
@@ -40,92 +41,96 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-const data = [ {
-  
-  id: 1,
-  Username: "kamal", 
-  Role:"Admin",
-  FirstName: "Malvrvak",
-  LastName: "Hamwi",
-  Phone: "76-076487",
-  Email: "csd@gmail.com",
-  DOB: "12 january 2023",
-  Gender: "male"
-  
-  },
-  {
-  
-    id: 1,
-    Username: "kamal", 
-    Role:"Admin",
-    FirstName: "Malvrvak",
-    LastName: "Hamwi",
-    Phone: "76-076487",
-    Email: "csd@gmail.com",
-    DOB: "12 january 2023",
-    Gender: "male"
-    
-    },
-    {
-  
-      id: 1,
-      Username: "kamal", 
-      Role:"Admin",
-      FirstName: "Malvrvak",
-      LastName: "Hamwi",
-      Phone: "76-076487",
-      Email: "csd@gmail.com",
-      DOB: "12 january 2023",
-      Gender: "male"
-      
-      },
-      {
-  
-        id: 1,
-        Username: "kamal", 
-        Role:"Admin",
-        FirstName: "Malvrvak",
-        LastName: "Hamwi",
-        Phone: "76-076487",
-        Email: "csd@gmail.com",
-        DOB: "12 january 2023",
-        Gender: "male"
-        
-        },
-        {
-  
-          id: 1,
-          Username: "kamal", 
-          Role:"Admin",
-          FirstName: "Malvrvak",
-          LastName: "Hamwi",
-          Phone: "76-076487",
-          Email: "csd@gmail.com",
-          DOB: "12 january 2023",
-          Gender: "male"
-          
-          },
-  
-           
-    
-    
-
-]
-
-    
-
-function createData(id, Username,Role, FirstName, LastName, Phone, Email, DOB, Gender, Action) {
-  return { id, Username,Role, FirstName, LastName, Phone, Email, DOB, Gender, Action };
-}
-
-const rows = []
-  for(let i = 0; i< data.length;  i++) {rows.push(createData(data[i].id, data[i].Username,data[i].Role, data[i].FirstName, data[i].LastName, data[i].Phone, data[i].Email,data[i].Gender, data[i].DOB))}
-  console.log(rows)
-
 const AdminRegRequests = () => {
+  const [data, setData] = useState([]);
+
+  const fetchPendingUsers = useCallback(async () => {
+    try {
+      await axios
+        .get("http://localhost:8100/api/users/getPending/request")
+        .then((response) => {
+          // console.log("this is response in useeffect: ", response) // for checking
+          setData(response.data);
+        });
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
+
+  useEffect(() => {
+    fetchPendingUsers();
+  }, []);
+  // console.log("this is data for rows: ", data);
+
+  function createData(
+    id,
+    Username,
+    Role,
+    FirstName,
+    LastName,
+    Phone,
+    Email,
+    DOB,
+    Gender,
+    Action
+  ) {
+    return {
+      id,
+      Username,
+      Role,
+      FirstName,
+      LastName,
+      Phone,
+      Email,
+      DOB,
+      Gender,
+      Action,
+    };
+  }
+
+  const rows = [];
+  for (let i = 0; i < data.length; i++) {
+    let dob = data[i].dob.split("T")[0]
+    let role = "No Role";
+    if (data[i].isCreator) {
+      role = "Creator";
+    }
+    if (data[i].isDonor) {
+      role = "Donor";
+    }
+    if (data[i].isCreator && data[i].isDonor) {
+      // will not be reached normally
+      role = "Cr & Dn";
+    }
+    rows.push(
+      createData(
+        data[i].id,
+        data[i].username,
+        role,
+        data[i].first_name,
+        data[i].last_name,
+        data[i].phone_number,
+        data[i].email,
+        data[i].gender,
+        dob
+      )
+    );
+  }
+  // console.log("these are rows: ", rows); //testing
+
+  const handleAcceptUser = async (id) => {
+    try {
+      await axios.put(`http://localhost:8100/api/users/accept/${id}`);
+    } catch (error) {
+      console.log("error accepting user: ", error);
+    } finally {
+      fetchPendingUsers();
+    }
+  };
+
   return (
-    <div className='Admin-Creators-table-main container d-flex flex-column '>
-       <h1 className="donors-page-heading">
+    <div className="Admin-Creators-table-main container d-flex flex-column ">
+      <h1 className="donors-page-heading">
         <img
           className="users-icon-in-donors-page"
           src={users_icon}
@@ -192,7 +197,7 @@ const AdminRegRequests = () => {
         </Table>
       </TableContainer>
     </div>
-  )
-}
+  );
+};
 
 export default AdminRegRequests;

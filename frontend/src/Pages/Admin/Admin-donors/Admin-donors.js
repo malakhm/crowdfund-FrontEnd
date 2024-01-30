@@ -9,9 +9,10 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import users_icon from "../Admin-assets/users-icon.png";
-import DeletePopper from '../../../Popups/delete.js';
-import EditPopper from '../../../Popups/edituser.js';
-import './Admin-donors.css'
+import DonorDeletePopper from "../../../Popups/delete-donor.js";
+import DonorEditPopper from "../../../Popups/edit-donor.js";
+import "./Admin-donors.css";
+
 const primary = {
   main: "#333333",
   light: "#f3c21b",
@@ -95,8 +96,8 @@ const AdminDonors = () => {
   }, []); //left dependancy array empty so it doesnt run when handle delete is ran
 
   return (
-    <div className='Admin-Creators-table-main container d-flex flex-column '>
-       <h1 className="donors-page-heading">
+    <div className="Admin-Creators-table-main container d-flex flex-column ">
+      <h1 className="donors-page-heading">
         <img
           className="users-icon-in-donors-page"
           src={users_icon}
@@ -189,7 +190,7 @@ const AdminDonors = () => {
         </Table>
       </TableContainer>
     </div>
-  )
-}
+  );
+};
 
 export default AdminDonors;

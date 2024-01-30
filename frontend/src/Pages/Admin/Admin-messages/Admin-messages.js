@@ -8,9 +8,9 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import users_icon from "../Admin-assets/users-icon.png";
-import DeletePopper from '../../../Popups/delete.js';
-import ReplyPopper from '../../../Popups/reply.js';
-import message_icon from '../Admin-assets/inbox.png';
+import MessageDeletePopper from "../../../Popups/delete-message.js";
+import ReplyPopper from "../../../Popups/reply.js";
+import message_icon from "../Admin-assets/inbox.png";
 const primary = {
   main: "#333333",
   light: "#f3c21b",
@@ -85,8 +85,8 @@ for (let i = 0; i < data.length; i++) {
 
 function AdminMessages() {
   return (
-    <div className='Admin-Creators-table-main container d-flex flex-column '>
-       <h1 className="donors-page-heading">
+    <div className="Admin-Creators-table-main container d-flex flex-column ">
+      <h1 className="donors-page-heading">
         <img
           className="users-icon-in-donors-page"
           src={message_icon}
@@ -144,7 +144,7 @@ function AdminMessages() {
         </Table>
       </TableContainer>
     </div>
-  )
+  );
 }
 
 export default AdminMessages;

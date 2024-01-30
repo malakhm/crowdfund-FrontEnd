@@ -1,6 +1,6 @@
 import AppRoutes from './routes/Routes.js'
 
-<<<<<<<<< Temporary merge branch 1
+
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import AdminCreators from "./Pages/Admin/Admin-creators/Admin-creators.js";
 import AdminDonors from "./Pages/Admin/Admin-donors/Admin-donors.js";
@@ -32,13 +32,12 @@ import AdminAnnouncements from '../src/Pages/Admin/Admin-announcements/Admin-ann
 import AdminMenu from '../src/Components/Admin-menu/admin-menu.js';
 
 
-=========
->>>>>>>>> Temporary merge branch 2
+
 const App = () => {
   return (
    
       <div className="App">
-<<<<<<<<< Temporary merge branch 1
+
 
         <SideBar><AdminMenu /></SideBar>
 
@@ -126,9 +125,9 @@ const App = () => {
           />
           
         </Routes>
-=========
+
         <AppRoutes/>
->>>>>>>>> Temporary merge branch 2
+
       </div>
   
 

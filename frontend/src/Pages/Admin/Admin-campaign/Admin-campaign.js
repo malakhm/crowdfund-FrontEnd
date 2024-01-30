@@ -8,8 +8,6 @@ import "./Admin-campaign.css";
 import { FaDeleteLeft } from "react-icons/fa6";
 import campaign_icon from "../Admin-assets/campaign.png";
 import { FaRegEyeSlash, FaRegEye } from "react-icons/fa";
-import SideBar from '../../../Components/Side-bar/Side-bar.js'
-import AdminMenu from '../../../Components/Admin-menu/admin-menu'
 const AdminCampaign = () => {
   const [accepted_campaigns, setAcceptedCampaigns] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -75,101 +73,71 @@ const AdminCampaign = () => {
   };
 
   return (
-
-    <div className='campaign-main-admin container d-flex flex-column'>
-    <h1 className="donors-page-heading ">
-        <img
-          className="campaign-icon-in-donors-page"
-          src={campaign_icon}
-          alt="campaign icon"
-        />
-        <p className="donors-page-heading-spacer"></p>
-        <p className="donors-page-word">Campaigns</p>
-      </h1>
-
-      <div className='campaign-main-Container container d-flex '>
-
-        <div className='Creator-main-Card '>
-          <div className='creator-main-card-controls d-flex justify-self-center '>
-          {Hidden?
-           <p className='creator-main-card-edit text-warning d-flex '><FaRegEyeSlash className='document-icon' onClick={()=>handlHideClick()}/></p>
-           :
-           <p className='creator-main-card-edit text-warning d-flex'><FaRegEye className='document-icon' onClick={()=>handlVisibleClick()}/></p>
-        }
-           <p className='creator-main-card-delete text-danger d-flex'><FaDeleteLeft className='document-icon' /></p>
-           
+    <>
+      <div className="campaign-main-admin container d-flex flex-column">
+        <h1 className="donors-page-heading">
+          <img
+            className="campaign-icon-in-campaign-page"
+            src={campaign_icon}
+            alt="campaign icon"
+          />
+          <p className="donors-page-heading-spacer"></p>
+          <p className="donors-page-word">Campaigns</p>
+        </h1>
+        <div className="campaign-main-Container container d-flex ">
+          <div className="Creator-main-Card ">
+            <div className="creator-main-card-controls d-flex justify-self-center ">
+              {!loading ? (
+                accepted_campaigns.map((campaign, campaign_name) => {
+                  return campaign.isHidden ? (
+                    <section key={campaign_name}>
+                      <p className="creator-main-card-edit text-warning d-flex ">
+                        <FaRegEyeSlash
+                          className="document-icon"
+                          onClick={() => handleCampaignUnhideClick(campaign)}
+                        />
+                      </p>
+                      <p className="creator-main-card-delete text-danger d-flex">
+                        <FaDeleteLeft
+                          className="document-icon"
+                          onClick={() => handleCampaignDelete(campaign)}
+                        />
+                      </p>
+                      <AcceptedCampaignCard
+                        key={campaign.campaign_name}
+                        campaign={campaign}
+                      />
+                    </section>
+                  ) : (
+                    <section key={campaign_name}>
+                      <p className="creator-main-card-edit text-warning d-flex">
+                        <FaRegEye
+                          className="document-icon"
+                          onClick={() => handleCampaignHideClick(campaign)}
+                        />
+                      </p>
+                      <p className="creator-main-card-delete text-danger d-flex">
+                        <FaDeleteLeft
+                          className="document-icon"
+                          onClick={() => handleCampaignDelete(campaign)}
+                        />
+                      </p>
+                      <AcceptedCampaignCard
+                        key={campaign.campaign_name}
+                        campaign={campaign}
+                      />
+                    </section>
+                  );
+                })
+              ) : (
+                <p>Loading...</p>
+              )}
+            </div>
           </div>
-          <Cards />
         </div>
+      </div>
+    </>
+  );
+};
 
-        <div className='Creator-main-Card '>
-          <div className='creator-main-card-controls d-flex justify-self-center '>
-          {Hidden?
-           <p className='creator-main-card-edit text-warning d-flex '><FaRegEyeSlash className='document-icon' onClick={()=>handlHideClick()}/></p>
-           :
-           <p className='creator-main-card-edit text-warning d-flex'><FaRegEye className='document-icon' onClick={()=>handlVisibleClick()}/></p>
-        }
-           <p className='creator-main-card-delete text-danger d-flex'><FaDeleteLeft className='document-icon' /></p>
-           
-          </div>
-        </div>
-
-        <div className='Creator-main-Card '>
-          <div className='creator-main-card-controls d-flex justify-self-center '>
-          {Hidden?
-           <p className='creator-main-card-edit text-warning d-flex '><FaRegEyeSlash className='document-icon' onClick={()=>handlHideClick()}/></p>
-           :
-           <p className='creator-main-card-edit text-warning d-flex'><FaRegEye className='document-icon' onClick={()=>handlVisibleClick()}/></p>
-        }
-           <p className='creator-main-card-delete text-danger d-flex'><FaDeleteLeft className='document-icon' /></p>
-           
-          </div>
-          <Cards />
-        </div>
-
-        <div className='Creator-main-Card '>
-          <div className='creator-main-card-controls d-flex justify-self-center '>
-          {Hidden?
-           <p className='creator-main-card-edit text-warning d-flex '><FaRegEyeSlash className='document-icon' onClick={()=>handlHideClick()}/></p>
-           :
-           <p className='creator-main-card-edit text-warning d-flex'><FaRegEye className='document-icon' onClick={()=>handlVisibleClick()}/></p>
-        }
-           <p className='creator-main-card-delete text-danger d-flex'><FaDeleteLeft className='document-icon' /></p>
-           
-          </div>
-          <Cards />
-        </div>
-
-        <div className='Creator-main-Card '>
-          <div className='creator-main-card-controls d-flex justify-self-center '>
-          {Hidden?
-           <p className='creator-main-card-edit text-warning d-flex '><FaRegEyeSlash className='document-icon' onClick={()=>handlHideClick()}/></p>
-           :
-           <p className='creator-main-card-edit text-warning d-flex'><FaRegEye className='document-icon' onClick={()=>handlVisibleClick()}/></p>
-        }
-           <p className='creator-main-card-delete text-danger d-flex'><FaDeleteLeft className='document-icon' /></p>
-           
-          </div>
-          <Cards />
-        </div>
-
-        <div className='Creator-main-Card '>
-          <div className='creator-main-card-controls d-flex justify-self-center '>
-          {Hidden?
-           <p className='creator-main-card-edit text-warning d-flex '><FaRegEyeSlash className='document-icon' onClick={()=>handlHideClick()}/></p>
-           :
-           <p className='creator-main-card-edit text-warning d-flex'><FaRegEye className='document-icon' onClick={()=>handlVisibleClick()}/></p>
-        }
-           <p className='creator-main-card-delete text-danger d-flex'><FaDeleteLeft className='document-icon' /></p>
-           
-          </div>
-          <Cards />
-        </div>
-</div>
-    </div>
-
-
-  )
-}
-
-export default AdminCampaign
+export default AdminCampaign;

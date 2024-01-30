@@ -1,9 +1,3 @@
 .sidebar-component-main{
     min-height: 120vh !important;
-    z-index: 1;
-}
-@media screen and (max-width:500px) {
-    .sidebar-component-main{
-        
-    }
 }

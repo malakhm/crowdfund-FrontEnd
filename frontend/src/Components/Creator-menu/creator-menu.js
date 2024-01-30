@@ -6,17 +6,14 @@ import {
   CDBSidebarMenu,
   CDBSidebarMenuItem,
 } from 'cdbreact';
-import { NavLink , useNavigate} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import {toast} from 'react-toastify'
 
 const CreatorMenu = () =>{
-  const navigate = useNavigate()
   const handleLogout= (e)=>{
     e.preventDefault()
     localStorage.clear();
-    navigate('/user/login')
     toast.success('Logged out successfully !')
-   
    
   }
   return (
@@ -25,7 +22,7 @@ const CreatorMenu = () =>{
             <NavLink exact to="/feed" activeClassName="activeClicked">
               <CDBSidebarMenuItem icon='seedling' className='menu-list-item-color'>Feed</CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to="/creator/projects" activeClassName="activeClicked">
+            <NavLink exact to="/" activeClassName="activeClicked">
               <CDBSidebarMenuItem icon='file-alt' className='menu-list-item-color'>My Projects</CDBSidebarMenuItem>
             </NavLink>
             <NavLink exact to="/profile" activeClassName="activeClicked">

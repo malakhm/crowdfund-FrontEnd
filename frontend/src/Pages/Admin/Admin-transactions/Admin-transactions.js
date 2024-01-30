@@ -1,5 +1,6 @@
-import React from 'react'
-import Notification from '../../../Components/Notification/Notification.js'
+import React, { useState, useEffect, useCallback } from "react";
+import axios from "axios";
+import Notification from "../../../Components/Notification/Notification.js";
 const AdminTransactions = () => {
 
   const [donations, setDonations] = useState(null);
@@ -34,21 +35,16 @@ const AdminTransactions = () => {
     donations
   ); //for checking
   return (
-    <div className='Notifications-main-container-div container d-flex justify-self-center flex-column'>
-      <Notification >Kamal</Notification>
-      <Notification >Kamal</Notification>
-      <Notification >Kamal</Notification>
-      <Notification >Kamal</Notification>
-      <Notification >Kamal</Notification>
-      <Notification >Kamal</Notification>
-      <Notification >Kamal</Notification>
-      <Notification >Kamal</Notification>
-      <Notification >Kamal</Notification>
-
-
+    <div className="Notifications-main-container-div container d-flex justify-self-center flex-column">
+      {!loading ? (donations ? donations.map((donation) => (
+        <Notification donation={donation}>{donation.user.username}</Notification>
+      )) : (
+        <p>No donations found</p>
+      )
+      ) : (<p className="loading-creators">Loading Creators...</p>)}
 
     </div>
-  )
-}
+  );
+};
 
 export default AdminTransactions;

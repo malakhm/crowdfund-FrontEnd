@@ -6,15 +6,14 @@ import {
   CDBSidebarMenu,
   CDBSidebarMenuItem,
 } from 'cdbreact';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 
 const AdminMenu = () =>{
- const navigate = useNavigate()
+ 
  const handleLogout= (e)=>{
   e.preventDefault()
-  navigate('/admin/login')
   localStorage.clear();
   toast.success('Logged out successfully !')
 }
